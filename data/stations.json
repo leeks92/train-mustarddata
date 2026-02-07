@@ -1,0 +1,2084 @@
+[
+  {
+    "stationId": "NAT020040",
+    "stationName": "상봉",
+    "cityName": "서울특별시",
+    "cityCode": 11
+  },
+  {
+    "stationId": "NAT130036",
+    "stationName": "서빙고",
+    "cityName": "서울특별시",
+    "cityCode": 11
+  },
+  {
+    "stationId": "NAT130070",
+    "stationName": "옥수",
+    "cityName": "서울특별시",
+    "cityCode": 11
+  },
+  {
+    "stationId": "NAT130104",
+    "stationName": "왕십리",
+    "cityName": "서울특별시",
+    "cityCode": 11
+  },
+  {
+    "stationId": "NAT130126",
+    "stationName": "청량리",
+    "cityName": "서울특별시",
+    "cityCode": 11
+  },
+  {
+    "stationId": "NAT130182",
+    "stationName": "광운대",
+    "cityName": "서울특별시",
+    "cityCode": 11
+  },
+  {
+    "stationId": "NAT010000",
+    "stationName": "서울",
+    "cityName": "서울특별시",
+    "cityCode": 11
+  },
+  {
+    "stationId": "NAT010032",
+    "stationName": "용산",
+    "cityName": "서울특별시",
+    "cityCode": 11
+  },
+  {
+    "stationId": "NAT010058",
+    "stationName": "노량진",
+    "cityName": "서울특별시",
+    "cityCode": 11
+  },
+  {
+    "stationId": "NAT010091",
+    "stationName": "영등포",
+    "cityName": "서울특별시",
+    "cityCode": 11
+  },
+  {
+    "stationId": "NAT010106",
+    "stationName": "신도림",
+    "cityName": "서울특별시",
+    "cityCode": 11
+  },
+  {
+    "stationId": "NATH30000",
+    "stationName": "수서",
+    "cityName": "서울특별시",
+    "cityCode": 11
+  },
+  {
+    "stationId": "NAT011403",
+    "stationName": "부강",
+    "cityName": "세종특별시",
+    "cityCode": 12
+  },
+  {
+    "stationId": "NAT011298",
+    "stationName": "조치원",
+    "cityName": "세종특별시",
+    "cityCode": 12
+  },
+  {
+    "stationId": "NAT011079",
+    "stationName": "소정리",
+    "cityName": "세종특별시",
+    "cityCode": 12
+  },
+  {
+    "stationId": "NAT011154",
+    "stationName": "전의",
+    "cityName": "세종특별시",
+    "cityCode": 12
+  },
+  {
+    "stationId": "NAT014244",
+    "stationName": "화명",
+    "cityName": "부산광역시",
+    "cityCode": 21
+  },
+  {
+    "stationId": "NAT014281",
+    "stationName": "구포",
+    "cityName": "부산광역시",
+    "cityCode": 21
+  },
+  {
+    "stationId": "NAT014331",
+    "stationName": "사상",
+    "cityName": "부산광역시",
+    "cityCode": 21
+  },
+  {
+    "stationId": "NAT014445",
+    "stationName": "부산",
+    "cityName": "부산광역시",
+    "cityCode": 21
+  },
+  {
+    "stationId": "NAT750046",
+    "stationName": "부전",
+    "cityName": "부산광역시",
+    "cityCode": 21
+  },
+  {
+    "stationId": "NAT750106",
+    "stationName": "동래",
+    "cityName": "부산광역시",
+    "cityCode": 21
+  },
+  {
+    "stationId": "NAT750161",
+    "stationName": "센텀",
+    "cityName": "부산광역시",
+    "cityCode": 21
+  },
+  {
+    "stationId": "NAT750189",
+    "stationName": "신해운대",
+    "cityName": "부산광역시",
+    "cityCode": 21
+  },
+  {
+    "stationId": "NAT750254",
+    "stationName": "송정",
+    "cityName": "부산광역시",
+    "cityCode": 21
+  },
+  {
+    "stationId": "NAT750329",
+    "stationName": "기장",
+    "cityName": "부산광역시",
+    "cityCode": 21
+  },
+  {
+    "stationId": "NAT750412",
+    "stationName": "좌천",
+    "cityName": "부산광역시",
+    "cityCode": 21
+  },
+  {
+    "stationId": "NAT013239",
+    "stationName": "대구",
+    "cityName": "대구광역시",
+    "cityCode": 22
+  },
+  {
+    "stationId": "NAT013271",
+    "stationName": "동대구",
+    "cityName": "대구광역시",
+    "cityCode": 22
+  },
+  {
+    "stationId": "NAT013189",
+    "stationName": "서대구",
+    "cityName": "대구광역시",
+    "cityCode": 22
+  },
+  {
+    "stationId": "NAT060231",
+    "stationName": "주안",
+    "cityName": "인천광역시",
+    "cityCode": 23
+  },
+  {
+    "stationId": "NATC30058",
+    "stationName": "인천공항T2",
+    "cityName": "인천광역시",
+    "cityCode": 23
+  },
+  {
+    "stationId": "NATC10325",
+    "stationName": "검암",
+    "cityName": "인천광역시",
+    "cityCode": 23
+  },
+  {
+    "stationId": "NATC10580",
+    "stationName": "인천공항T1",
+    "cityName": "인천광역시",
+    "cityCode": 23
+  },
+  {
+    "stationId": "NAT031857",
+    "stationName": "광주송정",
+    "cityName": "광주광역시",
+    "cityCode": 24
+  },
+  {
+    "stationId": "NAT882904",
+    "stationName": "효천",
+    "cityName": "광주광역시",
+    "cityCode": 24
+  },
+  {
+    "stationId": "NAT882936",
+    "stationName": "서광주",
+    "cityName": "광주광역시",
+    "cityCode": 24
+  },
+  {
+    "stationId": "NAT883012",
+    "stationName": "광주",
+    "cityName": "광주광역시",
+    "cityCode": 24
+  },
+  {
+    "stationId": "NAT883086",
+    "stationName": "극락강",
+    "cityName": "광주광역시",
+    "cityCode": 24
+  },
+  {
+    "stationId": "NAT011668",
+    "stationName": "대전",
+    "cityName": "대전광역시",
+    "cityCode": 25
+  },
+  {
+    "stationId": "NAT030057",
+    "stationName": "서대전",
+    "cityName": "대전광역시",
+    "cityCode": 25
+  },
+  {
+    "stationId": "NAT030173",
+    "stationName": "흑석리",
+    "cityName": "대전광역시",
+    "cityCode": 25
+  },
+  {
+    "stationId": "NAT011524",
+    "stationName": "신탄진",
+    "cityName": "대전광역시",
+    "cityCode": 25
+  },
+  {
+    "stationId": "NAT750781",
+    "stationName": "북울산",
+    "cityName": "울산광역시",
+    "cityCode": 26
+  },
+  {
+    "stationId": "NATH13717",
+    "stationName": "울산(통도사)",
+    "cityName": "울산광역시",
+    "cityCode": 26
+  },
+  {
+    "stationId": "NAT750560",
+    "stationName": "남창",
+    "cityName": "울산광역시",
+    "cityCode": 26
+  },
+  {
+    "stationId": "NAT750653",
+    "stationName": "덕하",
+    "cityName": "울산광역시",
+    "cityCode": 26
+  },
+  {
+    "stationId": "NAT750726",
+    "stationName": "태화강",
+    "cityName": "울산광역시",
+    "cityCode": 26
+  },
+  {
+    "stationId": "NAT750760",
+    "stationName": "효문",
+    "cityName": "울산광역시",
+    "cityCode": 26
+  },
+  {
+    "stationId": "NAT020178",
+    "stationName": "덕소",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT020471",
+    "stationName": "아신",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT020524",
+    "stationName": "양평",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT020641",
+    "stationName": "용문",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT020677",
+    "stationName": "지평",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT020717",
+    "stationName": "석불",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT020760",
+    "stationName": "일신",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT020803",
+    "stationName": "매곡",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT020845",
+    "stationName": "양동",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT020884",
+    "stationName": "삼산",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT060121",
+    "stationName": "부천",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT110147",
+    "stationName": "행신",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT110165",
+    "stationName": "능곡",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT110180",
+    "stationName": "대곡",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT110249",
+    "stationName": "일산",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT110265",
+    "stationName": "탄현",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT110407",
+    "stationName": "파주",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT110460",
+    "stationName": "문산",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT110497",
+    "stationName": "운천",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT110520",
+    "stationName": "임진강",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT110557",
+    "stationName": "도라산",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT130312",
+    "stationName": "의정부",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT130531",
+    "stationName": "동두천",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT130556",
+    "stationName": "소요산",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT130597",
+    "stationName": "초성리",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT130627",
+    "stationName": "한탄강",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT130652",
+    "stationName": "전곡",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT130738",
+    "stationName": "연천",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT130774",
+    "stationName": "신망리",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT130844",
+    "stationName": "대광리",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT130888",
+    "stationName": "신탄리",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT140098",
+    "stationName": "퇴계원",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT140133",
+    "stationName": "사릉",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT140214",
+    "stationName": "평내호평",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT140277",
+    "stationName": "마석",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT140362",
+    "stationName": "대성리",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT140436",
+    "stationName": "청평",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT140576",
+    "stationName": "가평",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT150057",
+    "stationName": "원릉",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT150167",
+    "stationName": "일영",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT150191",
+    "stationName": "장흥",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT150231",
+    "stationName": "송추",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT010239",
+    "stationName": "안양",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT010415",
+    "stationName": "수원",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT010570",
+    "stationName": "오산",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT010670",
+    "stationName": "서정리",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT010754",
+    "stationName": "평택",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT280090",
+    "stationName": "가남",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT250428",
+    "stationName": "부발",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NATH10219",
+    "stationName": "광명",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NATH30326",
+    "stationName": "동탄",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NATH30536",
+    "stationName": "평택지제",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT250007",
+    "stationName": "신판교",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT460073",
+    "stationName": "화성시청",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT460187",
+    "stationName": "향남",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT460378",
+    "stationName": "안중",
+    "cityName": "경기도",
+    "cityCode": 31
+  },
+  {
+    "stationId": "NAT020986",
+    "stationName": "동화",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT021033",
+    "stationName": "만종",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT021175",
+    "stationName": "반곡",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT021357",
+    "stationName": "신림",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT020864",
+    "stationName": "서원주",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT020947",
+    "stationName": "원주",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT130944",
+    "stationName": "백마고지",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT140681",
+    "stationName": "백양리",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT140701",
+    "stationName": "강촌",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT140787",
+    "stationName": "김유정",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT140840",
+    "stationName": "남춘천",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT140873",
+    "stationName": "춘천",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT600830",
+    "stationName": "동점",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT600870",
+    "stationName": "철암",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT601122",
+    "stationName": "도계",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT601275",
+    "stationName": "신기",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT601485",
+    "stationName": "동해",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT601545",
+    "stationName": "묵호",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT601602",
+    "stationName": "망상해변",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT601605",
+    "stationName": "망상",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT601774",
+    "stationName": "정동진",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT601936",
+    "stationName": "강릉",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT610064",
+    "stationName": "별어곡",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT610137",
+    "stationName": "선평",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT610226",
+    "stationName": "정선",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT610326",
+    "stationName": "나전",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT610387",
+    "stationName": "아우라지",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NATN10230",
+    "stationName": "횡성",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NATN10428",
+    "stationName": "둔내",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NATN10625",
+    "stationName": "평창",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NATN10787",
+    "stationName": "진부",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT630064",
+    "stationName": "추암",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT630078",
+    "stationName": "삼척해변",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT630129",
+    "stationName": "삼척",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT650177",
+    "stationName": "쌍룡",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT650253",
+    "stationName": "연당",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT650341",
+    "stationName": "영월",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT650515",
+    "stationName": "예미",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT650567",
+    "stationName": "함백",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT650722",
+    "stationName": "민둥산",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT650782",
+    "stationName": "사북",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT650828",
+    "stationName": "고한",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT650918",
+    "stationName": "추전",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT650978",
+    "stationName": "태백",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT651053",
+    "stationName": "동백산",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT752850",
+    "stationName": "임원",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT752787",
+    "stationName": "옥원",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT752946",
+    "stationName": "근덕",
+    "cityName": "강원도",
+    "cityCode": 32
+  },
+  {
+    "stationId": "NAT011833",
+    "stationName": "옥천",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT011916",
+    "stationName": "이원",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT011972",
+    "stationName": "지탄",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT012016",
+    "stationName": "심천",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT012054",
+    "stationName": "각계",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT012124",
+    "stationName": "영동",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT012270",
+    "stationName": "황간",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT012355",
+    "stationName": "추풍령",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT021478",
+    "stationName": "봉양",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT021549",
+    "stationName": "제천",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT021723",
+    "stationName": "도담",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT021784",
+    "stationName": "단양",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT050044",
+    "stationName": "오송",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT050114",
+    "stationName": "청주",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT050215",
+    "stationName": "오근장",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT050244",
+    "stationName": "청주공항",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT050366",
+    "stationName": "증평",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT050596",
+    "stationName": "음성",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT050719",
+    "stationName": "주덕",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT050827",
+    "stationName": "충주",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT050881",
+    "stationName": "목행",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT051006",
+    "stationName": "삼탄",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT280212",
+    "stationName": "감곡장호원",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT280358",
+    "stationName": "앙성온천",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT650050",
+    "stationName": "장락",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT280666",
+    "stationName": "살미",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT280751",
+    "stationName": "수안보온천",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT280814",
+    "stationName": "연풍",
+    "cityName": "충청북도",
+    "cityCode": 33
+  },
+  {
+    "stationId": "NAT030254",
+    "stationName": "계룡",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT030396",
+    "stationName": "연산",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT030508",
+    "stationName": "논산",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT030607",
+    "stationName": "강경",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT080045",
+    "stationName": "아산",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT080147",
+    "stationName": "온양온천",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT080216",
+    "stationName": "신창",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT080309",
+    "stationName": "도고온천",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT080353",
+    "stationName": "신례원",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT080402",
+    "stationName": "예산",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT080492",
+    "stationName": "삽교",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT080622",
+    "stationName": "홍성",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT080749",
+    "stationName": "광천",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT080827",
+    "stationName": "청소",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT080952",
+    "stationName": "대천",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT081240",
+    "stationName": "판교",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT081318",
+    "stationName": "장항",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT081343",
+    "stationName": "서천",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT340090",
+    "stationName": "연무대",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT010848",
+    "stationName": "성환",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT010971",
+    "stationName": "천안",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NATH10960",
+    "stationName": "천안아산",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NATH20438",
+    "stationName": "공주",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT081099",
+    "stationName": "신웅천",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT460553",
+    "stationName": "인주",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT460641",
+    "stationName": "합덕",
+    "cityName": "충청남도",
+    "cityCode": 34
+  },
+  {
+    "stationId": "NAT030667",
+    "stationName": "용동",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT030718",
+    "stationName": "함열",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT030879",
+    "stationName": "익산",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT031056",
+    "stationName": "김제",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT031179",
+    "stationName": "신태인",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT031314",
+    "stationName": "정읍",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT040133",
+    "stationName": "삼례",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT040173",
+    "stationName": "동산",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT040257",
+    "stationName": "전주",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT040352",
+    "stationName": "신리",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT040496",
+    "stationName": "관촌",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT040536",
+    "stationName": "임실",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT040667",
+    "stationName": "오수",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT040868",
+    "stationName": "남원",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT081388",
+    "stationName": "군산",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT320131",
+    "stationName": "대야",
+    "cityName": "전라북도",
+    "cityCode": 35
+  },
+  {
+    "stationId": "NAT031486",
+    "stationName": "백양사",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT031638",
+    "stationName": "장성",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT031998",
+    "stationName": "나주",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT032099",
+    "stationName": "다시",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT032273",
+    "stationName": "무안",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT032313",
+    "stationName": "몽탄",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT032422",
+    "stationName": "일로",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT032489",
+    "stationName": "임성리",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT032563",
+    "stationName": "목포",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT041072",
+    "stationName": "곡성",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT041285",
+    "stationName": "구례구",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT041595",
+    "stationName": "순천",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT041710",
+    "stationName": "율촌",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT041866",
+    "stationName": "여천",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT041993",
+    "stationName": "여수EXPO",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT032212",
+    "stationName": "함평",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT470133",
+    "stationName": "영암",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT470312",
+    "stationName": "해남",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT470446",
+    "stationName": "강진",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT470584",
+    "stationName": "전남장흥",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT470718",
+    "stationName": "장동",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT470804",
+    "stationName": "신보성",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT881538",
+    "stationName": "진상",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT881584",
+    "stationName": "옥곡",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT881708",
+    "stationName": "광양",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT882034",
+    "stationName": "벌교",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT882141",
+    "stationName": "조성",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT882194",
+    "stationName": "예당",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT882237",
+    "stationName": "득량",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT882328",
+    "stationName": "보성",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT882416",
+    "stationName": "명봉",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT882544",
+    "stationName": "이양",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT882666",
+    "stationName": "능주",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT882755",
+    "stationName": "화순",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT882847",
+    "stationName": "남평",
+    "cityName": "전라남도",
+    "cityCode": 36
+  },
+  {
+    "stationId": "NAT012546",
+    "stationName": "김천",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT012700",
+    "stationName": "아포",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT012775",
+    "stationName": "구미",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT012821",
+    "stationName": "사곡",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT012903",
+    "stationName": "약목",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT012968",
+    "stationName": "왜관",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT013067",
+    "stationName": "신동",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT013395",
+    "stationName": "경산",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT013542",
+    "stationName": "남성현",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT013629",
+    "stationName": "청도",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT022053",
+    "stationName": "풍기",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT022188",
+    "stationName": "영주",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT022844",
+    "stationName": "의성",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT023279",
+    "stationName": "신녕",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT023424",
+    "stationName": "북영천",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT023449",
+    "stationName": "영천",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT023601",
+    "stationName": "아화",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT023821",
+    "stationName": "서경주",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT300200",
+    "stationName": "옥산",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT300271",
+    "stationName": "청리",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT300360",
+    "stationName": "상주",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT300558",
+    "stationName": "함창",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT300600",
+    "stationName": "점촌",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT300669",
+    "stationName": "용궁",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT300733",
+    "stationName": "개포",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT300850",
+    "stationName": "예천",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT600147",
+    "stationName": "봉화",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT600257",
+    "stationName": "봉성",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT600379",
+    "stationName": "춘양",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT600476",
+    "stationName": "임기",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT600527",
+    "stationName": "현동",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT600593",
+    "stationName": "분천",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT600635",
+    "stationName": "비동",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT600655",
+    "stationName": "양원",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT600692",
+    "stationName": "승부",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT600768",
+    "stationName": "석포",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT752682",
+    "stationName": "흥부",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT752618",
+    "stationName": "죽변",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT752540",
+    "stationName": "울진",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT752428",
+    "stationName": "매화",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT752319",
+    "stationName": "기성",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT752196",
+    "stationName": "후포",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT752102",
+    "stationName": "고래불",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT8B0082",
+    "stationName": "신나원",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT8B0190",
+    "stationName": "신안강",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT8B0504",
+    "stationName": "월포",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT8B0595",
+    "stationName": "장사",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT8B0671",
+    "stationName": "강구",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT8B0737",
+    "stationName": "영덕",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT830200",
+    "stationName": "하양",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT8B0351",
+    "stationName": "포항",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NATH12383",
+    "stationName": "김천구미",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NATH13421",
+    "stationName": "경주",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT022558",
+    "stationName": "안동",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT750933",
+    "stationName": "입실",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT751238",
+    "stationName": "사방",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT751296",
+    "stationName": "안강",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT751325",
+    "stationName": "양자동",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT751354",
+    "stationName": "부조",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT751418",
+    "stationName": "효자",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT280927",
+    "stationName": "문경",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT752245",
+    "stationName": "평해",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT752029",
+    "stationName": "영해",
+    "cityName": "경상북도",
+    "cityCode": 37
+  },
+  {
+    "stationId": "NAT013747",
+    "stationName": "상동",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT013841",
+    "stationName": "밀양",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT013967",
+    "stationName": "삼랑진",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT014058",
+    "stationName": "원동",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT014150",
+    "stationName": "물금",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT880099",
+    "stationName": "한림정",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT880177",
+    "stationName": "진영",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT880179",
+    "stationName": "진례",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT880281",
+    "stationName": "창원중앙",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT880310",
+    "stationName": "창원",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT880345",
+    "stationName": "마산",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT880408",
+    "stationName": "중리",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT880520",
+    "stationName": "함안",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT880608",
+    "stationName": "군북",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT880644",
+    "stationName": "원북",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT880702",
+    "stationName": "평촌",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT880766",
+    "stationName": "반성",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT880825",
+    "stationName": "진성",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT881014",
+    "stationName": "진주",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT881168",
+    "stationName": "완사",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT881269",
+    "stationName": "북천",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT881323",
+    "stationName": "양보",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT881386",
+    "stationName": "횡천",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT881460",
+    "stationName": "하동",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT810048",
+    "stationName": "신창원",
+    "cityName": "경상남도",
+    "cityCode": 38
+  },
+  {
+    "stationId": "NAT810195",
+    "stationName": "진해",
+    "cityName": "경상남도",
+    "cityCode": 38
+  }
+]

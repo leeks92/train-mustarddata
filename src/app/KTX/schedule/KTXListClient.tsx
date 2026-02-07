@@ -1,0 +1,216 @@
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import { createStationSlug } from '@/lib/slug-utils';
+
+interface Station {
+  stationId: string;
+  stationName: string;
+  cityName?: string;
+}
+
+interface Route {
+  depStationId: string;
+  arrStationId: string;
+}
+
+interface Props {
+  stations: Station[];
+  routes: Route[];
+}
+
+function groupStationsByRegion(stations: Station[]) {
+  const regions: Record<string, Station[]> = {};
+
+  stations.forEach(station => {
+    let region = '기타';
+    const name = station.stationName;
+    const city = station.cityName || '';
+
+    if (name.includes('서울') || city.includes('서울')) region = '서울';
+    else if (name.includes('부산') || city.includes('부산')) region = '부산';
+    else if (name.includes('대구') || city.includes('대구')) region = '대구';
+    else if (name.includes('대전') || city.includes('대전')) region = '대전';
+    else if (name.includes('광주') || city.includes('광주')) region = '광주';
+    else if (name.includes('울산') || city.includes('울산')) region = '울산';
+    else if (name.includes('인천') || city.includes('인천')) region = '인천';
+    else if (name.includes('세종') || city.includes('세종')) region = '세종';
+    else if (city.includes('경기')) region = '경기';
+    else if (city.includes('강원')) region = '강원';
+    else if (city.includes('충청북') || city.includes('충북')) region = '충북';
+    else if (city.includes('충청남') || city.includes('충남')) region = '충남';
+    else if (city.includes('경상북') || city.includes('경북')) region = '경북';
+    else if (city.includes('경상남') || city.includes('경남')) region = '경남';
+    else if (city.includes('전라북') || city.includes('전북') || city.includes('전북특별자치도')) region = '전북';
+    else if (city.includes('전라남') || city.includes('전남')) region = '전남';
+    else if (city.includes('제주')) region = '제주';
+
+    if (!regions[region]) regions[region] = [];
+    regions[region].push(station);
+  });
+
+  return regions;
+}
+
+const regionOrder = [
+  '서울', '경기', '인천', '부산', '대구', '대전', '광주', '울산', '세종',
+  '강원', '충북', '충남', '경북', '경남', '전북', '전남', '제주', '기타'
+];
+
+export default function KTXListClient({ stations, routes }: Props) {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [showAll, setShowAll] = useState(false);
+
+  const depStationIds = new Set(routes.map(r => r.depStationId));
+
+  const filteredStations = stations.filter(s =>
+    s.stationName.includes(searchTerm) || (s.cityName && s.cityName.includes(searchTerm))
+  );
+
+  const uniqueStations = filteredStations.reduce<Station[]>((acc, station) => {
+    if (!acc.find(s => s.stationName === station.stationName)) {
+      acc.push(station);
+    }
+    return acc;
+  }, []);
+
+  const isSearching = searchTerm.length > 0;
+  const displayStations = (isSearching || showAll)
+    ? uniqueStations
+    : uniqueStations.filter(s => depStationIds.has(s.stationId));
+
+  const hiddenCount = uniqueStations.length - uniqueStations.filter(s => depStationIds.has(s.stationId)).length;
+  const activeCount = uniqueStations.filter(s => depStationIds.has(s.stationId)).length;
+
+  const groupedStations = groupStationsByRegion(displayStations);
+
+  return (
+    <div className="min-h-screen bg-gray-50 pb-16">
+      <div className="bg-emerald-700 text-white py-12 px-4 shadow-md">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">KTX 시간표</h1>
+          <p className="text-emerald-200 text-lg mb-8">
+            전국 <strong className="text-white">{activeCount}</strong>개 역, <strong className="text-white">{routes.length}</strong>개 노선의 KTX 운행 정보를 확인하세요
+          </p>
+
+          <div className="max-w-xl mx-auto relative">
+            <input
+              type="text"
+              placeholder="역 이름 검색 (예: 서울, 부산)"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full py-4 px-6 rounded-full bg-white text-gray-900 shadow-lg focus:outline-none focus:ring-4 focus:ring-emerald-400 text-lg placeholder-gray-400"
+            />
+            <div className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 mt-12">
+        {displayStations.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-xl text-gray-600">검색 결과가 없습니다.</p>
+          </div>
+        )}
+
+        <div className="space-y-12">
+          {regionOrder.map(region => {
+            const regionStations = groupedStations[region];
+            if (!regionStations || regionStations.length === 0) return null;
+
+            const activeInRegion = regionStations.filter(s => depStationIds.has(s.stationId)).length;
+
+            return (
+              <section key={region} className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100">
+                <h2 className="text-2xl font-bold mb-6 flex items-center gap-3 text-gray-800 border-b pb-4">
+                  <span className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 text-lg">
+                    {region.substring(0, 1)}
+                  </span>
+                  {region}
+                  <span className="text-sm font-normal text-gray-500 ml-auto bg-gray-50 px-3 py-1 rounded-full">
+                    {activeInRegion > 0 ? `${activeInRegion}개 역` : `${regionStations.length}개 역`}
+                  </span>
+                </h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {regionStations
+                    .sort((a, b) => {
+                      const aHas = depStationIds.has(a.stationId) ? 0 : 1;
+                      const bHas = depStationIds.has(b.stationId) ? 0 : 1;
+                      if (aHas !== bHas) return aHas - bHas;
+                      return a.stationName.localeCompare(b.stationName);
+                    })
+                    .map(station => {
+                      const routeCount = routes.filter(r => r.depStationId === station.stationId).length;
+                      const stationSlug = createStationSlug(station.stationName);
+                      const hasRoutes = routeCount > 0;
+
+                      return (
+                        <Link
+                          key={station.stationId}
+                          href={`/KTX/schedule/${stationSlug}`}
+                          className={`group block rounded-xl p-5 transition-all duration-200 ${
+                            hasRoutes
+                              ? 'bg-gray-50 hover:bg-white border border-transparent hover:border-emerald-200 hover:shadow-md'
+                              : 'bg-gray-50/50 border border-gray-100 opacity-60 hover:opacity-80'
+                          }`}
+                        >
+                          <div className="flex justify-between items-start mb-2">
+                            <h3 className={`text-lg font-bold transition-colors ${
+                              hasRoutes ? 'text-gray-900 group-hover:text-emerald-600' : 'text-gray-500'
+                            }`}>
+                              {station.stationName}
+                            </h3>
+                            {hasRoutes && (
+                              <span className="text-xs font-semibold bg-emerald-100 text-emerald-700 px-2 py-1 rounded">
+                                {routeCount}개 노선
+                              </span>
+                            )}
+                          </div>
+                          <div className="flex items-center text-sm text-gray-600 mt-2">
+                            <svg className="w-4 h-4 mr-1 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 7m0 13V7"></path></svg>
+                            {hasRoutes ? (
+                              <span><strong className="text-gray-800">{routeCount}</strong>개 노선 운행</span>
+                            ) : (
+                              <span className="text-gray-400">시간표 준비중</span>
+                            )}
+                          </div>
+                        </Link>
+                      );
+                    })}
+                </div>
+              </section>
+            );
+          })}
+        </div>
+
+        {!isSearching && hiddenCount > 0 && (
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 rounded-full text-sm text-gray-600 hover:bg-gray-50 hover:border-gray-400 transition-all shadow-sm"
+            >
+              {showAll ? (
+                <>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7"></path></svg>
+                  운행중인 역만 보기
+                </>
+              ) : (
+                <>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                  시간표 준비중인 역 {hiddenCount}개 더보기
+                </>
+              )}
+            </button>
+            {!showAll && (
+              <p className="text-xs text-gray-400 mt-2">시간표 데이터가 아직 수집되지 않은 역입니다</p>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
