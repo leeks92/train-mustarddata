@@ -209,56 +209,66 @@ async function main() {
     JSON.stringify(allStations, null, 2)
   );
 
-  // 3. 노선 수집
-  console.log('\n=== 열차 노선 수집 ===');
+  // 3. 노선 수집 (전체 역 대상)
+  console.log('\n=== 열차 노선 수집 (전체 역) ===');
   const routes: RouteData[] = [];
   const routeSet = new Set<string>();
   const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
   console.log(`조회 날짜: ${today}`);
   
-  // 주요 역 선별
-  const majorStationNames = [
-    '서울', '용산', '영등포', '수원', '평택', '천안아산', '오송', '대전',
-    '김천(구미)', '동대구', '경주', '울산(통도사)', '부산',
-    '광명', '천안', '조치원', '세종', '공주', '익산', '전주', '광주송정', '나주', '목포',
-    '여수EXPO', '순천', '구례구', '남원', '곡성',
-    '강릉', '동해', '정동진', '만종', '원주', '양평',
-    '청량리', '춘천', '가평', '남춘천',
-    '포항', '안동', '영주',
-    '마산', '진주', '창원',
-    '구포', '밀양', '삼랑진',
-    '김제', '정읍',
-    '동탄',
+  // 전체 역 사용 (중복 제거)
+  const targetStations = [...new Map(allStations.map(s => [s.stationId, s])).values()];
+  console.log(`전체 역: ${targetStations.length}개`);
+  
+  // 2단계 전략: 
+  // Phase 1 - 허브 역(주요 역)을 출발역으로 전체 역과 조합
+  // Phase 2 - 나머지 역 간 조합 (허브 역 도착은 이미 수집됐으므로 스킵)
+  
+  const hubStationNames = [
+    // 서울 수도권
+    '서울', '용산', '영등포', '수원', '청량리', '광명', '수서', '동탄', '평택지제',
+    // 충청
+    '천안아산', '천안', '오송', '대전', '조치원', '세종', '공주',
+    // 경상 (동)
+    '동대구', '경주', '울산(통도사)', '부산', '포항', '김천(구미)', '구포',
+    '마산', '진주', '창원', '창원중앙', '밀양', '삼랑진', '안동', '영주',
+    // 전라
+    '익산', '전주', '광주송정', '나주', '목포', '여수EXPO', '순천', '구례구', '남원', '곡성',
+    // 강원
+    '강릉', '동해', '정동진', '만종', '원주', '양평', '춘천', '가평', '남춘천',
+    // 기타
+    '평택', '김제', '정읍',
   ];
   
-  const majorStations = allStations.filter(s =>
-    majorStationNames.some(name => 
-      s.stationName.includes(name) || name.includes(s.stationName.replace('역', ''))
+  const hubStations = targetStations.filter(s =>
+    hubStationNames.some(name =>
+      s.stationName === name || s.stationName.includes(name) || name.includes(s.stationName.replace('역', ''))
     )
   );
+  const hubIds = new Set(hubStations.map(s => s.stationId));
+  const nonHubStations = targetStations.filter(s => !hubIds.has(s.stationId));
   
-  // 중복 제거
-  const uniqueMajorStations = [...new Map(majorStations.map(s => [s.stationId, s])).values()];
-  
-  console.log(`주요 역: ${uniqueMajorStations.length}개`);
-  console.log(`상위 10개: ${uniqueMajorStations.slice(0, 10).map(s => s.stationName).join(', ')}`);
-  
-  const totalCombinations = uniqueMajorStations.length * (uniqueMajorStations.length - 1);
-  console.log(`총 조합 수: ${totalCombinations} (예상 소요: ${Math.round(totalCombinations * 80 / 1000 / 60)}분)`);
+  console.log(`허브 역: ${hubStations.length}개`);
+  console.log(`비허브 역: ${nonHubStations.length}개`);
   
   let stationIndex = 0;
   let apiCalls = 0;
+  const API_CALL_LIMIT = 9500; // 일일 한도 10,000 중 여유분 확보
   
-  for (const depStation of uniqueMajorStations) {
+  // Phase 1: 허브 역 → 전체 역
+  console.log(`\n--- Phase 1: 허브 역 → 전체 역 (${hubStations.length} × ${targetStations.length}) ---`);
+  
+  for (const depStation of hubStations) {
     stationIndex++;
     
-    for (const arrStation of uniqueMajorStations) {
+    for (const arrStation of targetStations) {
       if (depStation.stationId === arrStation.stationId) continue;
+      if (apiCalls >= API_CALL_LIMIT) break;
       
       const routeKey = `${depStation.stationId}-${arrStation.stationId}`;
       if (routeSet.has(routeKey)) continue;
       
-      await delay(60);
+      await delay(50);
       apiCalls++;
       
       const schedules = await getTrainSchedules(
@@ -285,15 +295,68 @@ async function main() {
       }
     }
     
-    // 진행 상황 (5개 역마다)
+    if (apiCalls >= API_CALL_LIMIT) {
+      console.log(`\n⚠️ API 호출 한도 도달 (${apiCalls}회). Phase 1에서 중단.`);
+      break;
+    }
+    
     if (stationIndex % 5 === 0) {
-      console.log(`진행: ${stationIndex}/${uniqueMajorStations.length} 출발역 완료 - API 호출: ${apiCalls}회 - 수집된 노선: ${routes.length}개`);
+      console.log(`Phase 1: ${stationIndex}/${hubStations.length} 허브역 완료 - API: ${apiCalls}회 - 노선: ${routes.length}개`);
+      fs.writeFileSync(path.join(dataDir, 'routes.json'), JSON.stringify(routes, null, 2));
+    }
+  }
+  
+  // Phase 2: 비허브 역 → 허브 역 (역방향 데이터 수집)
+  if (apiCalls < API_CALL_LIMIT) {
+    console.log(`\n--- Phase 2: 비허브 역 → 허브 역 (${nonHubStations.length} × ${hubStations.length}) ---`);
+    let phase2Index = 0;
+    
+    for (const depStation of nonHubStations) {
+      phase2Index++;
       
-      // 중간 저장
-      fs.writeFileSync(
-        path.join(dataDir, 'routes.json'),
-        JSON.stringify(routes, null, 2)
-      );
+      for (const arrStation of hubStations) {
+        if (depStation.stationId === arrStation.stationId) continue;
+        if (apiCalls >= API_CALL_LIMIT) break;
+        
+        const routeKey = `${depStation.stationId}-${arrStation.stationId}`;
+        if (routeSet.has(routeKey)) continue;
+        
+        await delay(50);
+        apiCalls++;
+        
+        const schedules = await getTrainSchedules(
+          depStation.stationId,
+          arrStation.stationId,
+          today
+        );
+        
+        if (schedules.length > 0) {
+          routeSet.add(routeKey);
+          routes.push({
+            depStationId: depStation.stationId,
+            depStationName: depStation.stationName,
+            arrStationId: arrStation.stationId,
+            arrStationName: arrStation.stationName,
+            schedules: schedules.map(s => ({
+              trainNo: String(s.trainno),
+              trainType: s.traingradename || '기타',
+              depTime: formatTime(s.depplandtime),
+              arrTime: formatTime(s.arrplandtime),
+              charge: s.adultcharge || 0,
+            })),
+          });
+        }
+      }
+      
+      if (apiCalls >= API_CALL_LIMIT) {
+        console.log(`\n⚠️ API 호출 한도 도달 (${apiCalls}회). Phase 2에서 중단.`);
+        break;
+      }
+      
+      if (phase2Index % 10 === 0) {
+        console.log(`Phase 2: ${phase2Index}/${nonHubStations.length} 비허브역 완료 - API: ${apiCalls}회 - 노선: ${routes.length}개`);
+        fs.writeFileSync(path.join(dataDir, 'routes.json'), JSON.stringify(routes, null, 2));
+      }
     }
   }
   
