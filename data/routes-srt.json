@@ -1117,14 +1117,14 @@
         "charge": 37800
       },
       {
-        "trainNo": "9378",
+        "trainNo": "378",
         "trainType": "SRT",
         "depTime": "22:21",
         "arrTime": "00:22",
         "charge": 37400
       },
       {
-        "trainNo": "378",
+        "trainNo": "9378",
         "trainType": "SRT",
         "depTime": "22:21",
         "arrTime": "00:22",
@@ -1202,14 +1202,14 @@
         "charge": 41400
       },
       {
-        "trainNo": "9336",
+        "trainNo": "336",
         "trainType": "SRT",
         "depTime": "13:33",
         "arrTime": "15:26",
         "charge": 41800
       },
       {
-        "trainNo": "336",
+        "trainNo": "9336",
         "trainType": "SRT",
         "depTime": "13:33",
         "arrTime": "15:26",
@@ -1554,14 +1554,14 @@
         "charge": 15600
       },
       {
-        "trainNo": "333",
+        "trainNo": "9333",
         "trainType": "SRT",
         "depTime": "14:36",
         "arrTime": "15:17",
         "charge": 15600
       },
       {
-        "trainNo": "9333",
+        "trainNo": "333",
         "trainType": "SRT",
         "depTime": "14:36",
         "arrTime": "15:17",
@@ -1702,14 +1702,14 @@
         "charge": 17600
       },
       {
-        "trainNo": "314",
+        "trainNo": "382",
         "trainType": "SRT",
         "depTime": "08:52",
         "arrTime": "09:33",
         "charge": 17600
       },
       {
-        "trainNo": "382",
+        "trainNo": "314",
         "trainType": "SRT",
         "depTime": "08:52",
         "arrTime": "09:33",
@@ -2455,14 +2455,14 @@
         "charge": 22300
       },
       {
-        "trainNo": "382",
+        "trainNo": "314",
         "trainType": "SRT",
         "depTime": "08:52",
         "arrTime": "09:51",
         "charge": 22300
       },
       {
-        "trainNo": "314",
+        "trainNo": "382",
         "trainType": "SRT",
         "depTime": "08:52",
         "arrTime": "09:51",
@@ -2722,14 +2722,14 @@
         "charge": 26400
       },
       {
-        "trainNo": "394",
+        "trainNo": "364",
         "trainType": "SRT",
         "depTime": "20:22",
         "arrTime": "21:28",
         "charge": 26400
       },
       {
-        "trainNo": "364",
+        "trainNo": "394",
         "trainType": "SRT",
         "depTime": "20:22",
         "arrTime": "21:28",
@@ -3985,14 +3985,14 @@
         "charge": 33100
       },
       {
-        "trainNo": "325",
+        "trainNo": "9325",
         "trainType": "SRT",
         "depTime": "11:31",
         "arrTime": "13:01",
         "charge": 33100
       },
       {
-        "trainNo": "9325",
+        "trainNo": "325",
         "trainType": "SRT",
         "depTime": "11:31",
         "arrTime": "13:01",
@@ -4921,14 +4921,14 @@
         "charge": 7500
       },
       {
-        "trainNo": "382",
+        "trainNo": "314",
         "trainType": "SRT",
         "depTime": "09:35",
         "arrTime": "09:51",
         "charge": 7500
       },
       {
-        "trainNo": "314",
+        "trainNo": "382",
         "trainType": "SRT",
         "depTime": "09:35",
         "arrTime": "09:51",
@@ -5033,14 +5033,14 @@
         "charge": 7500
       },
       {
-        "trainNo": "9378",
+        "trainNo": "378",
         "trainType": "SRT",
         "depTime": "00:06",
         "arrTime": "00:22",
         "charge": 7500
       },
       {
-        "trainNo": "378",
+        "trainNo": "9378",
         "trainType": "SRT",
         "depTime": "00:06",
         "arrTime": "00:22",
@@ -5188,14 +5188,14 @@
         "charge": 8800
       },
       {
-        "trainNo": "364",
+        "trainNo": "394",
         "trainType": "SRT",
         "depTime": "21:05",
         "arrTime": "21:28",
         "charge": 8800
       },
       {
-        "trainNo": "394",
+        "trainNo": "364",
         "trainType": "SRT",
         "depTime": "21:05",
         "arrTime": "21:28",
@@ -11883,14 +11883,14 @@
         "charge": 41800
       },
       {
-        "trainNo": "9325",
+        "trainNo": "325",
         "trainType": "SRT",
         "depTime": "11:06",
         "arrTime": "13:01",
         "charge": 41800
       },
       {
-        "trainNo": "325",
+        "trainNo": "9325",
         "trainType": "SRT",
         "depTime": "11:06",
         "arrTime": "13:01",
@@ -12327,14 +12327,14 @@
         "charge": 8800
       },
       {
-        "trainNo": "9325",
+        "trainNo": "325",
         "trainType": "SRT",
         "depTime": "11:06",
         "arrTime": "11:29",
         "charge": 8800
       },
       {
-        "trainNo": "325",
+        "trainNo": "9325",
         "trainType": "SRT",
         "depTime": "11:06",
         "arrTime": "11:29",
@@ -12348,14 +12348,14 @@
         "charge": 8800
       },
       {
-        "trainNo": "381",
+        "trainNo": "329",
         "trainType": "SRT",
         "depTime": "12:44",
         "arrTime": "13:07",
         "charge": 8800
       },
       {
-        "trainNo": "329",
+        "trainNo": "381",
         "trainType": "SRT",
         "depTime": "12:44",
         "arrTime": "13:07",

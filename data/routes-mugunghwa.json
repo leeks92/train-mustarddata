@@ -2,9 +2,31 @@
   {
     "depStationId": "NAT130126",
     "depStationName": "청량리",
+    "arrStationId": "NAT010000",
+    "arrStationName": "서울",
+    "schedules": [
+      {
+        "trainNo": "4542",
+        "trainType": "무궁화호",
+        "depTime": "21:39",
+        "arrTime": "22:06",
+        "charge": 0
+      }
+    ]
+  },
+  {
+    "depStationId": "NAT130126",
+    "depStationName": "청량리",
     "arrStationId": "NAT020524",
     "arrStationName": "양평",
     "schedules": [
+      {
+        "trainNo": "4541",
+        "trainType": "무궁화호",
+        "depTime": "07:32",
+        "arrTime": "08:04",
+        "charge": 0
+      },
       {
         "trainNo": "1671",
         "trainType": "무궁화호",
@@ -91,6 +113,13 @@
     "arrStationId": "NAT020947",
     "arrStationName": "원주",
     "schedules": [
+      {
+        "trainNo": "4541",
+        "trainType": "무궁화호",
+        "depTime": "07:32",
+        "arrTime": "08:35",
+        "charge": 0
+      },
       {
         "trainNo": "1671",
         "trainType": "무궁화호",
@@ -196,6 +225,21 @@
   {
     "depStationId": "NAT010000",
     "depStationName": "서울",
+    "arrStationId": "NAT130126",
+    "arrStationName": "청량리",
+    "schedules": [
+      {
+        "trainNo": "4541",
+        "trainType": "무궁화호",
+        "depTime": "07:09",
+        "arrTime": "07:30",
+        "charge": 0
+      }
+    ]
+  },
+  {
+    "depStationId": "NAT010000",
+    "depStationName": "서울",
     "arrStationId": "NAT010091",
     "arrStationName": "영등포",
     "schedules": [
@@ -247,13 +291,6 @@
         "depTime": "08:04",
         "arrTime": "08:14",
         "charge": 4800
-      },
-      {
-        "trainNo": "4511",
-        "trainType": "무궁화호",
-        "depTime": "08:14",
-        "arrTime": "08:25",
-        "charge": 2600
       },
       {
         "trainNo": "1007",
@@ -408,13 +445,6 @@
         "trainType": "무궁화호",
         "depTime": "07:54",
         "arrTime": "09:29",
-        "charge": 8400
-      },
-      {
-        "trainNo": "4511",
-        "trainType": "무궁화호",
-        "depTime": "08:14",
-        "arrTime": "09:45",
         "charge": 8400
       },
       {
@@ -1086,6 +1116,21 @@
   {
     "depStationId": "NAT010000",
     "depStationName": "서울",
+    "arrStationId": "NAT020524",
+    "arrStationName": "양평",
+    "schedules": [
+      {
+        "trainNo": "4541",
+        "trainType": "무궁화호",
+        "depTime": "07:09",
+        "arrTime": "08:04",
+        "charge": 0
+      }
+    ]
+  },
+  {
+    "depStationId": "NAT010000",
+    "depStationName": "서울",
     "arrStationId": "NAT010415",
     "arrStationName": "수원",
     "schedules": [
@@ -1137,13 +1182,6 @@
         "depTime": "08:04",
         "arrTime": "08:41",
         "charge": 4800
-      },
-      {
-        "trainNo": "4511",
-        "trainType": "무궁화호",
-        "depTime": "08:14",
-        "arrTime": "08:49",
-        "charge": 2700
       },
       {
         "trainNo": "1007",
@@ -1410,6 +1448,21 @@
   {
     "depStationId": "NAT010000",
     "depStationName": "서울",
+    "arrStationId": "NAT020947",
+    "arrStationName": "원주",
+    "schedules": [
+      {
+        "trainNo": "4541",
+        "trainType": "무궁화호",
+        "depTime": "07:09",
+        "arrTime": "08:35",
+        "charge": 0
+      }
+    ]
+  },
+  {
+    "depStationId": "NAT010000",
+    "depStationName": "서울",
     "arrStationId": "NAT050044",
     "arrStationName": "오송",
     "schedules": [
@@ -1476,13 +1529,6 @@
         "depTime": "08:04",
         "arrTime": "09:20",
         "charge": 9300
-      },
-      {
-        "trainNo": "4511",
-        "trainType": "무궁화호",
-        "depTime": "08:14",
-        "arrTime": "09:23",
-        "charge": 6300
       },
       {
         "trainNo": "1007",
@@ -4469,13 +4515,6 @@
         "charge": 4800
       },
       {
-        "trainNo": "4512",
-        "trainType": "무궁화호",
-        "depTime": "19:02",
-        "arrTime": "19:12",
-        "charge": 2600
-      },
-      {
         "trainNo": "1160",
         "trainType": "무궁화호",
         "depTime": "19:14",
@@ -4853,13 +4892,6 @@
         "trainType": "무궁화호",
         "depTime": "08:07",
         "arrTime": "09:29",
-        "charge": 7800
-      },
-      {
-        "trainNo": "4511",
-        "trainType": "무궁화호",
-        "depTime": "08:28",
-        "arrTime": "09:45",
         "charge": 7800
       },
       {
@@ -5978,13 +6010,6 @@
         "charge": 4800
       },
       {
-        "trainNo": "4511",
-        "trainType": "무궁화호",
-        "depTime": "08:28",
-        "arrTime": "08:49",
-        "charge": 2600
-      },
-      {
         "trainNo": "2551",
         "trainType": "새마을호",
         "depTime": "08:38",
@@ -6869,13 +6894,6 @@
         "depTime": "08:17",
         "arrTime": "09:20",
         "charge": 8400
-      },
-      {
-        "trainNo": "4511",
-        "trainType": "무궁화호",
-        "depTime": "08:28",
-        "arrTime": "09:23",
-        "charge": 5700
       },
       {
         "trainNo": "2551",
@@ -8572,13 +8590,6 @@
         "charge": 8400
       },
       {
-        "trainNo": "4512",
-        "trainType": "무궁화호",
-        "depTime": "17:42",
-        "arrTime": "19:12",
-        "charge": 8400
-      },
-      {
         "trainNo": "1160",
         "trainType": "무궁화호",
         "depTime": "17:48",
@@ -8929,13 +8940,6 @@
         "depTime": "17:38",
         "arrTime": "18:53",
         "charge": 11600
-      },
-      {
-        "trainNo": "4512",
-        "trainType": "무궁화호",
-        "depTime": "17:42",
-        "arrTime": "19:00",
-        "charge": 7800
       },
       {
         "trainNo": "1160",
@@ -10067,13 +10071,6 @@
         "charge": 8500
       },
       {
-        "trainNo": "4512",
-        "trainType": "무궁화호",
-        "depTime": "17:42",
-        "arrTime": "18:38",
-        "charge": 5700
-      },
-      {
         "trainNo": "1160",
         "trainType": "무궁화호",
         "depTime": "17:48",
@@ -10635,13 +10632,6 @@
         "depTime": "17:38",
         "arrTime": "17:57",
         "charge": 4800
-      },
-      {
-        "trainNo": "4512",
-        "trainType": "무궁화호",
-        "depTime": "17:42",
-        "arrTime": "18:04",
-        "charge": 2600
       },
       {
         "trainNo": "1160",
@@ -14539,6 +14529,13 @@
         "depTime": "18:08",
         "arrTime": "21:01",
         "charge": 26500
+      },
+      {
+        "trainNo": "1196",
+        "trainType": "무궁화호",
+        "depTime": "18:15",
+        "arrTime": "21:49",
+        "charge": 17800
       }
     ]
   },
@@ -18175,6 +18172,13 @@
         "trainType": "ITX-새마을",
         "depTime": "16:03",
         "arrTime": "17:58",
+        "charge": 15400
+      },
+      {
+        "trainNo": "1016",
+        "trainType": "ITX-새마을",
+        "depTime": "16:18",
+        "arrTime": "18:06",
         "charge": 15400
       }
     ]
@@ -24642,11 +24646,33 @@
         "charge": 3100
       },
       {
+        "trainNo": "4542",
+        "trainType": "무궁화호",
+        "depTime": "20:56",
+        "arrTime": "21:37",
+        "charge": 0
+      },
+      {
         "trainNo": "1678",
         "trainType": "무궁화호",
         "depTime": "22:10",
         "arrTime": "22:40",
         "charge": 3100
+      }
+    ]
+  },
+  {
+    "depStationId": "NAT020524",
+    "depStationName": "양평",
+    "arrStationId": "NAT010000",
+    "arrStationName": "서울",
+    "schedules": [
+      {
+        "trainNo": "4542",
+        "trainType": "무궁화호",
+        "depTime": "20:56",
+        "arrTime": "22:06",
+        "charge": 0
       }
     ]
   },
@@ -24699,6 +24725,13 @@
     "arrStationId": "NAT020947",
     "arrStationName": "원주",
     "schedules": [
+      {
+        "trainNo": "4541",
+        "trainType": "무궁화호",
+        "depTime": "08:05",
+        "arrTime": "08:35",
+        "charge": 0
+      },
       {
         "trainNo": "1671",
         "trainType": "무궁화호",
@@ -24883,13 +24916,6 @@
         "depTime": "18:10",
         "arrTime": "18:41",
         "charge": 4800
-      },
-      {
-        "trainNo": "4512",
-        "trainType": "무궁화호",
-        "depTime": "18:39",
-        "arrTime": "19:12",
-        "charge": 2700
       },
       {
         "trainNo": "1160",
@@ -25205,413 +25231,6 @@
   {
     "depStationId": "NAT010415",
     "depStationName": "수원",
-    "arrStationId": "NAT010091",
-    "arrStationName": "영등포",
-    "schedules": [
-      {
-        "trainNo": "1102",
-        "trainType": "ITX-새마을",
-        "depTime": "07:41",
-        "arrTime": "08:03",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1174",
-        "trainType": "무궁화호",
-        "depTime": "08:07",
-        "arrTime": "08:31",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1472",
-        "trainType": "무궁화호",
-        "depTime": "08:16",
-        "arrTime": "08:41",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1272",
-        "trainType": "무궁화호",
-        "depTime": "08:28",
-        "arrTime": "08:53",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1202",
-        "trainType": "새마을호",
-        "depTime": "09:02",
-        "arrTime": "09:23",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1176",
-        "trainType": "무궁화호",
-        "depTime": "09:37",
-        "arrTime": "09:58",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1274",
-        "trainType": "무궁화호",
-        "depTime": "10:11",
-        "arrTime": "10:32",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1422",
-        "trainType": "ITX-새마을",
-        "depTime": "10:24",
-        "arrTime": "10:43",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1152",
-        "trainType": "무궁화호",
-        "depTime": "10:42",
-        "arrTime": "11:03",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1204",
-        "trainType": "새마을호",
-        "depTime": "11:11",
-        "arrTime": "11:32",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1572",
-        "trainType": "무궁화호",
-        "depTime": "11:23",
-        "arrTime": "11:47",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1154",
-        "trainType": "무궁화호",
-        "depTime": "11:38",
-        "arrTime": "11:59",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1452",
-        "trainType": "무궁화호",
-        "depTime": "11:51",
-        "arrTime": "12:13",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1182",
-        "trainType": "무궁화호",
-        "depTime": "11:57",
-        "arrTime": "12:21",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1276",
-        "trainType": "무궁화호",
-        "depTime": "12:06",
-        "arrTime": "12:27",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1424",
-        "trainType": "ITX-새마을",
-        "depTime": "12:23",
-        "arrTime": "12:43",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1042",
-        "trainType": "ITX-새마을",
-        "depTime": "12:37",
-        "arrTime": "12:58",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1206",
-        "trainType": "새마을호",
-        "depTime": "12:44",
-        "arrTime": "13:05",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1004",
-        "trainType": "ITX-새마을",
-        "depTime": "12:50",
-        "arrTime": "13:10",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1502",
-        "trainType": "ITX-새마을",
-        "depTime": "12:56",
-        "arrTime": "13:16",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1112",
-        "trainType": "ITX-새마을",
-        "depTime": "13:15",
-        "arrTime": "13:35",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1402",
-        "trainType": "ITX-새마을",
-        "depTime": "14:33",
-        "arrTime": "14:52",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1156",
-        "trainType": "무궁화호",
-        "depTime": "14:47",
-        "arrTime": "15:08",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1278",
-        "trainType": "무궁화호",
-        "depTime": "15:13",
-        "arrTime": "15:36",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1280",
-        "trainType": "무궁화호",
-        "depTime": "16:08",
-        "arrTime": "16:30",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1462",
-        "trainType": "무궁화호",
-        "depTime": "16:20",
-        "arrTime": "16:41",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1008",
-        "trainType": "ITX-새마을",
-        "depTime": "16:30",
-        "arrTime": "16:49",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1442",
-        "trainType": "ITX-새마을",
-        "depTime": "16:42",
-        "arrTime": "17:02",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1426",
-        "trainType": "ITX-새마을",
-        "depTime": "17:06",
-        "arrTime": "17:26",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1208",
-        "trainType": "새마을호",
-        "depTime": "17:17",
-        "arrTime": "17:38",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1158",
-        "trainType": "무궁화호",
-        "depTime": "17:34",
-        "arrTime": "17:58",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1012",
-        "trainType": "ITX-새마을",
-        "depTime": "18:10",
-        "arrTime": "18:29",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1574",
-        "trainType": "무궁화호",
-        "depTime": "18:17",
-        "arrTime": "18:39",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1282",
-        "trainType": "무궁화호",
-        "depTime": "18:24",
-        "arrTime": "18:46",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1506",
-        "trainType": "ITX-새마을",
-        "depTime": "18:31",
-        "arrTime": "18:53",
-        "charge": 4800
-      },
-      {
-        "trainNo": "4512",
-        "trainType": "무궁화호",
-        "depTime": "18:39",
-        "arrTime": "19:00",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1160",
-        "trainType": "무궁화호",
-        "depTime": "18:48",
-        "arrTime": "19:12",
-        "charge": 2600
-      },
-      {
-        "trainNo": "2552",
-        "trainType": "새마을호",
-        "depTime": "18:56",
-        "arrTime": "19:17",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1428",
-        "trainType": "ITX-새마을",
-        "depTime": "19:08",
-        "arrTime": "19:32",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1016",
-        "trainType": "ITX-새마을",
-        "depTime": "19:23",
-        "arrTime": "19:42",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1014",
-        "trainType": "ITX-새마을",
-        "depTime": "19:47",
-        "arrTime": "20:11",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1284",
-        "trainType": "무궁화호",
-        "depTime": "20:07",
-        "arrTime": "20:28",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1114",
-        "trainType": "ITX-새마을",
-        "depTime": "20:29",
-        "arrTime": "20:49",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1162",
-        "trainType": "무궁화호",
-        "depTime": "20:31",
-        "arrTime": "20:53",
-        "charge": 2600
-      },
-      {
-        "trainNo": "4752",
-        "trainType": "무궁화호",
-        "depTime": "20:55",
-        "arrTime": "21:17",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1408",
-        "trainType": "ITX-새마을",
-        "depTime": "21:09",
-        "arrTime": "21:30",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1286",
-        "trainType": "무궁화호",
-        "depTime": "21:32",
-        "arrTime": "21:53",
-        "charge": 2600
-      },
-      {
-        "trainNo": "2522",
-        "trainType": "새마을호",
-        "depTime": "21:39",
-        "arrTime": "22:00",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1410",
-        "trainType": "ITX-새마을",
-        "depTime": "21:46",
-        "arrTime": "22:05",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1430",
-        "trainType": "ITX-새마을",
-        "depTime": "22:01",
-        "arrTime": "22:21",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1210",
-        "trainType": "새마을호",
-        "depTime": "22:09",
-        "arrTime": "22:31",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1022",
-        "trainType": "ITX-새마을",
-        "depTime": "22:21",
-        "arrTime": "22:41",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1576",
-        "trainType": "무궁화호",
-        "depTime": "23:03",
-        "arrTime": "23:27",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1178",
-        "trainType": "무궁화호",
-        "depTime": "23:14",
-        "arrTime": "23:38",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1288",
-        "trainType": "무궁화호",
-        "depTime": "23:23",
-        "arrTime": "23:44",
-        "charge": 2600
-      },
-      {
-        "trainNo": "1026",
-        "trainType": "ITX-새마을",
-        "depTime": "23:31",
-        "arrTime": "23:50",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1578",
-        "trainType": "무궁화호",
-        "depTime": "23:59",
-        "arrTime": "00:20",
-        "charge": 2600
-      }
-    ]
-  },
-  {
-    "depStationId": "NAT010415",
-    "depStationName": "수원",
     "arrStationId": "NAT011298",
     "arrStationName": "조치원",
     "schedules": [
@@ -25676,13 +25295,6 @@
         "trainType": "무궁화호",
         "depTime": "08:34",
         "arrTime": "09:29",
-        "charge": 5700
-      },
-      {
-        "trainNo": "4511",
-        "trainType": "무궁화호",
-        "depTime": "08:51",
-        "arrTime": "09:45",
         "charge": 5700
       },
       {
@@ -27285,13 +26897,6 @@
         "depTime": "08:48",
         "arrTime": "09:20",
         "charge": 5300
-      },
-      {
-        "trainNo": "4511",
-        "trainType": "무궁화호",
-        "depTime": "08:51",
-        "arrTime": "09:23",
-        "charge": 3600
       },
       {
         "trainNo": "2551",
@@ -32760,11 +32365,33 @@
         "charge": 6200
       },
       {
+        "trainNo": "4542",
+        "trainType": "무궁화호",
+        "depTime": "20:27",
+        "arrTime": "21:37",
+        "charge": 0
+      },
+      {
         "trainNo": "1678",
         "trainType": "무궁화호",
         "depTime": "21:34",
         "arrTime": "22:40",
         "charge": 6200
+      }
+    ]
+  },
+  {
+    "depStationId": "NAT020947",
+    "depStationName": "원주",
+    "arrStationId": "NAT010000",
+    "arrStationName": "서울",
+    "schedules": [
+      {
+        "trainNo": "4542",
+        "trainType": "무궁화호",
+        "depTime": "20:27",
+        "arrTime": "22:06",
+        "charge": 0
       }
     ]
   },
@@ -32801,6 +32428,13 @@
         "depTime": "18:43",
         "arrTime": "19:34",
         "charge": 3100
+      },
+      {
+        "trainNo": "4542",
+        "trainType": "무궁화호",
+        "depTime": "20:27",
+        "arrTime": "20:55",
+        "charge": 0
       },
       {
         "trainNo": "1678",
@@ -34670,13 +34304,6 @@
         "charge": 9300
       },
       {
-        "trainNo": "4512",
-        "trainType": "무궁화호",
-        "depTime": "18:06",
-        "arrTime": "19:12",
-        "charge": 6300
-      },
-      {
         "trainNo": "1160",
         "trainType": "무궁화호",
         "depTime": "18:12",
@@ -35239,13 +34866,6 @@
         "charge": 8400
       },
       {
-        "trainNo": "4512",
-        "trainType": "무궁화호",
-        "depTime": "18:06",
-        "arrTime": "19:00",
-        "charge": 5700
-      },
-      {
         "trainNo": "1160",
         "trainType": "무궁화호",
         "depTime": "18:12",
@@ -35461,13 +35081,6 @@
         "trainType": "무궁화호",
         "depTime": "09:08",
         "arrTime": "09:29",
-        "charge": 2600
-      },
-      {
-        "trainNo": "4511",
-        "trainType": "무궁화호",
-        "depTime": "09:25",
-        "arrTime": "09:45",
         "charge": 2600
       },
       {
@@ -36731,13 +36344,6 @@
         "depTime": "17:59",
         "arrTime": "18:29",
         "charge": 5300
-      },
-      {
-        "trainNo": "4512",
-        "trainType": "무궁화호",
-        "depTime": "18:06",
-        "arrTime": "18:38",
-        "charge": 3600
       },
       {
         "trainNo": "1160",
@@ -40618,13 +40224,6 @@
         "depTime": "22:26",
         "arrTime": "22:44",
         "charge": 2600
-      },
-      {
-        "trainNo": "4651",
-        "trainType": "무궁화호",
-        "depTime": "23:05",
-        "arrTime": "23:21",
-        "charge": 0
       }
     ]
   },
@@ -43244,13 +42843,6 @@
     "arrStationId": "NAT030879",
     "arrStationName": "익산",
     "schedules": [
-      {
-        "trainNo": "4652",
-        "trainType": "무궁화호",
-        "depTime": "06:30",
-        "arrTime": "06:47",
-        "charge": 0
-      },
       {
         "trainNo": "1572",
         "trainType": "무궁화호",

@@ -41,14 +41,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "704",
+        "trainNo": "808",
         "trainType": "KTX-이음",
         "depTime": "09:59",
         "arrTime": "10:19",
         "charge": 8400
       },
       {
-        "trainNo": "808",
+        "trainNo": "704",
         "trainType": "KTX-이음",
         "depTime": "09:59",
         "arrTime": "10:19",
@@ -69,14 +69,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "814",
+        "trainNo": "708",
         "trainType": "KTX-이음",
         "depTime": "14:13",
         "arrTime": "14:33",
         "charge": 8400
       },
       {
-        "trainNo": "708",
+        "trainNo": "814",
         "trainType": "KTX-이음",
         "depTime": "14:13",
         "arrTime": "14:33",
@@ -224,14 +224,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "707",
+        "trainNo": "843",
         "trainType": "KTX-이음",
         "depTime": "11:20",
         "arrTime": "11:46",
         "charge": 8400
       },
       {
-        "trainNo": "843",
+        "trainNo": "707",
         "trainType": "KTX-이음",
         "depTime": "11:20",
         "arrTime": "11:46",
@@ -301,14 +301,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "825",
+        "trainNo": "717",
         "trainType": "KTX-이음",
         "depTime": "21:52",
         "arrTime": "22:17",
         "charge": 8400
       },
       {
-        "trainNo": "717",
+        "trainNo": "825",
         "trainType": "KTX-이음",
         "depTime": "21:52",
         "arrTime": "22:17",
@@ -1637,13 +1637,6 @@
         "charge": 52100
       },
       {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "19:44",
-        "arrTime": "22:35",
-        "charge": 52500
-      },
-      {
         "trainNo": "109",
         "trainType": "KTX",
         "depTime": "20:49",
@@ -1918,14 +1911,14 @@
         "charge": 59800
       },
       {
-        "trainNo": "9181",
+        "trainNo": "181",
         "trainType": "KTX-청룡",
         "depTime": "15:45",
         "arrTime": "18:03",
         "charge": 59800
       },
       {
-        "trainNo": "181",
+        "trainNo": "9181",
         "trainType": "KTX-청룡",
         "depTime": "15:45",
         "arrTime": "18:03",
@@ -2037,13 +2030,6 @@
         "charge": 59800
       },
       {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "19:44",
-        "arrTime": "22:50",
-        "charge": 53900
-      },
-      {
         "trainNo": "177",
         "trainType": "KTX",
         "depTime": "19:48",
@@ -2143,14 +2129,14 @@
     "arrStationName": "동대구",
     "schedules": [
       {
-        "trainNo": "201",
+        "trainNo": "297",
         "trainType": "KTX-산천(A-type)",
         "depTime": "05:03",
         "arrTime": "06:46",
         "charge": 43500
       },
       {
-        "trainNo": "297",
+        "trainNo": "201",
         "trainType": "KTX-산천(A-type)",
         "depTime": "05:03",
         "arrTime": "06:46",
@@ -2171,14 +2157,14 @@
         "charge": 43500
       },
       {
-        "trainNo": "203",
+        "trainNo": "231",
         "trainType": "KTX-산천(A-type)",
         "depTime": "05:38",
         "arrTime": "07:31",
         "charge": 43500
       },
       {
-        "trainNo": "231",
+        "trainNo": "203",
         "trainType": "KTX-산천(A-type)",
         "depTime": "05:38",
         "arrTime": "07:31",
@@ -2192,14 +2178,14 @@
         "charge": 43100
       },
       {
-        "trainNo": "75",
+        "trainNo": "281",
         "trainType": "KTX-산천(A-type)",
         "depTime": "06:03",
         "arrTime": "08:01",
         "charge": 43500
       },
       {
-        "trainNo": "281",
+        "trainNo": "75",
         "trainType": "KTX-산천(A-type)",
         "depTime": "06:03",
         "arrTime": "08:01",
@@ -2430,15 +2416,15 @@
         "charge": 43500
       },
       {
-        "trainNo": "31",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "243",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "12:58",
         "arrTime": "14:51",
         "charge": 43500
       },
       {
-        "trainNo": "243",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "31",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "12:58",
         "arrTime": "14:51",
         "charge": 43500
@@ -2493,14 +2479,14 @@
         "charge": 43500
       },
       {
-        "trainNo": "39",
+        "trainNo": "287",
         "trainType": "KTX-산천(A-type)",
         "depTime": "14:28",
         "arrTime": "16:16",
         "charge": 43500
       },
       {
-        "trainNo": "287",
+        "trainNo": "39",
         "trainType": "KTX-산천(A-type)",
         "depTime": "14:28",
         "arrTime": "16:16",
@@ -2563,13 +2549,6 @@
         "charge": 43500
       },
       {
-        "trainNo": "9181",
-        "trainType": "KTX-청룡",
-        "depTime": "15:45",
-        "arrTime": "17:21",
-        "charge": 43500
-      },
-      {
         "trainNo": "181",
         "trainType": "KTX-청룡",
         "depTime": "15:45",
@@ -2577,15 +2556,22 @@
         "charge": 43500
       },
       {
-        "trainNo": "4033",
-        "trainType": "KTX-산천(B-type)",
-        "depTime": "15:50",
-        "arrTime": "17:28",
+        "trainNo": "9181",
+        "trainType": "KTX-청룡",
+        "depTime": "15:45",
+        "arrTime": "17:21",
         "charge": 43500
       },
       {
         "trainNo": "193",
         "trainType": "KTX-산천(A-type)",
+        "depTime": "15:50",
+        "arrTime": "17:28",
+        "charge": 43500
+      },
+      {
+        "trainNo": "4033",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "15:50",
         "arrTime": "17:28",
         "charge": 43500
@@ -2817,14 +2803,14 @@
         "charge": 23700
       },
       {
-        "trainNo": "281",
+        "trainNo": "75",
         "trainType": "KTX-산천(A-type)",
         "depTime": "06:03",
         "arrTime": "07:12",
         "charge": 23700
       },
       {
-        "trainNo": "75",
+        "trainNo": "281",
         "trainType": "KTX-산천(A-type)",
         "depTime": "06:03",
         "arrTime": "07:12",
@@ -2943,14 +2929,14 @@
         "charge": 23700
       },
       {
-        "trainNo": "285",
+        "trainNo": "19",
         "trainType": "KTX-산천(A-type)",
         "depTime": "09:28",
         "arrTime": "10:33",
         "charge": 23700
       },
       {
-        "trainNo": "19",
+        "trainNo": "285",
         "trainType": "KTX-산천(A-type)",
         "depTime": "09:28",
         "arrTime": "10:33",
@@ -3118,14 +3104,14 @@
         "charge": 23700
       },
       {
-        "trainNo": "39",
+        "trainNo": "287",
         "trainType": "KTX-산천(A-type)",
         "depTime": "14:28",
         "arrTime": "15:32",
         "charge": 23700
       },
       {
-        "trainNo": "287",
+        "trainNo": "39",
         "trainType": "KTX-산천(A-type)",
         "depTime": "14:28",
         "arrTime": "15:32",
@@ -3153,14 +3139,14 @@
         "charge": 23700
       },
       {
-        "trainNo": "283",
+        "trainNo": "255",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:09",
         "arrTime": "16:13",
         "charge": 23700
       },
       {
-        "trainNo": "255",
+        "trainNo": "283",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:09",
         "arrTime": "16:13",
@@ -3174,13 +3160,6 @@
         "charge": 17200
       },
       {
-        "trainNo": "4027",
-        "trainType": "KTX-산천(A-type)",
-        "depTime": "15:23",
-        "arrTime": "16:21",
-        "charge": 23700
-      },
-      {
         "trainNo": "89",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:23",
@@ -3188,14 +3167,21 @@
         "charge": 23700
       },
       {
-        "trainNo": "181",
+        "trainNo": "4027",
+        "trainType": "KTX-산천(A-type)",
+        "depTime": "15:23",
+        "arrTime": "16:21",
+        "charge": 23700
+      },
+      {
+        "trainNo": "9181",
         "trainType": "KTX-청룡",
         "depTime": "15:45",
         "arrTime": "16:37",
         "charge": 23700
       },
       {
-        "trainNo": "9181",
+        "trainNo": "181",
         "trainType": "KTX-청룡",
         "depTime": "15:45",
         "arrTime": "16:37",
@@ -3272,14 +3258,14 @@
         "charge": 23700
       },
       {
-        "trainNo": "249",
+        "trainNo": "217",
         "trainType": "KTX-산천(A-type)",
         "depTime": "17:33",
         "arrTime": "18:37",
         "charge": 23700
       },
       {
-        "trainNo": "217",
+        "trainNo": "249",
         "trainType": "KTX-산천(A-type)",
         "depTime": "17:33",
         "arrTime": "18:37",
@@ -3907,14 +3893,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "191",
+        "trainNo": "4031",
         "trainType": "KTX-산천(A-type)",
         "depTime": "08:35",
         "arrTime": "08:52",
         "charge": 8400
       },
       {
-        "trainNo": "4031",
+        "trainNo": "191",
         "trainType": "KTX-산천(A-type)",
         "depTime": "08:35",
         "arrTime": "08:52",
@@ -3991,14 +3977,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "239",
+        "trainNo": "4021",
         "trainType": "KTX-산천(A-type)",
         "depTime": "10:43",
         "arrTime": "11:00",
         "charge": 8400
       },
       {
-        "trainNo": "4021",
+        "trainNo": "239",
         "trainType": "KTX-산천(A-type)",
         "depTime": "10:43",
         "arrTime": "11:00",
@@ -4019,14 +4005,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "511",
+        "trainNo": "415",
         "trainType": "KTX-산천(A-type)",
         "depTime": "12:08",
         "arrTime": "12:34",
         "charge": 8400
       },
       {
-        "trainNo": "415",
+        "trainNo": "511",
         "trainType": "KTX-산천(A-type)",
         "depTime": "12:08",
         "arrTime": "12:34",
@@ -4047,15 +4033,15 @@
         "charge": 8400
       },
       {
-        "trainNo": "31",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "243",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "12:58",
         "arrTime": "13:15",
         "charge": 8400
       },
       {
-        "trainNo": "243",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "31",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "12:58",
         "arrTime": "13:15",
         "charge": 8400
@@ -4131,14 +4117,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "255",
+        "trainNo": "283",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:09",
         "arrTime": "15:26",
         "charge": 8400
       },
       {
-        "trainNo": "283",
+        "trainNo": "255",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:09",
         "arrTime": "15:26",
@@ -4152,13 +4138,6 @@
         "charge": 8400
       },
       {
-        "trainNo": "215",
-        "trainType": "KTX-산천(A-type)",
-        "depTime": "16:18",
-        "arrTime": "16:35",
-        "charge": 8400
-      },
-      {
         "trainNo": "247",
         "trainType": "KTX-산천(A-type)",
         "depTime": "16:18",
@@ -4166,15 +4145,22 @@
         "charge": 8400
       },
       {
-        "trainNo": "515",
-        "trainType": "KTX-산천(B-type)",
-        "depTime": "16:35",
-        "arrTime": "16:59",
+        "trainNo": "215",
+        "trainType": "KTX-산천(A-type)",
+        "depTime": "16:18",
+        "arrTime": "16:35",
         "charge": 8400
       },
       {
         "trainNo": "427",
         "trainType": "KTX-산천(A-type)",
+        "depTime": "16:35",
+        "arrTime": "16:59",
+        "charge": 8400
+      },
+      {
+        "trainNo": "515",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "16:35",
         "arrTime": "16:59",
         "charge": 8400
@@ -4201,14 +4187,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "217",
+        "trainNo": "249",
         "trainType": "KTX-산천(A-type)",
         "depTime": "17:33",
         "arrTime": "17:50",
         "charge": 8400
       },
       {
-        "trainNo": "249",
+        "trainNo": "217",
         "trainType": "KTX-산천(A-type)",
         "depTime": "17:33",
         "arrTime": "17:50",
@@ -4261,13 +4247,6 @@
         "trainType": "KTX",
         "depTime": "19:29",
         "arrTime": "19:57",
-        "charge": 8400
-      },
-      {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "19:44",
-        "arrTime": "20:01",
         "charge": 8400
       },
       {
@@ -5301,15 +5280,15 @@
         "charge": 14100
       },
       {
-        "trainNo": "9507",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "507",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "09:45",
         "arrTime": "10:32",
         "charge": 14100
       },
       {
-        "trainNo": "507",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "9507",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "09:45",
         "arrTime": "10:32",
         "charge": 14100
@@ -5350,14 +5329,14 @@
         "charge": 14100
       },
       {
-        "trainNo": "4021",
+        "trainNo": "239",
         "trainType": "KTX-산천(A-type)",
         "depTime": "10:43",
         "arrTime": "11:23",
         "charge": 14100
       },
       {
-        "trainNo": "239",
+        "trainNo": "4021",
         "trainType": "KTX-산천(A-type)",
         "depTime": "10:43",
         "arrTime": "11:23",
@@ -5378,14 +5357,14 @@
         "charge": 14100
       },
       {
-        "trainNo": "511",
+        "trainNo": "415",
         "trainType": "KTX-산천(A-type)",
         "depTime": "12:08",
         "arrTime": "12:56",
         "charge": 14100
       },
       {
-        "trainNo": "415",
+        "trainNo": "511",
         "trainType": "KTX-산천(A-type)",
         "depTime": "12:08",
         "arrTime": "12:56",
@@ -5399,15 +5378,15 @@
         "charge": 14100
       },
       {
-        "trainNo": "243",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "31",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "12:58",
         "arrTime": "13:38",
         "charge": 14100
       },
       {
-        "trainNo": "31",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "243",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "12:58",
         "arrTime": "13:38",
         "charge": 14100
@@ -5497,15 +5476,15 @@
         "charge": 14100
       },
       {
-        "trainNo": "427",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "515",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "16:35",
         "arrTime": "17:21",
         "charge": 14100
       },
       {
-        "trainNo": "515",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "427",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "16:35",
         "arrTime": "17:21",
         "charge": 14100
@@ -5553,13 +5532,6 @@
         "charge": 14100
       },
       {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "19:44",
-        "arrTime": "20:24",
-        "charge": 14100
-      },
-      {
         "trainNo": "93",
         "trainType": "KTX",
         "depTime": "19:54",
@@ -5581,14 +5553,14 @@
         "charge": 14100
       },
       {
-        "trainNo": "251",
+        "trainNo": "221",
         "trainType": "KTX-산천(A-type)",
         "depTime": "20:38",
         "arrTime": "21:18",
         "charge": 14100
       },
       {
-        "trainNo": "221",
+        "trainNo": "251",
         "trainType": "KTX-산천(A-type)",
         "depTime": "20:38",
         "arrTime": "21:18",
@@ -6862,13 +6834,6 @@
         "depTime": "18:41",
         "arrTime": "21:20",
         "charge": 48100
-      },
-      {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "19:44",
-        "arrTime": "22:05",
-        "charge": 48500
       },
       {
         "trainNo": "109",
@@ -10500,13 +10465,6 @@
         "charge": 8400
       },
       {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "22:37",
-        "arrTime": "22:50",
-        "charge": 8400
-      },
-      {
         "trainNo": "109",
         "trainType": "KTX",
         "depTime": "23:50",
@@ -11032,14 +10990,14 @@
         "charge": 59800
       },
       {
-        "trainNo": "32",
+        "trainNo": "9032",
         "trainType": "KTX-청룡",
         "depTime": "12:34",
         "arrTime": "14:59",
         "charge": 59800
       },
       {
-        "trainNo": "9032",
+        "trainNo": "32",
         "trainType": "KTX-청룡",
         "depTime": "12:34",
         "arrTime": "14:59",
@@ -11065,13 +11023,6 @@
         "depTime": "13:22",
         "arrTime": "16:41",
         "charge": 53900
-      },
-      {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "13:28",
-        "arrTime": "16:07",
-        "charge": 59800
       },
       {
         "trainNo": "36",
@@ -11672,13 +11623,6 @@
         "charge": 12000
       },
       {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "13:28",
-        "arrTime": "14:08",
-        "charge": 17100
-      },
-      {
         "trainNo": "36",
         "trainType": "KTX",
         "depTime": "14:00",
@@ -11788,6 +11732,13 @@
         "trainType": "KTX",
         "depTime": "17:50",
         "arrTime": "18:41",
+        "charge": 17100
+      },
+      {
+        "trainNo": "54",
+        "trainType": "KTX",
+        "depTime": "18:00",
+        "arrTime": "18:46",
         "charge": 17100
       }
     ]
@@ -12007,13 +11958,6 @@
         "depTime": "13:22",
         "arrTime": "15:25",
         "charge": 30400
-      },
-      {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "13:28",
-        "arrTime": "14:51",
-        "charge": 36200
       },
       {
         "trainNo": "36",
@@ -12635,13 +12579,6 @@
         "charge": 51800
       },
       {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "13:28",
-        "arrTime": "15:47",
-        "charge": 57700
-      },
-      {
         "trainNo": "40",
         "trainType": "KTX",
         "depTime": "14:31",
@@ -12902,13 +12839,6 @@
         "charge": 34900
       },
       {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "13:28",
-        "arrTime": "15:09",
-        "charge": 42200
-      },
-      {
         "trainNo": "36",
         "trainType": "KTX",
         "depTime": "14:00",
@@ -13092,14 +13022,14 @@
         "charge": 46500
       },
       {
-        "trainNo": "32",
+        "trainNo": "9032",
         "trainType": "KTX-청룡",
         "depTime": "12:34",
         "arrTime": "14:20",
         "charge": 46500
       },
       {
-        "trainNo": "9032",
+        "trainNo": "32",
         "trainType": "KTX-청룡",
         "depTime": "12:34",
         "arrTime": "14:20",
@@ -13118,13 +13048,6 @@
         "depTime": "13:22",
         "arrTime": "15:56",
         "charge": 38800
-      },
-      {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "13:28",
-        "arrTime": "15:22",
-        "charge": 46500
       },
       {
         "trainNo": "36",
@@ -13487,14 +13410,14 @@
         "charge": 43500
       },
       {
-        "trainNo": "202",
+        "trainNo": "232",
         "trainType": "KTX-산천(A-type)",
         "depTime": "06:17",
         "arrTime": "08:01",
         "charge": 43500
       },
       {
-        "trainNo": "232",
+        "trainNo": "202",
         "trainType": "KTX-산천(A-type)",
         "depTime": "06:17",
         "arrTime": "08:01",
@@ -13557,14 +13480,14 @@
         "charge": 43500
       },
       {
-        "trainNo": "234",
+        "trainNo": "204",
         "trainType": "KTX-산천(A-type)",
         "depTime": "07:56",
         "arrTime": "09:52",
         "charge": 43500
       },
       {
-        "trainNo": "204",
+        "trainNo": "234",
         "trainType": "KTX-산천(A-type)",
         "depTime": "07:56",
         "arrTime": "09:52",
@@ -13683,14 +13606,14 @@
         "charge": 43100
       },
       {
-        "trainNo": "298",
+        "trainNo": "162",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:21",
         "arrTime": "13:11",
         "charge": 43500
       },
       {
-        "trainNo": "162",
+        "trainNo": "298",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:21",
         "arrTime": "13:11",
@@ -13779,13 +13702,6 @@
         "depTime": "14:05",
         "arrTime": "16:34",
         "charge": 34500
-      },
-      {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "14:10",
-        "arrTime": "16:07",
-        "charge": 43500
       },
       {
         "trainNo": "212",
@@ -14019,6 +13935,13 @@
         "charge": 43500
       },
       {
+        "trainNo": "182",
+        "trainType": "KTX-청룡",
+        "depTime": "19:53",
+        "arrTime": "21:35",
+        "charge": 43500
+      },
+      {
         "trainNo": "9182",
         "trainType": "KTX-청룡",
         "depTime": "19:53",
@@ -14130,13 +14053,6 @@
         "trainType": "KTX",
         "depTime": "20:49",
         "arrTime": "21:51",
-        "charge": 10300
-      },
-      {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "21:33",
-        "arrTime": "22:35",
         "charge": 10300
       },
       {
@@ -14407,14 +14323,14 @@
         "charge": 17100
       },
       {
-        "trainNo": "181",
+        "trainNo": "9181",
         "trainType": "KTX-청룡",
         "depTime": "17:23",
         "arrTime": "18:03",
         "charge": 17100
       },
       {
-        "trainNo": "9181",
+        "trainNo": "181",
         "trainType": "KTX-청룡",
         "depTime": "17:23",
         "arrTime": "18:03",
@@ -14569,14 +14485,14 @@
         "charge": 19700
       },
       {
-        "trainNo": "234",
+        "trainNo": "204",
         "trainType": "KTX-산천(A-type)",
         "depTime": "07:56",
         "arrTime": "08:42",
         "charge": 19700
       },
       {
-        "trainNo": "204",
+        "trainNo": "234",
         "trainType": "KTX-산천(A-type)",
         "depTime": "07:56",
         "arrTime": "08:42",
@@ -14695,13 +14611,6 @@
         "charge": 19300
       },
       {
-        "trainNo": "162",
-        "trainType": "KTX-산천(A-type)",
-        "depTime": "11:21",
-        "arrTime": "12:07",
-        "charge": 19700
-      },
-      {
         "trainNo": "298",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:21",
@@ -14709,14 +14618,21 @@
         "charge": 19700
       },
       {
-        "trainNo": "208",
+        "trainNo": "162",
+        "trainType": "KTX-산천(A-type)",
+        "depTime": "11:21",
+        "arrTime": "12:07",
+        "charge": 19700
+      },
+      {
+        "trainNo": "240",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:45",
         "arrTime": "12:26",
         "charge": 19700
       },
       {
-        "trainNo": "240",
+        "trainNo": "208",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:45",
         "arrTime": "12:26",
@@ -14744,13 +14660,6 @@
         "charge": 19300
       },
       {
-        "trainNo": "9032",
-        "trainType": "KTX-청룡",
-        "depTime": "13:15",
-        "arrTime": "13:55",
-        "charge": 19700
-      },
-      {
         "trainNo": "32",
         "trainType": "KTX-청룡",
         "depTime": "13:15",
@@ -14758,15 +14667,22 @@
         "charge": 19700
       },
       {
-        "trainNo": "9292",
-        "trainType": "KTX-산천(B-type)",
-        "depTime": "13:23",
-        "arrTime": "14:04",
+        "trainNo": "9032",
+        "trainType": "KTX-청룡",
+        "depTime": "13:15",
+        "arrTime": "13:55",
         "charge": 19700
       },
       {
         "trainNo": "292",
         "trainType": "KTX-산천(A-type)",
+        "depTime": "13:23",
+        "arrTime": "14:04",
+        "charge": 19700
+      },
+      {
+        "trainNo": "9292",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "13:23",
         "arrTime": "14:04",
         "charge": 19700
@@ -14793,13 +14709,6 @@
         "charge": 19700
       },
       {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "14:10",
-        "arrTime": "14:51",
-        "charge": 19700
-      },
-      {
         "trainNo": "212",
         "trainType": "KTX",
         "depTime": "14:30",
@@ -14807,14 +14716,14 @@
         "charge": 19300
       },
       {
-        "trainNo": "244",
+        "trainNo": "106",
         "trainType": "KTX-산천(A-type)",
         "depTime": "14:44",
         "arrTime": "15:25",
         "charge": 19700
       },
       {
-        "trainNo": "106",
+        "trainNo": "244",
         "trainType": "KTX-산천(A-type)",
         "depTime": "14:44",
         "arrTime": "15:25",
@@ -15398,14 +15307,14 @@
         "charge": 41300
       },
       {
-        "trainNo": "240",
+        "trainNo": "208",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:45",
         "arrTime": "13:17",
         "charge": 41300
       },
       {
-        "trainNo": "208",
+        "trainNo": "240",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:45",
         "arrTime": "13:17",
@@ -15433,13 +15342,6 @@
         "charge": 40900
       },
       {
-        "trainNo": "9292",
-        "trainType": "KTX-산천(B-type)",
-        "depTime": "13:23",
-        "arrTime": "14:54",
-        "charge": 41300
-      },
-      {
         "trainNo": "292",
         "trainType": "KTX-산천(A-type)",
         "depTime": "13:23",
@@ -15447,10 +15349,10 @@
         "charge": 41300
       },
       {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "14:10",
-        "arrTime": "15:47",
+        "trainNo": "9292",
+        "trainType": "KTX-산천(B-type)",
+        "depTime": "13:23",
+        "arrTime": "14:54",
         "charge": 41300
       },
       {
@@ -15461,14 +15363,14 @@
         "charge": 40900
       },
       {
-        "trainNo": "106",
+        "trainNo": "244",
         "trainType": "KTX-산천(A-type)",
         "depTime": "14:44",
         "arrTime": "16:22",
         "charge": 41300
       },
       {
-        "trainNo": "244",
+        "trainNo": "106",
         "trainType": "KTX-산천(A-type)",
         "depTime": "14:44",
         "arrTime": "16:22",
@@ -15517,14 +15419,14 @@
         "charge": 40900
       },
       {
-        "trainNo": "284",
+        "trainNo": "248",
         "trainType": "KTX-산천(A-type)",
         "depTime": "17:02",
         "arrTime": "18:39",
         "charge": 41300
       },
       {
-        "trainNo": "248",
+        "trainNo": "284",
         "trainType": "KTX-산천(A-type)",
         "depTime": "17:02",
         "arrTime": "18:39",
@@ -15636,14 +15538,14 @@
         "charge": 41300
       },
       {
-        "trainNo": "110",
+        "trainNo": "252",
         "trainType": "KTX-산천(A-type)",
         "depTime": "20:08",
         "arrTime": "21:45",
         "charge": 40900
       },
       {
-        "trainNo": "252",
+        "trainNo": "110",
         "trainType": "KTX-산천(A-type)",
         "depTime": "20:08",
         "arrTime": "21:45",
@@ -15657,14 +15559,14 @@
         "charge": 41300
       },
       {
-        "trainNo": "4024",
+        "trainNo": "198",
         "trainType": "KTX-산천(A-type)",
         "depTime": "20:57",
         "arrTime": "22:28",
         "charge": 41300
       },
       {
-        "trainNo": "198",
+        "trainNo": "4024",
         "trainType": "KTX-산천(A-type)",
         "depTime": "20:57",
         "arrTime": "22:28",
@@ -15706,14 +15608,14 @@
         "charge": 41300
       },
       {
-        "trainNo": "222",
+        "trainNo": "254",
         "trainType": "KTX-산천(A-type)",
         "depTime": "22:17",
         "arrTime": "23:48",
         "charge": 41300
       },
       {
-        "trainNo": "254",
+        "trainNo": "222",
         "trainType": "KTX-산천(A-type)",
         "depTime": "22:17",
         "arrTime": "23:48",
@@ -15861,15 +15763,15 @@
         "charge": 24800
       },
       {
-        "trainNo": "292",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "9292",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "13:23",
         "arrTime": "14:22",
         "charge": 24800
       },
       {
-        "trainNo": "9292",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "292",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "13:23",
         "arrTime": "14:22",
         "charge": 24800
@@ -15879,13 +15781,6 @@
         "trainType": "KTX",
         "depTime": "13:57",
         "arrTime": "14:56",
-        "charge": 24800
-      },
-      {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "14:10",
-        "arrTime": "15:09",
         "charge": 24800
       },
       {
@@ -15931,14 +15826,14 @@
         "charge": 24400
       },
       {
-        "trainNo": "284",
+        "trainNo": "248",
         "trainType": "KTX-산천(A-type)",
         "depTime": "17:02",
         "arrTime": "18:06",
         "charge": 24800
       },
       {
-        "trainNo": "248",
+        "trainNo": "284",
         "trainType": "KTX-산천(A-type)",
         "depTime": "17:02",
         "arrTime": "18:06",
@@ -15987,15 +15882,15 @@
         "charge": 24800
       },
       {
-        "trainNo": "294",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "286",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "19:35",
         "arrTime": "20:39",
         "charge": 24800
       },
       {
-        "trainNo": "286",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "294",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "19:35",
         "arrTime": "20:39",
         "charge": 24800
@@ -16170,14 +16065,14 @@
         "charge": 28900
       },
       {
-        "trainNo": "9032",
+        "trainNo": "32",
         "trainType": "KTX-청룡",
         "depTime": "13:15",
         "arrTime": "14:20",
         "charge": 29300
       },
       {
-        "trainNo": "32",
+        "trainNo": "9032",
         "trainType": "KTX-청룡",
         "depTime": "13:15",
         "arrTime": "14:20",
@@ -16195,13 +16090,6 @@
         "trainType": "KTX",
         "depTime": "13:57",
         "arrTime": "15:09",
-        "charge": 29300
-      },
-      {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "14:10",
-        "arrTime": "15:22",
         "charge": 29300
       },
       {
@@ -16814,13 +16702,6 @@
         "trainType": "KTX",
         "depTime": "20:49",
         "arrTime": "21:20",
-        "charge": 8400
-      },
-      {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "21:33",
-        "arrTime": "22:05",
         "charge": 8400
       },
       {
@@ -18591,14 +18472,14 @@
         "charge": 23700
       },
       {
-        "trainNo": "232",
+        "trainNo": "202",
         "trainType": "KTX-산천(A-type)",
         "depTime": "07:00",
         "arrTime": "08:01",
         "charge": 23700
       },
       {
-        "trainNo": "202",
+        "trainNo": "232",
         "trainType": "KTX-산천(A-type)",
         "depTime": "07:00",
         "arrTime": "08:01",
@@ -18661,14 +18542,14 @@
         "charge": 23700
       },
       {
-        "trainNo": "204",
+        "trainNo": "234",
         "trainType": "KTX-산천(A-type)",
         "depTime": "08:44",
         "arrTime": "09:52",
         "charge": 23700
       },
       {
-        "trainNo": "234",
+        "trainNo": "204",
         "trainType": "KTX-산천(A-type)",
         "depTime": "08:44",
         "arrTime": "09:52",
@@ -18745,14 +18626,14 @@
         "charge": 23700
       },
       {
-        "trainNo": "206",
+        "trainNo": "236",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:22",
         "arrTime": "12:25",
         "charge": 23700
       },
       {
-        "trainNo": "236",
+        "trainNo": "206",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:22",
         "arrTime": "12:25",
@@ -18801,14 +18682,14 @@
         "charge": 23700
       },
       {
-        "trainNo": "240",
+        "trainNo": "208",
         "trainType": "KTX-산천(A-type)",
         "depTime": "12:28",
         "arrTime": "13:36",
         "charge": 23700
       },
       {
-        "trainNo": "208",
+        "trainNo": "240",
         "trainType": "KTX-산천(A-type)",
         "depTime": "12:28",
         "arrTime": "13:36",
@@ -18836,14 +18717,14 @@
         "charge": 23700
       },
       {
-        "trainNo": "32",
+        "trainNo": "9032",
         "trainType": "KTX-청룡",
         "depTime": "13:57",
         "arrTime": "14:59",
         "charge": 23700
       },
       {
-        "trainNo": "9032",
+        "trainNo": "32",
         "trainType": "KTX-청룡",
         "depTime": "13:57",
         "arrTime": "14:59",
@@ -18883,13 +18764,6 @@
         "depTime": "14:48",
         "arrTime": "16:34",
         "charge": 17200
-      },
-      {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "14:53",
-        "arrTime": "16:07",
-        "charge": 23700
       },
       {
         "trainNo": "212",
@@ -18983,14 +18857,14 @@
         "charge": 23700
       },
       {
-        "trainNo": "248",
+        "trainNo": "284",
         "trainType": "KTX-산천(A-type)",
         "depTime": "17:50",
         "arrTime": "18:58",
         "charge": 23700
       },
       {
-        "trainNo": "284",
+        "trainNo": "248",
         "trainType": "KTX-산천(A-type)",
         "depTime": "17:50",
         "arrTime": "18:58",
@@ -19107,6 +18981,13 @@
         "depTime": "20:15",
         "arrTime": "21:24",
         "charge": 23700
+      },
+      {
+        "trainNo": "294",
+        "trainType": "KTX-산천(B-type)",
+        "depTime": "20:23",
+        "arrTime": "21:31",
+        "charge": 23700
       }
     ]
   },
@@ -19214,13 +19095,6 @@
         "depTime": "19:52",
         "arrTime": "21:51",
         "charge": 28500
-      },
-      {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "20:49",
-        "arrTime": "22:35",
-        "charge": 28900
       },
       {
         "trainNo": "109",
@@ -19575,14 +19449,14 @@
     "arrStationName": "동대구",
     "schedules": [
       {
-        "trainNo": "201",
+        "trainNo": "297",
         "trainType": "KTX-산천(A-type)",
         "depTime": "06:04",
         "arrTime": "06:46",
         "charge": 19700
       },
       {
-        "trainNo": "297",
+        "trainNo": "201",
         "trainType": "KTX-산천(A-type)",
         "depTime": "06:04",
         "arrTime": "06:46",
@@ -19715,14 +19589,14 @@
         "charge": 19700
       },
       {
-        "trainNo": "17",
+        "trainNo": "9017",
         "trainType": "KTX-청룡",
         "depTime": "09:52",
         "arrTime": "10:34",
         "charge": 19700
       },
       {
-        "trainNo": "9017",
+        "trainNo": "17",
         "trainType": "KTX-청룡",
         "depTime": "09:52",
         "arrTime": "10:34",
@@ -19750,14 +19624,14 @@
         "charge": 19700
       },
       {
-        "trainNo": "19",
+        "trainNo": "285",
         "trainType": "KTX-산천(A-type)",
         "depTime": "10:35",
         "arrTime": "11:22",
         "charge": 19700
       },
       {
-        "trainNo": "285",
+        "trainNo": "19",
         "trainType": "KTX-산천(A-type)",
         "depTime": "10:35",
         "arrTime": "11:22",
@@ -19799,14 +19673,14 @@
         "charge": 19700
       },
       {
-        "trainNo": "239",
+        "trainNo": "4021",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:54",
         "arrTime": "12:36",
         "charge": 19700
       },
       {
-        "trainNo": "4021",
+        "trainNo": "239",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:54",
         "arrTime": "12:36",
@@ -20439,14 +20313,14 @@
         "charge": 21200
       },
       {
-        "trainNo": "236",
+        "trainNo": "206",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:22",
         "arrTime": "12:04",
         "charge": 21200
       },
       {
-        "trainNo": "206",
+        "trainNo": "236",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:22",
         "arrTime": "12:04",
@@ -20474,13 +20348,6 @@
         "charge": 21200
       },
       {
-        "trainNo": "298",
-        "trainType": "KTX-산천(A-type)",
-        "depTime": "12:09",
-        "arrTime": "12:51",
-        "charge": 21200
-      },
-      {
         "trainNo": "162",
         "trainType": "KTX-산천(A-type)",
         "depTime": "12:09",
@@ -20488,14 +20355,21 @@
         "charge": 21200
       },
       {
-        "trainNo": "208",
+        "trainNo": "298",
+        "trainType": "KTX-산천(A-type)",
+        "depTime": "12:09",
+        "arrTime": "12:51",
+        "charge": 21200
+      },
+      {
+        "trainNo": "240",
         "trainType": "KTX-산천(A-type)",
         "depTime": "12:28",
         "arrTime": "13:17",
         "charge": 21200
       },
       {
-        "trainNo": "240",
+        "trainNo": "208",
         "trainType": "KTX-산천(A-type)",
         "depTime": "12:28",
         "arrTime": "13:17",
@@ -20534,13 +20408,6 @@
         "trainType": "KTX-산천(A-type)",
         "depTime": "14:06",
         "arrTime": "14:54",
-        "charge": 21200
-      },
-      {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "14:53",
-        "arrTime": "15:47",
         "charge": 21200
       },
       {
@@ -20705,15 +20572,15 @@
         "charge": 21200
       },
       {
-        "trainNo": "294",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "286",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "20:23",
         "arrTime": "21:12",
         "charge": 21200
       },
       {
-        "trainNo": "286",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "294",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "20:23",
         "arrTime": "21:12",
         "charge": 21200
@@ -20726,14 +20593,14 @@
         "charge": 21200
       },
       {
-        "trainNo": "110",
+        "trainNo": "252",
         "trainType": "KTX-산천(A-type)",
         "depTime": "21:01",
         "arrTime": "21:45",
         "charge": 21200
       },
       {
-        "trainNo": "252",
+        "trainNo": "110",
         "trainType": "KTX-산천(A-type)",
         "depTime": "21:01",
         "arrTime": "21:45",
@@ -20796,14 +20663,14 @@
         "charge": 21200
       },
       {
-        "trainNo": "222",
+        "trainNo": "254",
         "trainType": "KTX-산천(A-type)",
         "depTime": "23:00",
         "arrTime": "23:48",
         "charge": 21200
       },
       {
-        "trainNo": "254",
+        "trainNo": "222",
         "trainType": "KTX-산천(A-type)",
         "depTime": "23:00",
         "arrTime": "23:48",
@@ -20986,21 +20853,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "14:53",
-        "arrTime": "15:09",
-        "charge": 8400
-      },
-      {
-        "trainNo": "244",
+        "trainNo": "106",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:27",
         "arrTime": "15:43",
         "charge": 8400
       },
       {
-        "trainNo": "106",
+        "trainNo": "244",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:27",
         "arrTime": "15:43",
@@ -21316,21 +21176,14 @@
         "charge": 9600
       },
       {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "14:53",
-        "arrTime": "15:22",
-        "charge": 9600
-      },
-      {
-        "trainNo": "106",
+        "trainNo": "244",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:27",
         "arrTime": "15:56",
         "charge": 9600
       },
       {
-        "trainNo": "244",
+        "trainNo": "106",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:27",
         "arrTime": "15:56",
@@ -21933,13 +21786,6 @@
         "depTime": "19:52",
         "arrTime": "21:20",
         "charge": 25000
-      },
-      {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "20:49",
-        "arrTime": "22:05",
-        "charge": 25400
       },
       {
         "trainNo": "109",
@@ -25720,70 +25566,6 @@
   {
     "depStationId": "NAT010415",
     "depStationName": "수원",
-    "arrStationId": "NAT010091",
-    "arrStationName": "영등포",
-    "schedules": [
-      {
-        "trainNo": "170",
-        "trainType": "KTX",
-        "depTime": "09:25",
-        "arrTime": "09:46",
-        "charge": 8400
-      },
-      {
-        "trainNo": "122",
-        "trainType": "KTX",
-        "depTime": "11:01",
-        "arrTime": "11:22",
-        "charge": 8400
-      },
-      {
-        "trainNo": "172",
-        "trainType": "KTX",
-        "depTime": "13:03",
-        "arrTime": "13:24",
-        "charge": 8400
-      },
-      {
-        "trainNo": "124",
-        "trainType": "KTX",
-        "depTime": "16:01",
-        "arrTime": "16:21",
-        "charge": 8400
-      },
-      {
-        "trainNo": "174",
-        "trainType": "KTX",
-        "depTime": "17:56",
-        "arrTime": "18:17",
-        "charge": 8400
-      },
-      {
-        "trainNo": "126",
-        "trainType": "KTX",
-        "depTime": "20:38",
-        "arrTime": "20:59",
-        "charge": 8400
-      },
-      {
-        "trainNo": "128",
-        "trainType": "KTX",
-        "depTime": "22:29",
-        "arrTime": "22:50",
-        "charge": 8400
-      },
-      {
-        "trainNo": "176",
-        "trainType": "KTX",
-        "depTime": "22:39",
-        "arrTime": "23:00",
-        "charge": 8400
-      }
-    ]
-  },
-  {
-    "depStationId": "NAT010415",
-    "depStationName": "수원",
     "arrStationId": "NAT014445",
     "arrStationName": "부산",
     "schedules": [
@@ -26080,13 +25862,6 @@
         "charge": 8400
       },
       {
-        "trainNo": "232",
-        "trainType": "KTX-산천(A-type)",
-        "depTime": "07:43",
-        "arrTime": "08:01",
-        "charge": 8400
-      },
-      {
         "trainNo": "202",
         "trainType": "KTX-산천(A-type)",
         "depTime": "07:43",
@@ -26094,14 +25869,21 @@
         "charge": 8400
       },
       {
-        "trainNo": "502",
+        "trainNo": "232",
+        "trainType": "KTX-산천(A-type)",
+        "depTime": "07:43",
+        "arrTime": "08:01",
+        "charge": 8400
+      },
+      {
+        "trainNo": "404",
         "trainType": "KTX-산천(A-type)",
         "depTime": "07:57",
         "arrTime": "08:21",
         "charge": 8400
       },
       {
-        "trainNo": "404",
+        "trainNo": "502",
         "trainType": "KTX-산천(A-type)",
         "depTime": "07:57",
         "arrTime": "08:21",
@@ -26297,14 +26079,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "208",
+        "trainNo": "240",
         "trainType": "KTX-산천(A-type)",
         "depTime": "13:18",
         "arrTime": "13:36",
         "charge": 8400
       },
       {
-        "trainNo": "240",
+        "trainNo": "208",
         "trainType": "KTX-산천(A-type)",
         "depTime": "13:18",
         "arrTime": "13:36",
@@ -26332,15 +26114,15 @@
         "charge": 8400
       },
       {
-        "trainNo": "292",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "9292",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "14:56",
         "arrTime": "15:14",
         "charge": 8400
       },
       {
-        "trainNo": "9292",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "292",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "14:56",
         "arrTime": "15:14",
         "charge": 8400
@@ -26350,13 +26132,6 @@
         "trainType": "KTX",
         "depTime": "15:11",
         "arrTime": "15:36",
-        "charge": 8400
-      },
-      {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "15:49",
-        "arrTime": "16:07",
         "charge": 8400
       },
       {
@@ -26514,14 +26289,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "488",
+        "trainNo": "4054",
         "trainType": "KTX-산천(A-type)",
         "depTime": "19:59",
         "arrTime": "20:22",
         "charge": 8400
       },
       {
-        "trainNo": "4054",
+        "trainNo": "488",
         "trainType": "KTX-산천(A-type)",
         "depTime": "19:59",
         "arrTime": "20:22",
@@ -26563,15 +26338,15 @@
         "charge": 8400
       },
       {
-        "trainNo": "294",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "286",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "21:13",
         "arrTime": "21:31",
         "charge": 8400
       },
       {
-        "trainNo": "286",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "294",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "21:13",
         "arrTime": "21:31",
         "charge": 8400
@@ -26584,14 +26359,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "110",
+        "trainNo": "252",
         "trainType": "KTX-산천(A-type)",
         "depTime": "21:47",
         "arrTime": "22:05",
         "charge": 8400
       },
       {
-        "trainNo": "252",
+        "trainNo": "110",
         "trainType": "KTX-산천(A-type)",
         "depTime": "21:47",
         "arrTime": "22:05",
@@ -26619,14 +26394,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "198",
+        "trainNo": "4024",
         "trainType": "KTX-산천(A-type)",
         "depTime": "22:29",
         "arrTime": "22:47",
         "charge": 8400
       },
       {
-        "trainNo": "4024",
+        "trainNo": "198",
         "trainType": "KTX-산천(A-type)",
         "depTime": "22:29",
         "arrTime": "22:47",
@@ -27020,13 +26795,6 @@
         "charge": 49900
       },
       {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "20:03",
-        "arrTime": "22:35",
-        "charge": 50300
-      },
-      {
         "trainNo": "109",
         "trainType": "KTX",
         "depTime": "21:08",
@@ -27294,13 +27062,6 @@
         "charge": 57700
       },
       {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "20:03",
-        "arrTime": "22:50",
-        "charge": 51800
-      },
-      {
         "trainNo": "93",
         "trainType": "KTX",
         "depTime": "20:13",
@@ -27435,14 +27196,14 @@
         "charge": 40900
       },
       {
-        "trainNo": "281",
+        "trainNo": "75",
         "trainType": "KTX-산천(A-type)",
         "depTime": "06:22",
         "arrTime": "08:01",
         "charge": 41300
       },
       {
-        "trainNo": "75",
+        "trainNo": "281",
         "trainType": "KTX-산천(A-type)",
         "depTime": "06:22",
         "arrTime": "08:01",
@@ -27533,14 +27294,14 @@
         "charge": 41300
       },
       {
-        "trainNo": "19",
+        "trainNo": "285",
         "trainType": "KTX-산천(A-type)",
         "depTime": "09:47",
         "arrTime": "11:22",
         "charge": 41300
       },
       {
-        "trainNo": "285",
+        "trainNo": "19",
         "trainType": "KTX-산천(A-type)",
         "depTime": "09:47",
         "arrTime": "11:22",
@@ -27701,14 +27462,14 @@
         "charge": 41300
       },
       {
-        "trainNo": "255",
+        "trainNo": "283",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:28",
         "arrTime": "16:57",
         "charge": 41300
       },
       {
-        "trainNo": "283",
+        "trainNo": "255",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:28",
         "arrTime": "16:57",
@@ -27722,14 +27483,14 @@
         "charge": 40900
       },
       {
-        "trainNo": "215",
+        "trainNo": "247",
         "trainType": "KTX-산천(A-type)",
         "depTime": "16:37",
         "arrTime": "18:06",
         "charge": 41300
       },
       {
-        "trainNo": "247",
+        "trainNo": "215",
         "trainType": "KTX-산천(A-type)",
         "depTime": "16:37",
         "arrTime": "18:06",
@@ -27757,14 +27518,14 @@
         "charge": 41300
       },
       {
-        "trainNo": "217",
+        "trainNo": "249",
         "trainType": "KTX-산천(A-type)",
         "depTime": "17:52",
         "arrTime": "19:27",
         "charge": 41300
       },
       {
-        "trainNo": "249",
+        "trainNo": "217",
         "trainType": "KTX-산천(A-type)",
         "depTime": "17:52",
         "arrTime": "19:27",
@@ -27810,13 +27571,6 @@
         "trainType": "KTX",
         "depTime": "19:39",
         "arrTime": "21:01",
-        "charge": 41300
-      },
-      {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "20:03",
-        "arrTime": "21:31",
         "charge": 41300
       },
       {
@@ -28368,14 +28122,14 @@
         "charge": 21200
       },
       {
-        "trainNo": "39",
+        "trainNo": "287",
         "trainType": "KTX-산천(A-type)",
         "depTime": "14:47",
         "arrTime": "15:32",
         "charge": 21200
       },
       {
-        "trainNo": "287",
+        "trainNo": "39",
         "trainType": "KTX-산천(A-type)",
         "depTime": "14:47",
         "arrTime": "15:32",
@@ -28403,14 +28157,14 @@
         "charge": 21200
       },
       {
-        "trainNo": "283",
+        "trainNo": "255",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:28",
         "arrTime": "16:13",
         "charge": 21200
       },
       {
-        "trainNo": "255",
+        "trainNo": "283",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:28",
         "arrTime": "16:13",
@@ -28424,14 +28178,14 @@
         "charge": 21200
       },
       {
-        "trainNo": "247",
+        "trainNo": "215",
         "trainType": "KTX-산천(A-type)",
         "depTime": "16:37",
         "arrTime": "17:22",
         "charge": 21200
       },
       {
-        "trainNo": "215",
+        "trainNo": "247",
         "trainType": "KTX-산천(A-type)",
         "depTime": "16:37",
         "arrTime": "17:22",
@@ -28512,13 +28266,6 @@
         "trainType": "KTX",
         "depTime": "19:39",
         "arrTime": "20:17",
-        "charge": 21200
-      },
-      {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "20:03",
-        "arrTime": "20:46",
         "charge": 21200
       },
       {
@@ -29604,14 +29351,14 @@
         "charge": 11600
       },
       {
-        "trainNo": "415",
+        "trainNo": "511",
         "trainType": "KTX-산천(A-type)",
         "depTime": "12:35",
         "arrTime": "12:56",
         "charge": 11600
       },
       {
-        "trainNo": "511",
+        "trainNo": "415",
         "trainType": "KTX-산천(A-type)",
         "depTime": "12:35",
         "arrTime": "12:56",
@@ -29625,15 +29372,15 @@
         "charge": 11600
       },
       {
-        "trainNo": "31",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "243",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "13:17",
         "arrTime": "13:38",
         "charge": 11600
       },
       {
-        "trainNo": "243",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "31",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "13:17",
         "arrTime": "13:38",
         "charge": 11600
@@ -29688,15 +29435,15 @@
         "charge": 11600
       },
       {
-        "trainNo": "4041",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "593",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "14:56",
         "arrTime": "15:17",
         "charge": 11600
       },
       {
-        "trainNo": "593",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "4041",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "14:56",
         "arrTime": "15:17",
         "charge": 11600
@@ -29786,13 +29533,6 @@
         "charge": 11600
       },
       {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "20:03",
-        "arrTime": "20:24",
-        "charge": 11600
-      },
-      {
         "trainNo": "93",
         "trainType": "KTX",
         "depTime": "20:13",
@@ -29821,13 +29561,6 @@
         "charge": 11600
       },
       {
-        "trainNo": "435",
-        "trainType": "KTX-산천(A-type)",
-        "depTime": "20:50",
-        "arrTime": "21:11",
-        "charge": 11600
-      },
-      {
         "trainNo": "541",
         "trainType": "KTX-산천(A-type)",
         "depTime": "20:50",
@@ -29835,14 +29568,21 @@
         "charge": 11600
       },
       {
-        "trainNo": "221",
+        "trainNo": "435",
+        "trainType": "KTX-산천(A-type)",
+        "depTime": "20:50",
+        "arrTime": "21:11",
+        "charge": 11600
+      },
+      {
+        "trainNo": "251",
         "trainType": "KTX-산천(A-type)",
         "depTime": "20:57",
         "arrTime": "21:18",
         "charge": 11600
       },
       {
-        "trainNo": "251",
+        "trainNo": "221",
         "trainType": "KTX-산천(A-type)",
         "depTime": "20:57",
         "arrTime": "21:18",
@@ -31668,13 +31408,6 @@
         "depTime": "19:00",
         "arrTime": "21:20",
         "charge": 46000
-      },
-      {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "20:03",
-        "arrTime": "22:05",
-        "charge": 46400
       },
       {
         "trainNo": "109",
@@ -35428,14 +35161,14 @@
         "charge": 18500
       },
       {
-        "trainNo": "204",
+        "trainNo": "234",
         "trainType": "KTX-산천(A-type)",
         "depTime": "09:02",
         "arrTime": "09:52",
         "charge": 18500
       },
       {
-        "trainNo": "234",
+        "trainNo": "204",
         "trainType": "KTX-산천(A-type)",
         "depTime": "09:02",
         "arrTime": "09:52",
@@ -35519,21 +35252,14 @@
         "charge": 18500
       },
       {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "15:10",
-        "arrTime": "16:07",
-        "charge": 18500
-      },
-      {
-        "trainNo": "244",
+        "trainNo": "106",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:45",
         "arrTime": "16:41",
         "charge": 18500
       },
       {
-        "trainNo": "106",
+        "trainNo": "244",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:45",
         "arrTime": "16:41",
@@ -35575,14 +35301,14 @@
         "charge": 18500
       },
       {
-        "trainNo": "248",
+        "trainNo": "284",
         "trainType": "KTX-산천(A-type)",
         "depTime": "18:08",
         "arrTime": "18:58",
         "charge": 18500
       },
       {
-        "trainNo": "284",
+        "trainNo": "248",
         "trainType": "KTX-산천(A-type)",
         "depTime": "18:08",
         "arrTime": "18:58",
@@ -35652,15 +35378,15 @@
         "charge": 18500
       },
       {
-        "trainNo": "294",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "286",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "20:41",
         "arrTime": "21:31",
         "charge": 18500
       },
       {
-        "trainNo": "286",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "294",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "20:41",
         "arrTime": "21:31",
         "charge": 18500
@@ -37138,14 +36864,14 @@
         "charge": 16100
       },
       {
-        "trainNo": "204",
+        "trainNo": "234",
         "trainType": "KTX-산천(A-type)",
         "depTime": "09:02",
         "arrTime": "09:33",
         "charge": 16100
       },
       {
-        "trainNo": "234",
+        "trainNo": "204",
         "trainType": "KTX-산천(A-type)",
         "depTime": "09:02",
         "arrTime": "09:33",
@@ -37229,15 +36955,15 @@
         "charge": 16100
       },
       {
-        "trainNo": "292",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "9292",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "14:23",
         "arrTime": "14:54",
         "charge": 16100
       },
       {
-        "trainNo": "9292",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "292",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "14:23",
         "arrTime": "14:54",
         "charge": 16100
@@ -37261,13 +36987,6 @@
         "trainType": "KTX",
         "depTime": "15:05",
         "arrTime": "15:43",
-        "charge": 16100
-      },
-      {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "15:10",
-        "arrTime": "15:47",
         "charge": 16100
       },
       {
@@ -37411,15 +37130,15 @@
         "charge": 16100
       },
       {
-        "trainNo": "286",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "294",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "20:41",
         "arrTime": "21:12",
         "charge": 16100
       },
       {
-        "trainNo": "294",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "286",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "20:41",
         "arrTime": "21:12",
         "charge": 16100
@@ -37636,21 +37355,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "15:10",
-        "arrTime": "15:22",
-        "charge": 8400
-      },
-      {
-        "trainNo": "106",
+        "trainNo": "244",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:45",
         "arrTime": "15:56",
         "charge": 8400
       },
       {
-        "trainNo": "244",
+        "trainNo": "106",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:45",
         "arrTime": "15:56",
@@ -39370,15 +39082,15 @@
         "charge": 14100
       },
       {
-        "trainNo": "508",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "414",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "12:44",
         "arrTime": "13:33",
         "charge": 14100
       },
       {
-        "trainNo": "414",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "508",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "12:44",
         "arrTime": "13:33",
         "charge": 14100
@@ -39440,21 +39152,14 @@
         "charge": 14100
       },
       {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "15:23",
-        "arrTime": "16:07",
-        "charge": 14100
-      },
-      {
-        "trainNo": "244",
+        "trainNo": "106",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:58",
         "arrTime": "16:41",
         "charge": 14100
       },
       {
-        "trainNo": "106",
+        "trainNo": "244",
         "trainType": "KTX-산천(A-type)",
         "depTime": "15:58",
         "arrTime": "16:41",
@@ -39827,13 +39532,6 @@
         "charge": 36900
       },
       {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "20:25",
-        "arrTime": "22:35",
-        "charge": 37300
-      },
-      {
         "trainNo": "109",
         "trainType": "KTX",
         "depTime": "21:30",
@@ -40038,13 +39736,6 @@
         "charge": 46500
       },
       {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "20:25",
-        "arrTime": "22:50",
-        "charge": 38800
-      },
-      {
         "trainNo": "93",
         "trainType": "KTX",
         "depTime": "20:35",
@@ -40228,14 +39919,14 @@
         "charge": 29300
       },
       {
-        "trainNo": "239",
+        "trainNo": "4021",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:24",
         "arrTime": "12:36",
         "charge": 29300
       },
       {
-        "trainNo": "4021",
+        "trainNo": "239",
         "trainType": "KTX-산천(A-type)",
         "depTime": "11:24",
         "arrTime": "12:36",
@@ -40340,14 +40031,14 @@
         "charge": 29300
       },
       {
-        "trainNo": "89",
+        "trainNo": "4027",
         "trainType": "KTX-산천(A-type)",
         "depTime": "16:00",
         "arrTime": "17:05",
         "charge": 29300
       },
       {
-        "trainNo": "4027",
+        "trainNo": "89",
         "trainType": "KTX-산천(A-type)",
         "depTime": "16:00",
         "arrTime": "17:05",
@@ -40403,13 +40094,6 @@
         "charge": 29300
       },
       {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "20:25",
-        "arrTime": "21:31",
-        "charge": 29300
-      },
-      {
         "trainNo": "93",
         "trainType": "KTX",
         "depTime": "20:35",
@@ -40431,14 +40115,14 @@
         "charge": 29300
       },
       {
-        "trainNo": "221",
+        "trainNo": "251",
         "trainType": "KTX-산천(A-type)",
         "depTime": "21:19",
         "arrTime": "22:31",
         "charge": 29300
       },
       {
-        "trainNo": "251",
+        "trainNo": "221",
         "trainType": "KTX-산천(A-type)",
         "depTime": "21:19",
         "arrTime": "22:31",
@@ -40608,14 +40292,14 @@
         "charge": 9600
       },
       {
-        "trainNo": "231",
+        "trainNo": "203",
         "trainType": "KTX-산천(A-type)",
         "depTime": "06:19",
         "arrTime": "06:47",
         "charge": 9600
       },
       {
-        "trainNo": "203",
+        "trainNo": "231",
         "trainType": "KTX-산천(A-type)",
         "depTime": "06:19",
         "arrTime": "06:47",
@@ -40748,15 +40432,15 @@
         "charge": 9600
       },
       {
-        "trainNo": "243",
-        "trainType": "KTX-산천(A-type)",
+        "trainNo": "31",
+        "trainType": "KTX-산천(B-type)",
         "depTime": "13:39",
         "arrTime": "14:07",
         "charge": 9600
       },
       {
-        "trainNo": "31",
-        "trainType": "KTX-산천(B-type)",
+        "trainNo": "243",
+        "trainType": "KTX-산천(A-type)",
         "depTime": "13:39",
         "arrTime": "14:07",
         "charge": 9600
@@ -40885,13 +40569,6 @@
         "trainType": "KTX",
         "depTime": "19:39",
         "arrTime": "20:07",
-        "charge": 9600
-      },
-      {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "20:25",
-        "arrTime": "20:46",
         "charge": 9600
       },
       {
@@ -41332,14 +41009,14 @@
         "charge": 11600
       },
       {
-        "trainNo": "408",
+        "trainNo": "542",
         "trainType": "KTX-산천(B-type)",
         "depTime": "10:17",
         "arrTime": "10:41",
         "charge": 11600
       },
       {
-        "trainNo": "542",
+        "trainNo": "408",
         "trainType": "KTX-산천(B-type)",
         "depTime": "10:17",
         "arrTime": "10:41",
@@ -41381,14 +41058,14 @@
         "charge": 11600
       },
       {
-        "trainNo": "240",
+        "trainNo": "208",
         "trainType": "KTX-산천(A-type)",
         "depTime": "12:53",
         "arrTime": "13:17",
         "charge": 11600
       },
       {
-        "trainNo": "208",
+        "trainNo": "240",
         "trainType": "KTX-산천(A-type)",
         "depTime": "12:53",
         "arrTime": "13:17",
@@ -41420,13 +41097,6 @@
         "trainType": "KTX",
         "depTime": "15:19",
         "arrTime": "15:43",
-        "charge": 11600
-      },
-      {
-        "trainNo": "90",
-        "trainType": "KTX",
-        "depTime": "15:23",
-        "arrTime": "15:47",
         "charge": 11600
       },
       {
@@ -43117,13 +42787,6 @@
         "depTime": "19:22",
         "arrTime": "21:20",
         "charge": 33000
-      },
-      {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "20:25",
-        "arrTime": "22:05",
-        "charge": 33400
       },
       {
         "trainNo": "109",
@@ -60457,13 +60120,6 @@
         "charge": 8400
       },
       {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "22:06",
-        "arrTime": "22:35",
-        "charge": 8400
-      },
-      {
         "trainNo": "109",
         "trainType": "KTX",
         "depTime": "23:19",
@@ -60518,13 +60174,6 @@
         "trainType": "KTX",
         "depTime": "21:22",
         "arrTime": "22:06",
-        "charge": 8400
-      },
-      {
-        "trainNo": "165",
-        "trainType": "KTX",
-        "depTime": "22:06",
-        "arrTime": "22:50",
         "charge": 8400
       },
       {

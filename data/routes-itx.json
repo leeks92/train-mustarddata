@@ -6090,14 +6090,14 @@
         "charge": 4800
       },
       {
-        "trainNo": "1507",
+        "trainNo": "1407",
         "trainType": "ITX-마음",
         "depTime": "17:27",
         "arrTime": "17:48",
         "charge": 0
       },
       {
-        "trainNo": "1407",
+        "trainNo": "1507",
         "trainType": "ITX-마음",
         "depTime": "17:27",
         "arrTime": "17:48",
@@ -6555,14 +6555,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "1507",
+        "trainNo": "1407",
         "trainType": "ITX-마음",
         "depTime": "17:27",
         "arrTime": "18:18",
         "charge": 0
       },
       {
-        "trainNo": "1407",
+        "trainNo": "1507",
         "trainType": "ITX-마음",
         "depTime": "17:27",
         "arrTime": "18:18",
@@ -7956,14 +7956,14 @@
         "charge": 11600
       },
       {
-        "trainNo": "1406",
+        "trainNo": "1508",
         "trainType": "ITX-마음",
         "depTime": "19:04",
         "arrTime": "20:17",
         "charge": 0
       },
       {
-        "trainNo": "1508",
+        "trainNo": "1406",
         "trainType": "ITX-마음",
         "depTime": "19:04",
         "arrTime": "20:17",
@@ -8819,14 +8819,14 @@
         "charge": 8500
       },
       {
-        "trainNo": "1406",
+        "trainNo": "1508",
         "trainType": "ITX-마음",
         "depTime": "19:04",
         "arrTime": "19:55",
         "charge": 0
       },
       {
-        "trainNo": "1508",
+        "trainNo": "1406",
         "trainType": "ITX-마음",
         "depTime": "19:04",
         "arrTime": "19:55",
@@ -9179,14 +9179,14 @@
         "charge": 4800
       },
       {
-        "trainNo": "1406",
+        "trainNo": "1508",
         "trainType": "ITX-마음",
         "depTime": "19:04",
         "arrTime": "19:23",
         "charge": 0
       },
       {
-        "trainNo": "1508",
+        "trainNo": "1406",
         "trainType": "ITX-마음",
         "depTime": "19:04",
         "arrTime": "19:23",
@@ -15451,6 +15451,13 @@
         "depTime": "16:03",
         "arrTime": "17:58",
         "charge": 15400
+      },
+      {
+        "trainNo": "1016",
+        "trainType": "ITX-새마을",
+        "depTime": "16:18",
+        "arrTime": "18:06",
+        "charge": 15400
       }
     ]
   },
@@ -21614,252 +21621,6 @@
   {
     "depStationId": "NAT010415",
     "depStationName": "수원",
-    "arrStationId": "NAT010091",
-    "arrStationName": "영등포",
-    "schedules": [
-      {
-        "trainNo": "1102",
-        "trainType": "ITX-새마을",
-        "depTime": "07:41",
-        "arrTime": "08:03",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1104",
-        "trainType": "ITX-마음",
-        "depTime": "09:56",
-        "arrTime": "10:21",
-        "charge": 0
-      },
-      {
-        "trainNo": "1422",
-        "trainType": "ITX-새마을",
-        "depTime": "10:24",
-        "arrTime": "10:43",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1002",
-        "trainType": "ITX-마음",
-        "depTime": "10:36",
-        "arrTime": "10:55",
-        "charge": 0
-      },
-      {
-        "trainNo": "1424",
-        "trainType": "ITX-새마을",
-        "depTime": "12:23",
-        "arrTime": "12:43",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1042",
-        "trainType": "ITX-새마을",
-        "depTime": "12:37",
-        "arrTime": "12:58",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1004",
-        "trainType": "ITX-새마을",
-        "depTime": "12:50",
-        "arrTime": "13:10",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1502",
-        "trainType": "ITX-새마을",
-        "depTime": "12:56",
-        "arrTime": "13:16",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1112",
-        "trainType": "ITX-새마을",
-        "depTime": "13:15",
-        "arrTime": "13:35",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1402",
-        "trainType": "ITX-새마을",
-        "depTime": "14:33",
-        "arrTime": "14:52",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1006",
-        "trainType": "ITX-마음",
-        "depTime": "14:55",
-        "arrTime": "15:16",
-        "charge": 0
-      },
-      {
-        "trainNo": "1404",
-        "trainType": "ITX-마음",
-        "depTime": "15:06",
-        "arrTime": "15:26",
-        "charge": 0
-      },
-      {
-        "trainNo": "1504",
-        "trainType": "ITX-마음",
-        "depTime": "15:06",
-        "arrTime": "15:26",
-        "charge": 0
-      },
-      {
-        "trainNo": "1008",
-        "trainType": "ITX-새마을",
-        "depTime": "16:30",
-        "arrTime": "16:49",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1442",
-        "trainType": "ITX-새마을",
-        "depTime": "16:42",
-        "arrTime": "17:02",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1426",
-        "trainType": "ITX-새마을",
-        "depTime": "17:06",
-        "arrTime": "17:26",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1010",
-        "trainType": "ITX-마음",
-        "depTime": "17:44",
-        "arrTime": "18:03",
-        "charge": 0
-      },
-      {
-        "trainNo": "1012",
-        "trainType": "ITX-새마을",
-        "depTime": "18:10",
-        "arrTime": "18:29",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1506",
-        "trainType": "ITX-새마을",
-        "depTime": "18:31",
-        "arrTime": "18:53",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1428",
-        "trainType": "ITX-새마을",
-        "depTime": "19:08",
-        "arrTime": "19:32",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1016",
-        "trainType": "ITX-새마을",
-        "depTime": "19:23",
-        "arrTime": "19:42",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1014",
-        "trainType": "ITX-새마을",
-        "depTime": "19:47",
-        "arrTime": "20:11",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1406",
-        "trainType": "ITX-마음",
-        "depTime": "19:57",
-        "arrTime": "20:17",
-        "charge": 0
-      },
-      {
-        "trainNo": "1508",
-        "trainType": "ITX-마음",
-        "depTime": "19:57",
-        "arrTime": "20:17",
-        "charge": 0
-      },
-      {
-        "trainNo": "1114",
-        "trainType": "ITX-새마을",
-        "depTime": "20:29",
-        "arrTime": "20:49",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1222",
-        "trainType": "ITX-마음",
-        "depTime": "20:59",
-        "arrTime": "21:19",
-        "charge": 0
-      },
-      {
-        "trainNo": "1408",
-        "trainType": "ITX-새마을",
-        "depTime": "21:09",
-        "arrTime": "21:30",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1018",
-        "trainType": "ITX-마음",
-        "depTime": "21:16",
-        "arrTime": "21:35",
-        "charge": 0
-      },
-      {
-        "trainNo": "1410",
-        "trainType": "ITX-새마을",
-        "depTime": "21:46",
-        "arrTime": "22:05",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1020",
-        "trainType": "ITX-마음",
-        "depTime": "21:55",
-        "arrTime": "22:15",
-        "charge": 0
-      },
-      {
-        "trainNo": "1430",
-        "trainType": "ITX-새마을",
-        "depTime": "22:01",
-        "arrTime": "22:21",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1022",
-        "trainType": "ITX-새마을",
-        "depTime": "22:21",
-        "arrTime": "22:41",
-        "charge": 4800
-      },
-      {
-        "trainNo": "1024",
-        "trainType": "ITX-마음",
-        "depTime": "22:48",
-        "arrTime": "23:07",
-        "charge": 0
-      },
-      {
-        "trainNo": "1026",
-        "trainType": "ITX-새마을",
-        "depTime": "23:31",
-        "arrTime": "23:50",
-        "charge": 4800
-      }
-    ]
-  },
-  {
-    "depStationId": "NAT010415",
-    "depStationName": "수원",
     "arrStationId": "NAT011298",
     "arrStationName": "조치원",
     "schedules": [
@@ -23233,14 +22994,14 @@
         "charge": 5300
       },
       {
-        "trainNo": "1507",
+        "trainNo": "1407",
         "trainType": "ITX-마음",
         "depTime": "17:50",
         "arrTime": "18:18",
         "charge": 0
       },
       {
-        "trainNo": "1407",
+        "trainNo": "1507",
         "trainType": "ITX-마음",
         "depTime": "17:50",
         "arrTime": "18:18",
@@ -29585,14 +29346,14 @@
         "charge": 8400
       },
       {
-        "trainNo": "1508",
+        "trainNo": "1406",
         "trainType": "ITX-마음",
         "depTime": "19:25",
         "arrTime": "20:17",
         "charge": 0
       },
       {
-        "trainNo": "1406",
+        "trainNo": "1508",
         "trainType": "ITX-마음",
         "depTime": "19:25",
         "arrTime": "20:17",
@@ -30799,14 +30560,14 @@
         "charge": 5300
       },
       {
-        "trainNo": "1508",
+        "trainNo": "1406",
         "trainType": "ITX-마음",
         "depTime": "19:25",
         "arrTime": "19:55",
         "charge": 0
       },
       {
-        "trainNo": "1406",
+        "trainNo": "1508",
         "trainType": "ITX-마음",
         "depTime": "19:25",
         "arrTime": "19:55",

@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-02-07T12:51:59.622Z",
+  "lastUpdated": "2026-02-08T08:01:03.203Z",
   "stationCount": 347,
-  "routeCount": 2420,
-  "ktxRouteCount": 582,
+  "routeCount": 1214,
+  "ktxRouteCount": 581,
   "srtRouteCount": 336,
-  "itxRouteCount": 708,
-  "mugunghwaRouteCount": 794
+  "itxRouteCount": 707,
+  "mugunghwaRouteCount": 799
 }
