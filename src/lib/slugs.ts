@@ -14,12 +14,16 @@ let idToSlugMap: Map<string, string> | null = null;
 
 // 슬러그 매핑 초기화
 function initSlugMaps() {
-  if (slugToIdMap && idToSlugMap) return;
+  // 이미 데이터가 있으면 리턴 (단, 데이터가 비어있으면 다시 시도)
+  if (slugToIdMap && idToSlugMap && slugToIdMap.size > 0) return;
   
   slugToIdMap = new Map();
   idToSlugMap = new Map();
   
   const stations = getStations();
+  
+  if (stations.length === 0) return; // 데이터가 없으면 초기화하지 않음 (다음에 다시 시도)
+  
   const slugCount = new Map<string, number>();
   
   // 먼저 슬러그 중복 체크

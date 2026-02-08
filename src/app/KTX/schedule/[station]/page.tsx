@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   getStation,
-  getRoutesFromStation,
-  getStations,
   getKtxRoutes,
   formatCharge,
   getValidMinCharge,
@@ -12,8 +10,8 @@ import { getStationInfo } from '@/lib/station-info';
 import { BreadcrumbJsonLd, TrainStationJsonLd } from '@/components/JsonLd';
 import {
   getStationIdBySlug,
-  createStationSlug,
   createRouteSlug,
+  getAllStationSlugs,
 } from '@/lib/slugs';
 
 const BASE_URL = 'https://train.mustarddata.com';
@@ -25,17 +23,8 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const stations = getStations();
-  const slugSet = new Set<string>();
-
-  return stations
-    .map(s => {
-      const slug = createStationSlug(s.stationName);
-      if (slugSet.has(slug)) return null;
-      slugSet.add(slug);
-      return { station: slug };
-    })
-    .filter((p): p is { station: string } => p !== null);
+  const slugs = getAllStationSlugs();
+  return slugs.map(slug => ({ station: encodeURIComponent(slug) }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -82,7 +71,6 @@ export default async function KTXStationPage({ params }: Props) {
   const decodedSlug = decodeURIComponent(stationSlug);
   const stationId = getStationIdBySlug(decodedSlug);
   const station = stationId ? getStation(stationId) : null;
-  const allRoutes = stationId ? getRoutesFromStation(stationId) : [];
   const ktxAllRoutes = getKtxRoutes();
   const stationInfo = station ? getStationInfo(station.stationName) : null;
 
@@ -97,9 +85,8 @@ export default async function KTXStationPage({ params }: Props) {
     );
   }
 
-  const ktxRoutes = allRoutes.filter(r =>
-    ktxAllRoutes.some(kr => kr.depStationId === r.depStationId && kr.arrStationId === r.arrStationId)
-  );
+  // KTX 전용 데이터에서 해당 역 출발 노선만 필터
+  const ktxRoutes = ktxAllRoutes.filter(r => r.depStationId === stationId);
 
   const sortedRoutes = ktxRoutes.sort((a, b) =>
     a.arrStationName.localeCompare(b.arrStationName)

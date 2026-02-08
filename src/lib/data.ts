@@ -39,10 +39,19 @@ function loadJson<T>(filename: string): T | null {
     return cache.get(filename) as T;
   }
   try {
-    const filePath = path.join(dataDir, filename);
+    let filePath = path.join(dataDir, filename);
+    
+    // 데이터 디렉토리가 없으면 현재 파일 위치 기준으로 탐색 시도 (Fallback)
     if (!fs.existsSync(filePath)) {
-      return null;
+       // process.cwd()가 .next/server 등으로 잡히는 경우 대비
+       const altDataDir = path.join(process.cwd(), '..', 'data');
+       if (fs.existsSync(path.join(altDataDir, filename))) {
+         filePath = path.join(altDataDir, filename);
+       } else {
+         return null;
+       }
     }
+    
     const content = fs.readFileSync(filePath, 'utf-8');
     const parsed = JSON.parse(content) as T;
     cache.set(filename, parsed);
@@ -149,7 +158,7 @@ export function getGeneralRoutes(): RouteData[] {
   return Array.from(routeMap.values());
 }
 
-// 특정 노선 조회
+// 특정 노선 조회 (전체 병합 - 역 상세 등에서 사용)
 export function getRoute(
   depStationId: string,
   arrStationId: string
@@ -160,6 +169,27 @@ export function getRoute(
       r => r.depStationId === depStationId && r.arrStationId === arrStationId
     ) || null
   );
+}
+
+// 열차 유형별 특정 노선 조회 (해당 유형 전용 파일에서만 조회)
+export function getKtxRoute(depStationId: string, arrStationId: string): RouteData | null {
+  const routes = getKtxRoutes();
+  return routes.find(r => r.depStationId === depStationId && r.arrStationId === arrStationId) || null;
+}
+
+export function getSrtRoute(depStationId: string, arrStationId: string): RouteData | null {
+  const routes = getSrtRoutes();
+  return routes.find(r => r.depStationId === depStationId && r.arrStationId === arrStationId) || null;
+}
+
+export function getItxRoute(depStationId: string, arrStationId: string): RouteData | null {
+  const routes = getItxRoutes();
+  return routes.find(r => r.depStationId === depStationId && r.arrStationId === arrStationId) || null;
+}
+
+export function getMugunghwaRoute(depStationId: string, arrStationId: string): RouteData | null {
+  const routes = getMugunghwaRoutes();
+  return routes.find(r => r.depStationId === depStationId && r.arrStationId === arrStationId) || null;
 }
 
 // 기차역별 출발 노선 목록

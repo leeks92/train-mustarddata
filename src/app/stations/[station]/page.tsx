@@ -3,7 +3,6 @@ import Link from 'next/link';
 import {
   getStation,
   getRoutesFromStation,
-  getStations,
   getKtxRoutes,
   getSrtRoutes,
   getItxRoutes,
@@ -16,8 +15,8 @@ import { getStationGuide } from '@/lib/station-guide';
 import { TrainStationJsonLd, BreadcrumbJsonLd, FAQJsonLd, LocalBusinessJsonLd } from '@/components/JsonLd';
 import {
   getStationIdBySlug,
-  createStationSlug,
   createRouteSlug,
+  getAllStationSlugs,
 } from '@/lib/slugs';
 
 const BASE_URL = 'https://train.mustarddata.com';
@@ -29,17 +28,8 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const stations = getStations();
-  const slugSet = new Set<string>();
-
-  return stations
-    .map(s => {
-      const slug = createStationSlug(s.stationName);
-      if (slugSet.has(slug)) return null;
-      slugSet.add(slug);
-      return { station: slug };
-    })
-    .filter((p): p is { station: string } => p !== null);
+  const slugs = getAllStationSlugs();
+  return slugs.map(slug => ({ station: encodeURIComponent(slug) }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

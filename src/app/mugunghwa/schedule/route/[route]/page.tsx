@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getRoute, getMugunghwaRoutes, getStations, formatCharge, getValidMinCharge, getValidMaxCharge } from '@/lib/data';
+import { getMugunghwaRoute, getMugunghwaRoutes, getStations, formatCharge, getValidMinCharge, getValidMaxCharge } from '@/lib/data';
 import { TrainTripJsonLd, BreadcrumbJsonLd, FAQJsonLd, TableJsonLd } from '@/components/JsonLd';
 import {
   getStationIdBySlug,
@@ -37,7 +37,7 @@ export async function generateStaticParams() {
       const slug = createRouteSlug(route.depStationName, route.arrStationName);
       if (slugSet.has(slug)) return null;
       slugSet.add(slug);
-      return { route: slug };
+      return { route: encodeURIComponent(slug) };
     })
     .filter((p): p is { route: string } => p !== null);
 }
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!depStationId || !arrStationId) return { title: '노선을 찾을 수 없습니다' };
 
-  const route = getRoute(depStationId, arrStationId);
+  const route = getMugunghwaRoute(depStationId, arrStationId);
   if (!route) return { title: '노선을 찾을 수 없습니다' };
 
   const depName = route.depStationName.replace('역', '');
@@ -120,7 +120,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
     );
   }
 
-  const route = getRoute(depStationId, arrStationId);
+  const route = getMugunghwaRoute(depStationId, arrStationId);
 
   if (!route) {
     return (

@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const BASE_URL = 'https://train.mustarddata.com';
-const GA_ID = 'G-PLACEHOLDER'; // Google Analytics 측정 ID
+const GA_ID = 'G-X5VQ9NDG36';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     email: false,
   },
   other: {
-    'naver-site-verification': '',
+    'naver-site-verification': '582101bc223a996adfbae2e242834da5faf85522',
   },
 };
 
@@ -117,7 +117,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="google-adsense-account" content="ca-pub-9325661912203986" />
+        <meta name="google-adsense-account" content="ca-pub-3224638013189545" />
         {/* 네이버 SEO 최적화 메타태그 (naver-site-verification은 metadata.other에서 설정) */}
         <meta name="NaverBot" content="All" />
         <meta name="NaverBot" content="index,follow" />
@@ -133,9 +133,16 @@ export default function RootLayout({
         {/* Preconnect for performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://www.letskorail.com" />
       </head>
       <body className="min-h-screen flex flex-col">
+        {/* Google AdSense */}
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3224638013189545"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         {/* Google Analytics */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}

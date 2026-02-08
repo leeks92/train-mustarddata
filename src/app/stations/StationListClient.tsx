@@ -61,30 +61,25 @@ const regionOrder = [
 
 export default function StationListClient({ stations, ktxRoutes, generalRoutes }: Props) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [showAll, setShowAll] = useState(false);
 
   const allRouteDepIds = new Set([
     ...ktxRoutes.map(r => r.depStationId),
     ...generalRoutes.map(r => r.depStationId),
   ]);
 
-  const filteredStations = stations.filter(s =>
+  const activeStations = stations
+    .filter(s => allRouteDepIds.has(s.stationId))
+    .reduce<Station[]>((acc, station) => {
+      if (!acc.find(s => s.stationName === station.stationName)) {
+        acc.push(station);
+      }
+      return acc;
+    }, []);
+
+  const displayStations = activeStations.filter(s =>
     s.stationName.includes(searchTerm) || (s.cityName && s.cityName.includes(searchTerm))
   );
 
-  const uniqueStations = filteredStations.reduce<Station[]>((acc, station) => {
-    if (!acc.find(s => s.stationName === station.stationName)) {
-      acc.push(station);
-    }
-    return acc;
-  }, []);
-
-  const isSearching = searchTerm.length > 0;
-  const displayStations = (isSearching || showAll)
-    ? uniqueStations
-    : uniqueStations.filter(s => allRouteDepIds.has(s.stationId));
-
-  const hiddenCount = uniqueStations.length - uniqueStations.filter(s => allRouteDepIds.has(s.stationId)).length;
   const activeKtxCount = new Set(ktxRoutes.map(r => r.depStationId)).size;
   const activeGeneralCount = new Set(generalRoutes.map(r => r.depStationId)).size;
 
@@ -116,7 +111,7 @@ export default function StationListClient({ stations, ktxRoutes, generalRoutes }
       </div>
 
       <div className="max-w-6xl mx-auto px-4 mt-12">
-        {uniqueStations.length === 0 && (
+        {displayStations.length === 0 && (
           <div className="text-center py-12">
             <p className="text-xl text-gray-600">검색 결과가 없습니다.</p>
           </div>
@@ -135,40 +130,26 @@ export default function StationListClient({ stations, ktxRoutes, generalRoutes }
                   </span>
                   {region}
                   <span className="text-sm font-normal text-gray-500 ml-auto bg-gray-50 px-3 py-1 rounded-full">
-                    {regionStations.filter(s => allRouteDepIds.has(s.stationId)).length > 0
-                      ? `${regionStations.filter(s => allRouteDepIds.has(s.stationId)).length}개 역`
-                      : `${regionStations.length}개 역`}
+                    {regionStations.length}개 역
                   </span>
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {regionStations
-                    .sort((a, b) => {
-                      const aHas = allRouteDepIds.has(a.stationId) ? 0 : 1;
-                      const bHas = allRouteDepIds.has(b.stationId) ? 0 : 1;
-                      if (aHas !== bHas) return aHas - bHas;
-                      return a.stationName.localeCompare(b.stationName);
-                    })
+                    .sort((a, b) => a.stationName.localeCompare(b.stationName))
                     .map(station => {
                       const ktxCount = ktxRoutes.filter(r => r.depStationId === station.stationId).length;
                       const generalCount = generalRoutes.filter(r => r.depStationId === station.stationId).length;
                       const stationSlug = createStationSlug(station.stationName);
-                      const hasRoutes = ktxCount > 0 || generalCount > 0;
 
                       return (
                         <Link
                           key={station.stationId}
                           href={`/stations/${stationSlug}`}
-                          className={`group block rounded-xl p-5 transition-all duration-200 ${
-                            hasRoutes
-                              ? 'bg-gray-50 hover:bg-white border border-transparent hover:border-emerald-200 hover:shadow-md'
-                              : 'bg-gray-50/50 border border-gray-100 opacity-60 hover:opacity-80'
-                          }`}
+                          className="group block rounded-xl p-5 transition-all duration-200 bg-gray-50 hover:bg-white border border-transparent hover:border-emerald-200 hover:shadow-md"
                         >
                           <div className="flex justify-between items-start mb-2">
-                            <h3 className={`text-lg font-bold transition-colors ${
-                              hasRoutes ? 'text-gray-900 group-hover:text-emerald-600' : 'text-gray-500'
-                            }`}>
+                            <h3 className="text-lg font-bold transition-colors text-gray-900 group-hover:text-emerald-600">
                               {station.stationName}
                             </h3>
                           </div>
@@ -183,9 +164,6 @@ export default function StationListClient({ stations, ktxRoutes, generalRoutes }
                                 일반열차 {generalCount}개
                               </span>
                             )}
-                            {!hasRoutes && (
-                              <span className="text-xs text-gray-400">시간표 준비중</span>
-                            )}
                           </div>
                         </Link>
                       );
@@ -196,29 +174,6 @@ export default function StationListClient({ stations, ktxRoutes, generalRoutes }
           })}
         </div>
 
-        {!isSearching && hiddenCount > 0 && (
-          <div className="mt-12 text-center">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 rounded-full text-sm text-gray-600 hover:bg-gray-50 hover:border-gray-400 transition-all shadow-sm"
-            >
-              {showAll ? (
-                <>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7"></path></svg>
-                  운행중인 역만 보기
-                </>
-              ) : (
-                <>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-                  시간표 준비중인 역 {hiddenCount.toLocaleString()}개 더보기
-                </>
-              )}
-            </button>
-            {!showAll && (
-              <p className="text-xs text-gray-400 mt-2">시간표 데이터가 아직 수집되지 않은 역입니다</p>
-            )}
-          </div>
-        )}
       </div>
     </div>
   );

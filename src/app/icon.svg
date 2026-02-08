@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background: Mustard Yellow -->
+  <rect width="512" height="512" rx="115" fill="#FFDB58"/>
+  
+  <!-- Train Body: White -->
+  <path d="M156 380 L156 220 C156 130 200 80 256 80 C312 80 356 130 356 220 L356 380 Z" fill="white"/>
+  
+  <!-- Windshield -->
+  <path d="M180 210 C180 180 210 160 256 160 C302 160 332 180 332 210 L332 230 L180 230 Z" fill="#FFDB58"/>
+  
+  <!-- Lights -->
+  <circle cx="200" cy="320" r="15" fill="#FFDB58"/>
+  <circle cx="312" cy="320" r="15" fill="#FFDB58"/>
+  
+  <!-- Bottom Stripe -->
+  <rect x="180" y="350" width="152" height="10" rx="5" fill="#FFDB58"/>
+</svg>
