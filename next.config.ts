@@ -7,8 +7,6 @@ const nextConfig: NextConfig = {
   },
   trailingSlash: true,
   
-  // 성능 최적화
-  compress: true,
   poweredByHeader: false, // X-Powered-By 헤더 제거 (보안)
 };
 

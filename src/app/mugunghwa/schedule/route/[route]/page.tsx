@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getMugunghwaRoute, getMugunghwaRoutes, getStations, formatCharge, getValidMinCharge, getValidMaxCharge } from '@/lib/data';
+import { getMugunghwaRoute, getMugunghwaRoutes, getStations, formatCharge, getValidMinCharge, getValidMaxCharge, getMetadata } from '@/lib/data';
 import { TrainTripJsonLd, BreadcrumbJsonLd, FAQJsonLd, TableJsonLd } from '@/components/JsonLd';
 import {
   getStationIdBySlug,
@@ -61,10 +61,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const metaMinCharge = getValidMinCharge(route.schedules);
   const routeSlug = createRouteSlug(route.depStationName, route.arrStationName);
   const chargeText = metaMinCharge > 0 ? `, 요금 ${formatCharge(metaMinCharge)}부터` : '';
+  const firstTime = route.schedules[0]?.depTime;
+  const lastTime = route.schedules[route.schedules.length - 1]?.depTime;
+  const timeText = firstTime && lastTime ? `(첫차 ${firstTime}, 막차 ${lastTime})` : '';
 
   return {
-    title: `${depName} → ${arrName} 무궁화호 시간표 - 요금, 소요시간`,
-    description: `${route.depStationName}에서 ${route.arrStationName} 가는 무궁화호 시간표. ${route.schedules.length}회 운행${chargeText}.`,
+    title: `${route.depStationName}에서 ${route.arrStationName} 가는 무궁화호 시간표 - 요금, 소요시간`,
+    description: `${route.depStationName}에서 ${route.arrStationName} 가는 무궁화호 시간표. ${route.schedules.length}회 운행${timeText}${chargeText}.`,
     keywords: [
       `${depName} ${arrName} 무궁화호`,
       `${depName} ${arrName} 누리로`,
@@ -76,15 +79,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `${BASE_URL}/mugunghwa/schedule/route/${routeSlug}`,
     },
     openGraph: {
-      title: `${depName} → ${arrName} 무궁화호 시간표`,
-      description: `${route.depStationName}에서 ${route.arrStationName} 가는 무궁화호. ${route.schedules.length}회/일 운행${chargeText}.`,
+      title: `${route.depStationName}에서 ${route.arrStationName} 가는 무궁화호 시간표`,
+      description: `${route.depStationName}에서 ${route.arrStationName} 가는 무궁화호. ${route.schedules.length}회/일 운행${timeText}${chargeText}.`,
       url: `${BASE_URL}/mugunghwa/schedule/route/${routeSlug}`,
       type: 'website',
     },
     twitter: {
       card: 'summary',
-      title: `${depName} → ${arrName} 무궁화호 시간표`,
-      description: `${route.schedules.length}회/일 운행${chargeText}`,
+      title: `${route.depStationName}에서 ${route.arrStationName} 가는 무궁화호 시간표`,
+      description: `${route.schedules.length}회/일 운행${timeText}${chargeText}`,
     },
   };
 }
@@ -140,6 +143,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
   const routeSlug = createRouteSlug(route.depStationName, route.arrStationName);
   const reverseRouteSlug = createRouteSlug(route.arrStationName, route.depStationName);
   const depStationSlug = createStationSlug(route.depStationName);
+  const siteMetadata = getMetadata();
 
   // 열차유형별 그룹화
   const typeGroups = schedules.reduce(
@@ -229,6 +233,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
         price={minCharge}
         trainType="무궁화호"
         url={`${BASE_URL}/mugunghwa/schedule/route/${routeSlug}`}
+        dateModified={siteMetadata?.lastUpdated}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQJsonLd items={faqItems} />
@@ -256,9 +261,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
           <span className="bg-white/20 px-2 py-1 rounded text-sm">무궁화호</span>
         </div>
         <h1 className="text-2xl md:text-3xl font-bold mb-4">
-          {route.depStationName}
-          <span className="mx-4 opacity-75">→</span>
-          {route.arrStationName}
+          {route.depStationName}에서 {route.arrStationName} 가는 무궁화호 시간표
         </h1>
         <div className="flex flex-wrap gap-6 text-sm">
           <div>
@@ -301,7 +304,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
       {/* 시간표 테이블 */}
       <section className="bg-white rounded-xl shadow overflow-hidden">
         <div className="p-4 border-b bg-gray-50">
-          <h2 className="text-lg font-bold text-gray-900">{route.depStationName} → {route.arrStationName} 시간표</h2>
+          <h2 className="text-lg font-bold text-gray-900">{route.depStationName} → {route.arrStationName} 무궁화호 전체 시간표</h2>
         </div>
         <div className="overflow-x-auto">
           <table className="schedule-table">
@@ -339,7 +342,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
 
       {/* 열차유형별 요약 */}
       <section className="mt-8">
-        <h2 className="text-xl font-bold mb-4">열차유형별 요금 안내</h2>
+        <h2 className="text-xl font-bold mb-4">{route.depStationName} → {route.arrStationName} 무궁화호 요금 안내</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {Object.entries(typeGroups).map(([type, items]) => (
             <div key={type} className="bg-white border rounded-lg p-4">
@@ -358,7 +361,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
       {/* 시간대별 운행 가이드 */}
       {schedules.length >= 3 && (
         <section className="mt-8 bg-white border border-gray-200 rounded-xl p-6">
-          <h2 className="text-xl font-bold mb-4 text-gray-900">시간대별 운행 가이드</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-900">{route.depStationName} → {route.arrStationName} 무궁화호 시간대별 운행</h2>
           <p className="text-sm text-gray-600 mb-4">{route.depStationName} → {route.arrStationName} 노선의 시간대별 운행 현황입니다.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-orange-50 rounded-lg p-4 border border-orange-100">
@@ -407,7 +410,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
 
       {/* FAQ 섹션 */}
       <section className="mt-8">
-        <h2 className="text-xl font-bold mb-4">자주 묻는 질문</h2>
+        <h2 className="text-xl font-bold mb-4">{route.depStationName} → {route.arrStationName} 무궁화호 자주 묻는 질문</h2>
         <div className="space-y-4">
           {faqItems.map((item, idx) => (
             <details key={idx} className="bg-white border border-gray-200 rounded-lg group">

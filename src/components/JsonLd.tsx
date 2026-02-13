@@ -18,6 +18,7 @@ interface TrainTripSchemaProps {
   price?: number;
   trainType?: string;
   url: string;
+  dateModified?: string;
 }
 
 interface BreadcrumbItem {
@@ -55,7 +56,7 @@ export function TrainStationJsonLd({ name, address, telephone, url }: TrainStati
   );
 }
 
-export function TrainTripJsonLd({ departureStation, arrivalStation, departureTime, price, trainType, url }: TrainTripSchemaProps) {
+export function TrainTripJsonLd({ departureStation, arrivalStation, departureTime, price, trainType, url, dateModified }: TrainTripSchemaProps) {
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'TrainTrip',
@@ -68,6 +69,7 @@ export function TrainTripJsonLd({ departureStation, arrivalStation, departureTim
   if (price && price > 0) {
     schema.offers = { '@type': 'Offer', price, priceCurrency: 'KRW', availability: 'https://schema.org/InStock' };
   }
+  if (dateModified) schema.dateModified = dateModified;
   return (
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
   );

@@ -2,7 +2,8 @@ name: Scheduled Data Fetch
 
 on:
   schedule:
-    - cron: '0 19 * * 6' # 매주 일요일 새벽 4시 (KST)
+    - cron: '0 19 * * 3' # 매주 목요일 새벽 4시 KST (수요일 변경 반영)
+    - cron: '0 19 * * 6' # 매주 일요일 새벽 4시 KST (주말 변경 반영)
   workflow_dispatch:
 
 permissions:

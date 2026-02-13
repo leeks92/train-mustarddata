@@ -39,29 +39,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const ktxRoutes = getKtxRoutes();
   const stationKtxRoutes = ktxRoutes.filter(r => r.depStationId === stationId);
+  const stationInfo = getStationInfo(station.stationName);
+  const stationInfoText = stationInfo ? ` ${station.stationName} 주소, 전화번호, 편의시설 정보 제공.` : '';
 
   return {
-    title: `${station.stationName} KTX 시간표 - 요금, 노선 안내`,
-    description: `${station.stationName}에서 출발하는 KTX 시간표와 요금 정보. ${stationKtxRoutes.length}개 노선 운행, 전국 주요 도시 연결.`,
+    title: `${station.stationName} KTX 시간표 운행노선 요금 역 정보`,
+    description: `${station.stationName}에서 출발하는 KTX 시간표. ${stationKtxRoutes.length}개 운행노선, 요금 정보.${stationInfoText} 전국 주요 도시 연결.`,
     keywords: [
       `${station.stationName} KTX`,
-      `${station.stationName} 시간표`,
+      `${station.stationName} KTX 시간표`,
       `${station.stationName} 기차 요금`,
+      `${station.stationName} 운행노선`,
       'KTX 예매',
     ],
     alternates: {
       canonical: `${BASE_URL}/KTX/schedule/${decodedSlug}`,
     },
     openGraph: {
-      title: `${station.stationName} KTX 시간표`,
-      description: `${station.stationName} KTX 시간표와 요금 정보를 확인하세요. ${stationKtxRoutes.length}개 노선 운행.`,
+      title: `${station.stationName} KTX 시간표 - 운행노선, 요금, 역 정보`,
+      description: `${station.stationName}에서 출발하는 KTX 시간표. ${stationKtxRoutes.length}개 운행노선, 요금 정보.${stationInfoText}`,
       url: `${BASE_URL}/KTX/schedule/${decodedSlug}`,
       type: 'website',
     },
     twitter: {
       card: 'summary',
-      title: `${station.stationName} KTX 시간표`,
-      description: `${station.stationName} KTX 시간표와 요금 정보를 확인하세요.`,
+      title: `${station.stationName} KTX 시간표 - 운행노선, 요금`,
+      description: `${station.stationName}에서 출발하는 KTX 시간표. ${stationKtxRoutes.length}개 운행노선, 요금 정보.`,
     },
   };
 }
@@ -121,7 +124,7 @@ export default async function KTXStationPage({ params }: Props) {
           <span className="bg-white/20 px-2 py-1 rounded text-sm">KTX</span>
         </div>
         <h1 className="text-2xl md:text-3xl font-bold mb-2">
-          {station.stationName} KTX 시간표
+          {station.stationName} KTX 시간표 운행노선 역 정보
         </h1>
         <p className="opacity-90">{station.cityName || '기차역'}</p>
         <div className="mt-4 flex flex-wrap gap-2">
@@ -133,7 +136,7 @@ export default async function KTXStationPage({ params }: Props) {
 
       {stationInfo && (
         <section className="bg-white border border-gray-200 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold mb-4 text-gray-900">역 정보</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-900">{station.stationName} 역 정보 주소 전화번호</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               {stationInfo.address && (
@@ -178,7 +181,7 @@ export default async function KTXStationPage({ params }: Props) {
       )}
 
       <section>
-        <h2 className="text-xl font-bold mb-4">{station.stationName}에서 출발하는 KTX</h2>
+        <h2 className="text-xl font-bold mb-4">{station.stationName} 출발 KTX 운행노선</h2>
         {sortedRoutes.length === 0 ? (
           <p className="text-gray-500">운행 노선 정보가 없습니다.</p>
         ) : (
@@ -211,7 +214,7 @@ export default async function KTXStationPage({ params }: Props) {
       </section>
 
       <section className="mt-12 bg-gray-100 rounded-lg p-6">
-        <h2 className="text-xl font-bold mb-4 text-gray-900">예매 안내</h2>
+        <h2 className="text-xl font-bold mb-4 text-gray-900">KTX 예매 안내</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <h3 className="font-medium mb-2 text-gray-800">온라인 예매</h3>
