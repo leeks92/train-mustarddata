@@ -61,9 +61,11 @@ jobs:
         run: |
           URLS='[
             "https://train.mustarddata.com/",
-            "https://train.mustarddata.com/KTX/시간표/",
-            "https://train.mustarddata.com/일반열차/시간표/",
-            "https://train.mustarddata.com/기차역/",
+            "https://train.mustarddata.com/KTX/schedule/",
+            "https://train.mustarddata.com/SRT/schedule/",
+            "https://train.mustarddata.com/ITX/schedule/",
+            "https://train.mustarddata.com/mugunghwa/schedule/",
+            "https://train.mustarddata.com/stations/",
             "https://train.mustarddata.com/sitemap.xml"
           ]'
           
@@ -89,9 +91,11 @@ jobs:
 
           URLS=(
             "https://train.mustarddata.com/"
-            "https://train.mustarddata.com/KTX/시간표/"
-            "https://train.mustarddata.com/일반열차/시간표/"
-            "https://train.mustarddata.com/기차역/"
+            "https://train.mustarddata.com/KTX/schedule/"
+            "https://train.mustarddata.com/SRT/schedule/"
+            "https://train.mustarddata.com/ITX/schedule/"
+            "https://train.mustarddata.com/mugunghwa/schedule/"
+            "https://train.mustarddata.com/stations/"
           )
 
           # JWT 생성
