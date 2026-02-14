@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { createStationSlug } from '@/lib/slug-utils';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
 interface Station {
   stationId: string;
@@ -87,6 +88,10 @@ export default function StationListClient({ stations, ktxRoutes, generalRoutes }
 
   return (
     <div className="min-h-screen bg-gray-50 pb-16">
+      <BreadcrumbJsonLd items={[
+        { name: '홈', url: 'https://train.mustarddata.com' },
+        { name: '전국 기차역', url: 'https://train.mustarddata.com/stations' },
+      ]} />
       <div className="bg-emerald-600 text-white py-12 px-4 shadow-md">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">전국 기차역</h1>

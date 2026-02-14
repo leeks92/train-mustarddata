@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getStations, getMugunghwaRoutes } from '@/lib/data';
-import MugunghwaListClient from './MugunghwaListClient';
+import TrainListClient from '@/components/TrainListClient';
 
 export const metadata: Metadata = {
   title: '무궁화호·누리로 시간표 - 전국 운행정보',
@@ -11,5 +11,18 @@ export const metadata: Metadata = {
 export default function MugunghwaListPage() {
   const stations = getStations();
   const routes = getMugunghwaRoutes();
-  return <MugunghwaListClient stations={stations} routes={routes} />;
+
+  return (
+    <TrainListClient
+      stations={stations}
+      routes={routes}
+      config={{
+        title: '무궁화호·누리로 시간표',
+        description: '저렴한 요금, 전국 구석구석 연결',
+        pathPrefix: '/mugunghwa/schedule',
+        searchPlaceholder: '역 이름 검색 (예: 서울, 대전, 경주)',
+        color: 'orange',
+      }}
+    />
+  );
 }

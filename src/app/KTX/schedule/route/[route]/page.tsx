@@ -9,6 +9,7 @@ import {
   parseRouteSlug,
 } from '@/lib/slugs';
 import { getStationGuide } from '@/lib/station-guide';
+import ScheduleTable from '@/components/ScheduleTable';
 
 const BASE_URL = 'https://train.mustarddata.com';
 
@@ -298,43 +299,12 @@ export default async function KTXRoutePage({ params }: Props) {
       </div>
 
       {/* 시간표 테이블 */}
-      <section className="bg-white rounded-xl shadow overflow-hidden">
-        <div className="p-4 border-b bg-gray-50">
-          <h2 className="text-lg font-bold text-gray-900">{route.depStationName} → {route.arrStationName} KTX 전체 시간표</h2>
-        </div>
-        <div className="overflow-x-auto">
-          <table className="schedule-table">
-            <thead>
-              <tr>
-                <th className="w-24">출발</th>
-                <th className="w-24">도착</th>
-                <th className="w-28">열차유형</th>
-                <th className="w-24">열차번호</th>
-                <th className="w-32 text-right">요금 (어른)</th>
-              </tr>
-            </thead>
-            <tbody>
-              {schedules.map((schedule, index) => (
-                <tr key={index}>
-                  <td className="font-medium">
-                    <time dateTime={`T${schedule.depTime}:00`}>{schedule.depTime}</time>
-                  </td>
-                  <td>
-                    <time dateTime={`T${schedule.arrTime}:00`}>{schedule.arrTime}</time>
-                  </td>
-                  <td>
-                    <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${getTrainTypeBadge(schedule.trainType)}`}>
-                      {schedule.trainType}
-                    </span>
-                  </td>
-                  <td className="text-gray-600">{schedule.trainNo}</td>
-                  <td className="text-right font-medium">{formatCharge(schedule.charge)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+      <ScheduleTable
+        schedules={schedules}
+        depStationName={route.depStationName}
+        arrStationName={route.arrStationName}
+        trainLabel="KTX"
+      />
 
       {/* 열차유형별 요약 */}
       <section className="mt-8">
@@ -504,7 +474,7 @@ function StationTipsSection({ stationName, label }: { stationName: string; label
   return (
     <section className="mt-8 bg-white border border-gray-200 rounded-xl p-6">
       <h2 className="text-xl font-bold mb-4 text-gray-900">
-        <span className="mr-2">&#x1F4CD;</span> {stationName} {label} 꿀팁
+        <span className="mr-2" aria-hidden="true">&#x1F4CD;</span> {stationName} {label} 꿀팁
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* 대중교통 연결 */}
@@ -585,7 +555,7 @@ function TransportCompareSection({ depName, arrName, minCharge, duration }: { de
   return (
     <section className="mt-8 bg-white border border-gray-200 rounded-xl p-6">
       <h2 className="text-xl font-bold mb-4 text-gray-900">
-        <span className="mr-2">&#x1F504;</span> KTX vs 고속버스 비교
+        <span className="mr-2" aria-hidden="true">&#x1F504;</span> KTX vs 고속버스 비교
       </h2>
       <p className="text-sm text-gray-600 mb-4">{depClean} → {arrClean} 구간의 교통수단별 비교입니다.</p>
       <div className="overflow-x-auto">
@@ -631,7 +601,7 @@ function SeasonalNotice({ depName, arrName }: { depName: string; arrName: string
   return (
     <section className="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-6">
       <h2 className="text-lg font-bold mb-3 text-amber-900 flex items-center gap-2">
-        <span>&#x1F4C5;</span> 명절·성수기 이용 안내
+        <span aria-hidden="true">&#x1F4C5;</span> 명절·성수기 이용 안내
       </h2>
       <div className="space-y-3 text-sm text-amber-800">
         <div className="flex gap-3">

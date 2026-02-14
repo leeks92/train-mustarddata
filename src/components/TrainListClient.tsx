@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { createStationSlug } from '@/lib/slug-utils';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
 interface Station {
   stationId: string;
@@ -15,10 +16,67 @@ interface Route {
   arrStationId: string;
 }
 
+interface TrainListConfig {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  pathPrefix: string;
+  searchPlaceholder: string;
+  color: 'emerald' | 'purple' | 'sky' | 'orange';
+}
+
 interface Props {
   stations: Station[];
   routes: Route[];
+  config: TrainListConfig;
 }
+
+const colorMap = {
+  emerald: {
+    headerBg: 'bg-emerald-700',
+    headerText: 'text-emerald-200',
+    ring: 'focus:ring-emerald-400',
+    regionBg: 'bg-emerald-50',
+    regionText: 'text-emerald-600',
+    hoverBorder: 'hover:border-emerald-200',
+    hoverText: 'group-hover:text-emerald-600',
+    badgeBg: 'bg-emerald-100',
+    badgeText: 'text-emerald-700',
+  },
+  purple: {
+    headerBg: 'bg-purple-700',
+    headerText: 'text-purple-200',
+    ring: 'focus:ring-purple-400',
+    regionBg: 'bg-purple-50',
+    regionText: 'text-purple-600',
+    hoverBorder: 'hover:border-purple-200',
+    hoverText: 'group-hover:text-purple-600',
+    badgeBg: 'bg-purple-100',
+    badgeText: 'text-purple-700',
+  },
+  sky: {
+    headerBg: 'bg-sky-700',
+    headerText: 'text-sky-200',
+    ring: 'focus:ring-sky-400',
+    regionBg: 'bg-sky-50',
+    regionText: 'text-sky-600',
+    hoverBorder: 'hover:border-sky-200',
+    hoverText: 'group-hover:text-sky-600',
+    badgeBg: 'bg-sky-100',
+    badgeText: 'text-sky-700',
+  },
+  orange: {
+    headerBg: 'bg-orange-700',
+    headerText: 'text-orange-200',
+    ring: 'focus:ring-orange-400',
+    regionBg: 'bg-orange-50',
+    regionText: 'text-orange-600',
+    hoverBorder: 'hover:border-orange-200',
+    hoverText: 'group-hover:text-orange-600',
+    badgeBg: 'bg-orange-100',
+    badgeText: 'text-orange-700',
+  },
+};
 
 function groupStationsByRegion(stations: Station[]) {
   const regions: Record<string, Station[]> = {};
@@ -58,8 +116,9 @@ const regionOrder = [
   '강원', '충북', '충남', '경북', '경남', '전북', '전남', '제주', '기타'
 ];
 
-export default function MugunghwaListClient({ stations, routes }: Props) {
+export default function TrainListClient({ stations, routes, config }: Props) {
   const [searchTerm, setSearchTerm] = useState('');
+  const colors = colorMap[config.color];
 
   const depStationIds = new Set(routes.map(r => r.depStationId));
 
@@ -78,23 +137,34 @@ export default function MugunghwaListClient({ stations, routes }: Props) {
 
   const groupedStations = groupStationsByRegion(displayStations);
 
+  const breadcrumbItems = [
+    { name: '홈', url: 'https://train.mustarddata.com' },
+    { name: config.title, url: `https://train.mustarddata.com${config.pathPrefix}` },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50 pb-16">
-      <div className="bg-orange-700 text-white py-12 px-4 shadow-md">
+      <BreadcrumbJsonLd items={breadcrumbItems} />
+      <div className={`${colors.headerBg} text-white py-12 px-4 shadow-md`}>
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">무궁화호·누리로 시간표</h1>
-          <p className="text-orange-200 text-base mb-2">저렴한 요금, 전국 구석구석 연결</p>
-          <p className="text-orange-200 text-lg mb-8">
-            전국 <strong className="text-white">{activeStations.length}</strong>개 역, <strong className="text-white">{routes.length}</strong>개 노선의 무궁화호·누리로 운행 정보를 확인하세요
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">{config.title}</h1>
+          {config.subtitle && (
+            <p className={`${colors.headerText} text-sm mb-4`}>{config.subtitle}</p>
+          )}
+          {config.description && (
+            <p className={`${colors.headerText} text-base mb-2`}>{config.description}</p>
+          )}
+          <p className={`${colors.headerText} text-lg mb-8`}>
+            전국 <strong className="text-white">{activeStations.length}</strong>개 역, <strong className="text-white">{routes.length}</strong>개 노선의 운행 정보를 확인하세요
           </p>
 
           <div className="max-w-xl mx-auto relative">
             <input
               type="text"
-              placeholder="역 이름 검색 (예: 서울, 대전, 경주)"
+              placeholder={config.searchPlaceholder}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full py-4 px-6 rounded-full bg-white text-gray-900 shadow-lg focus:outline-none focus:ring-4 focus:ring-orange-400 text-lg placeholder-gray-400"
+              className={`w-full py-4 px-6 rounded-full bg-white text-gray-900 shadow-lg focus:outline-none focus:ring-4 ${colors.ring} text-lg placeholder-gray-400`}
             />
             <div className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -118,7 +188,7 @@ export default function MugunghwaListClient({ stations, routes }: Props) {
             return (
               <section key={region} className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100">
                 <h2 className="text-2xl font-bold mb-6 flex items-center gap-3 text-gray-800 border-b pb-4">
-                  <span className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-50 text-orange-600 text-lg">
+                  <span className={`flex items-center justify-center w-10 h-10 rounded-full ${colors.regionBg} ${colors.regionText} text-lg`}>
                     {region.substring(0, 1)}
                   </span>
                   {region}
@@ -137,14 +207,14 @@ export default function MugunghwaListClient({ stations, routes }: Props) {
                       return (
                         <Link
                           key={station.stationId}
-                          href={`/mugunghwa/schedule/${stationSlug}`}
-                          className="group block rounded-xl p-5 transition-all duration-200 bg-gray-50 hover:bg-white border border-transparent hover:border-orange-200 hover:shadow-md"
+                          href={`${config.pathPrefix}/${stationSlug}`}
+                          className={`group block rounded-xl p-5 transition-all duration-200 bg-gray-50 hover:bg-white border border-transparent ${colors.hoverBorder} hover:shadow-md`}
                         >
                           <div className="flex justify-between items-start mb-2">
-                            <h3 className="text-lg font-bold transition-colors text-gray-900 group-hover:text-orange-600">
+                            <h3 className={`text-lg font-bold transition-colors text-gray-900 ${colors.hoverText}`}>
                               {station.stationName}
                             </h3>
-                            <span className="text-xs font-semibold bg-orange-100 text-orange-700 px-2 py-1 rounded">
+                            <span className={`text-xs font-semibold ${colors.badgeBg} ${colors.badgeText} px-2 py-1 rounded`}>
                               {routeCount}개 노선
                             </span>
                           </div>

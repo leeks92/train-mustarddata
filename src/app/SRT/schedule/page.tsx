@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getStations, getSrtRoutes } from '@/lib/data';
-import SRTListClient from './SRTListClient';
+import TrainListClient from '@/components/TrainListClient';
 
 export const metadata: Metadata = {
   title: 'SRT 시간표 - 전국 SRT 역 운행정보',
@@ -15,5 +15,16 @@ export default function SRTListPage() {
   const stations = getStations();
   const routes = getSrtRoutes();
 
-  return <SRTListClient stations={stations} routes={routes} />;
+  return (
+    <TrainListClient
+      stations={stations}
+      routes={routes}
+      config={{
+        title: 'SRT 시간표',
+        pathPrefix: '/SRT/schedule',
+        searchPlaceholder: '역 이름 검색 (예: 수서, 부산)',
+        color: 'purple',
+      }}
+    />
+  );
 }

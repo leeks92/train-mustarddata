@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getStations, getItxRoutes } from '@/lib/data';
-import ITXListClient from './ITXListClient';
+import TrainListClient from '@/components/TrainListClient';
 
 export const metadata: Metadata = {
   title: 'ITX 시간표 - ITX-새마을·ITX-청춘 운행정보',
@@ -15,5 +15,17 @@ export default function ITXListPage() {
   const stations = getStations();
   const routes = getItxRoutes();
 
-  return <ITXListClient stations={stations} routes={routes} />;
+  return (
+    <TrainListClient
+      stations={stations}
+      routes={routes}
+      config={{
+        title: 'ITX 시간표',
+        subtitle: 'ITX-새마을·ITX-청춘·ITX-마음',
+        pathPrefix: '/ITX/schedule',
+        searchPlaceholder: '역 이름 검색 (예: 서울, 춘천, 청량리)',
+        color: 'sky',
+      }}
+    />
+  );
 }

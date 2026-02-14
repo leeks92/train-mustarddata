@@ -22,6 +22,23 @@ const trainTabs: { type: TrainType; label: string; path: string; activeClass: st
   { type: 'mugunghwa', label: '무궁화호', path: '/mugunghwa/schedule/route', activeClass: 'bg-orange-600 text-white border-orange-600', ringClass: 'ring-orange-500 border-orange-500', buttonClass: 'bg-orange-600 hover:bg-orange-700', dotClass: 'bg-orange-600', borderColor: 'border-orange-500' },
 ];
 
+/* ── 검색어 하이라이트 ── */
+function HighlightMatch({ text, query }: { text: string; query: string }) {
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const parts = text.split(new RegExp(`(${escaped})`, 'gi'));
+  return (
+    <span>
+      {parts.map((part, i) =>
+        part.toLowerCase() === query.toLowerCase() ? (
+          <mark key={i} className="bg-yellow-200 rounded px-0.5">{part}</mark>
+        ) : (
+          part
+        )
+      )}
+    </span>
+  );
+}
+
 /* ── 검색 가능한 커스텀 Combobox ── */
 function StationCombobox({
   label,
@@ -202,12 +219,7 @@ function StationCombobox({
                     <span className="flex items-center gap-2">
                       <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                       {query ? (
-                        <span dangerouslySetInnerHTML={{
-                          __html: station.stationName.replace(
-                            new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'),
-                            '<mark class="bg-yellow-200 rounded px-0.5">$1</mark>'
-                          )
-                        }} />
+                        <HighlightMatch text={station.stationName} query={query} />
                       ) : (
                         station.stationName
                       )}
@@ -307,7 +319,7 @@ export default function SearchForm({ stations }: Props) {
         })}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto] gap-4 md:gap-3 items-end">
         <StationCombobox
           label="출발역"
           stations={uniqueStations}
@@ -316,6 +328,36 @@ export default function SearchForm({ stations }: Props) {
           ringClass={currentTab.ringClass}
           borderColor={currentTab.borderColor}
         />
+
+        <button
+          type="button"
+          onClick={() => {
+            setDeparture(arrival);
+            setArrival(departure);
+            setError('');
+          }}
+          className="hidden md:flex items-center justify-center w-10 h-10 mb-0.5 rounded-full border border-gray-300 bg-white hover:bg-gray-50 text-gray-500 hover:text-gray-700 transition"
+          aria-label="출발역과 도착역 교체"
+          title="출발역과 도착역 교체"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" /></svg>
+        </button>
+
+        <div className="md:hidden flex justify-center -my-1">
+          <button
+            type="button"
+            onClick={() => {
+              setDeparture(arrival);
+              setArrival(departure);
+              setError('');
+            }}
+            className="flex items-center gap-1 text-sm text-gray-500 hover:text-gray-700 transition"
+            aria-label="출발역과 도착역 교체"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" /></svg>
+            교체
+          </button>
+        </div>
 
         <StationCombobox
           label="도착역"
@@ -326,8 +368,8 @@ export default function SearchForm({ stations }: Props) {
           borderColor={currentTab.borderColor}
         />
 
-        <div className="flex items-end">
-          <button 
+        <div className="flex items-end md:col-span-4">
+          <button
             onClick={handleSearch}
             className={`w-full text-white py-3.5 rounded-xl font-bold text-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0 ${currentTab.buttonClass}`}
           >

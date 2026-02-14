@@ -1,8 +1,13 @@
 import Link from 'next/link';
 import SisterSites from './SisterSites';
+import { getMetadata } from '@/lib/data';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const metadata = getMetadata();
+  const lastUpdated = metadata?.lastUpdated
+    ? new Date(metadata.lastUpdated).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })
+    : null;
 
   return (
     <footer className="bg-gray-100 border-t mt-12">
@@ -83,6 +88,11 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-6 border-t text-center text-sm text-gray-600">
+          {lastUpdated && (
+            <p className="mb-2 text-gray-500">
+              데이터 기준일: <time dateTime={metadata!.lastUpdated}>{lastUpdated}</time>
+            </p>
+          )}
           <p>
             © {currentYear} MustardData. 본 사이트의 시간표 정보는 공공데이터를
             기반으로 제공되며, 실제 운행 정보와 다를 수 있습니다.

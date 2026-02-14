@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getStations, getKtxRoutes } from '@/lib/data';
-import KTXListClient from './KTXListClient';
+import TrainListClient from '@/components/TrainListClient';
 
 export const metadata: Metadata = {
   title: 'KTX 시간표 - 전국 KTX 역 운행정보',
@@ -15,5 +15,16 @@ export default function KTXListPage() {
   const stations = getStations();
   const routes = getKtxRoutes();
 
-  return <KTXListClient stations={stations} routes={routes} />;
+  return (
+    <TrainListClient
+      stations={stations}
+      routes={routes}
+      config={{
+        title: 'KTX 시간표',
+        pathPrefix: '/KTX/schedule',
+        searchPlaceholder: '역 이름 검색 (예: 서울, 부산)',
+        color: 'emerald',
+      }}
+    />
+  );
 }
