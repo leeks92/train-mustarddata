@@ -26,6 +26,12 @@ export function createStationSlug(stationName: string): string {
   return addStationSuffix(stationName);
 }
 
+// 역 이름에 "역" 접미사가 없으면 추가 (표시용)
+export function withYeok(name: string): string {
+  const n = name.trim();
+  return n.endsWith('역') ? n : n + '역';
+}
+
 // 노선 슬러그 생성 (출발-도착)
 export function createRouteSlug(depName: string, arrName: string): string {
   const dep = normalizeStationName(depName);

@@ -8,6 +8,7 @@ import {
   createRouteSlug,
   parseRouteSlug,
 } from '@/lib/slugs';
+import { withYeok } from '@/lib/slug-utils';
 import { getStationGuide } from '@/lib/station-guide';
 import ScheduleTable from '@/components/ScheduleTable';
 
@@ -59,6 +60,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const depName = route.depStationName.replace('역', '');
   const arrName = route.arrStationName.replace('역', '');
+  const depDisplay = withYeok(route.depStationName);
+  const arrDisplay = withYeok(route.arrStationName);
   const metaMinCharge = getValidMinCharge(route.schedules);
   const routeSlug = createRouteSlug(route.depStationName, route.arrStationName);
   const chargeText = metaMinCharge > 0 ? `, 요금 ${formatCharge(metaMinCharge)}부터` : '';
@@ -67,27 +70,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const timeText = firstTime && lastTime ? `(첫차 ${firstTime}, 막차 ${lastTime})` : '';
 
   return {
-    title: `${route.depStationName}에서 ${route.arrStationName} 가는 ITX 시간표 - 요금, 소요시간`,
-    description: `${route.depStationName}에서 ${route.arrStationName} 가는 ITX 시간표. ${route.schedules.length}회 운행${timeText}${chargeText}.`,
+    title: `${depDisplay}에서 ${arrDisplay} 가는 ITX 시간표 - 요금, 소요시간`,
+    description: `${depDisplay}에서 ${arrDisplay} 가는 ITX 시간표. ${route.schedules.length}회 운행${timeText}${chargeText}.`,
     keywords: [
       `${depName} ${arrName} ITX`,
       `${depName} ${arrName} ITX-새마을`,
       `${depName} ${arrName} ITX-청춘`,
-      `${route.depStationName} 시간표`,
-      `${route.arrStationName} 시간표`,
+      `${depDisplay} 시간표`,
+      `${arrDisplay} 시간표`,
     ],
     alternates: {
       canonical: `${BASE_URL}/ITX/schedule/route/${routeSlug}`,
     },
     openGraph: {
-      title: `${route.depStationName}에서 ${route.arrStationName} 가는 ITX 시간표`,
-      description: `${route.depStationName}에서 ${route.arrStationName} 가는 ITX. ${route.schedules.length}회/일 운행${timeText}${chargeText}.`,
+      title: `${depDisplay}에서 ${arrDisplay} 가는 ITX 시간표`,
+      description: `${depDisplay}에서 ${arrDisplay} 가는 ITX. ${route.schedules.length}회/일 운행${timeText}${chargeText}.`,
       url: `${BASE_URL}/ITX/schedule/route/${routeSlug}`,
       type: 'website',
     },
     twitter: {
       card: 'summary',
-      title: `${route.depStationName}에서 ${route.arrStationName} 가는 ITX 시간표`,
+      title: `${depDisplay}에서 ${arrDisplay} 가는 ITX 시간표`,
       description: `${route.schedules.length}회/일 운행${timeText}${chargeText}`,
     },
   };
@@ -145,6 +148,8 @@ export default async function ITXRoutePage({ params }: Props) {
   const reverseRouteSlug = createRouteSlug(route.arrStationName, route.depStationName);
   const depStationSlug = createStationSlug(route.depStationName);
   const siteMetadata = getMetadata();
+  const depName = withYeok(route.depStationName);
+  const arrName = withYeok(route.arrStationName);
 
   // 열차유형별 그룹화
   const typeGroups = schedules.reduce(
@@ -160,8 +165,8 @@ export default async function ITXRoutePage({ params }: Props) {
   const breadcrumbItems = [
     { name: '홈', url: BASE_URL },
     { name: 'ITX 시간표', url: `${BASE_URL}/ITX/schedule` },
-    { name: route.depStationName, url: `${BASE_URL}/ITX/schedule/${depStationSlug}` },
-    { name: `${route.depStationName} → ${route.arrStationName}`, url: `${BASE_URL}/ITX/schedule/route/${routeSlug}` },
+    { name: depName, url: `${BASE_URL}/ITX/schedule/${depStationSlug}` },
+    { name: `${depName} → ${arrName}`, url: `${BASE_URL}/ITX/schedule/route/${routeSlug}` },
   ];
 
   // 소요시간 계산
@@ -187,23 +192,23 @@ export default async function ITXRoutePage({ params }: Props) {
   // FAQ 데이터
   const faqItems = [
     {
-      question: `${route.depStationName}에서 ${route.arrStationName}까지 ITX 요금은 얼마인가요?`,
-      answer: `${route.depStationName}에서 ${route.arrStationName}까지 ITX 요금은 ${formatCharge(minCharge)}${minCharge !== maxCharge ? `부터 ${formatCharge(maxCharge)}` : ''}입니다. 열차 유형(${trainTypeList})에 따라 요금이 다릅니다.`,
+      question: `${depName}에서 ${arrName}까지 ITX 요금은 얼마인가요?`,
+      answer: `${depName}에서 ${arrName}까지 ITX 요금은 ${formatCharge(minCharge)}${minCharge !== maxCharge ? `부터 ${formatCharge(maxCharge)}` : ''}입니다. 열차 유형(${trainTypeList})에 따라 요금이 다릅니다.`,
     },
     {
-      question: `${route.depStationName}에서 ${route.arrStationName}까지 첫차와 막차 시간은?`,
+      question: `${depName}에서 ${arrName}까지 첫차와 막차 시간은?`,
       answer: `첫차는 ${schedules[0]?.depTime || '-'}에 출발하고, 막차는 ${schedules[schedules.length - 1]?.depTime || '-'}에 출발합니다. 하루 총 ${schedules.length}회 운행됩니다.`,
     },
     {
-      question: `${route.depStationName}에서 ${route.arrStationName}까지 소요시간은 얼마나 걸리나요?`,
-      answer: `${route.depStationName}에서 ${route.arrStationName}까지 ITX 소요시간은 ${estimatedDuration || '노선에 따라 상이합니다'}입니다. 정차역에 따라 달라질 수 있습니다.`,
+      question: `${depName}에서 ${arrName}까지 소요시간은 얼마나 걸리나요?`,
+      answer: `${depName}에서 ${arrName}까지 ITX 소요시간은 ${estimatedDuration || '노선에 따라 상이합니다'}입니다. 정차역에 따라 달라질 수 있습니다.`,
     },
     {
-      question: `${route.depStationName} ${route.arrStationName} ITX 하루 몇 회 운행하나요?`,
-      answer: `${route.depStationName}에서 ${route.arrStationName}까지 하루 총 ${schedules.length}회 운행됩니다. ${trainTypeList} 열차가 운행됩니다.`,
+      question: `${depName} ${arrName} ITX 하루 몇 회 운행하나요?`,
+      answer: `${depName}에서 ${arrName}까지 하루 총 ${schedules.length}회 운행됩니다. ${trainTypeList} 열차가 운행됩니다.`,
     },
     {
-      question: `${route.depStationName} ${route.arrStationName} ITX 예매는 어디서 하나요?`,
+      question: `${depName} ${arrName} ITX 예매는 어디서 하나요?`,
       answer: `코레일(www.letskorail.com) 또는 코레일톡 앱에서 온라인 예매가 가능합니다. 출발 20분 전까지 무료 취소가 가능합니다.`,
     },
     {
@@ -211,7 +216,7 @@ export default async function ITXRoutePage({ params }: Props) {
       answer: `ITX-새마을은 경부선·호남선·전라선 등 전국 주요 간선 노선을 운행하며, ITX-청춘은 경춘선(청량리-춘천) 구간을 전문으로 운행합니다. ITX-청춘은 자유석(입석) 이용이 가능하고, ITX-새마을은 전 좌석 지정석입니다.`,
     },
     {
-      question: `${route.depStationName} ${route.arrStationName} ITX 어린이·청소년 할인이 되나요?`,
+      question: `${depName} ${arrName} ITX 어린이·청소년 할인이 되나요?`,
       answer: `만 6세~12세 어린이는 약 50% 할인, 만 13세~18세 청소년은 약 30% 할인이 적용됩니다. 예매 시 생년월일 입력이 필요합니다.`,
     },
   ];
@@ -239,8 +244,8 @@ export default async function ITXRoutePage({ params }: Props) {
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQJsonLd items={faqItems} />
       <TableJsonLd
-        name={`${route.depStationName} → ${route.arrStationName} ITX 시간표`}
-        description={`${route.depStationName}에서 ${route.arrStationName}까지 ITX 시간표. ${schedules.length}회 운행, ${formatCharge(minCharge)}부터.`}
+        name={`${depName} → ${arrName} ITX 시간표`}
+        description={`${depName}에서 ${arrName}까지 ITX 시간표. ${schedules.length}회 운행, ${formatCharge(minCharge)}부터.`}
         columns={['출발', '도착', '열차유형', '열차번호', '요금']}
         rows={schedules.slice(0, 10).map(s => [s.depTime, s.arrTime, s.trainType, s.trainNo, formatCharge(s.charge)])}
       />
@@ -251,9 +256,9 @@ export default async function ITXRoutePage({ params }: Props) {
         <span className="mx-2">›</span>
         <Link href="/ITX/schedule" className="hover:text-sky-600">ITX 시간표</Link>
         <span className="mx-2">›</span>
-        <Link href={`/ITX/schedule/${depStationSlug}`} className="hover:text-sky-600">{route.depStationName}</Link>
+        <Link href={`/ITX/schedule/${depStationSlug}`} className="hover:text-sky-600">{depName}</Link>
         <span className="mx-2">›</span>
-        <span className="text-gray-800">{route.arrStationName}</span>
+        <span className="text-gray-800">{arrName}</span>
       </nav>
 
       {/* 노선 정보 헤더 */}
@@ -262,7 +267,7 @@ export default async function ITXRoutePage({ params }: Props) {
           <span className="bg-white/20 px-2 py-1 rounded text-sm">ITX</span>
         </div>
         <h1 className="text-2xl md:text-3xl font-bold mb-4">
-          {route.depStationName}에서 {route.arrStationName} 가는 ITX 시간표
+          {depName}에서 {arrName} 가는 ITX 시간표
         </h1>
         <div className="flex flex-wrap gap-6 text-sm">
           <div>
@@ -312,7 +317,7 @@ export default async function ITXRoutePage({ params }: Props) {
 
       {/* 열차유형별 요약 */}
       <section className="mt-8">
-        <h2 className="text-xl font-bold mb-4">{route.depStationName} → {route.arrStationName} ITX 요금 안내</h2>
+        <h2 className="text-xl font-bold mb-4">{depName} → {arrName} ITX 요금 안내</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {Object.entries(typeGroups).map(([type, items]) => (
             <div key={type} className="bg-white border rounded-lg p-4">
@@ -331,8 +336,8 @@ export default async function ITXRoutePage({ params }: Props) {
       {/* 시간대별 운행 가이드 */}
       {schedules.length >= 3 && (
         <section className="mt-8 bg-white border border-gray-200 rounded-xl p-6">
-          <h2 className="text-xl font-bold mb-4 text-gray-900">{route.depStationName} → {route.arrStationName} ITX 시간대별 운행</h2>
-          <p className="text-sm text-gray-600 mb-4">{route.depStationName} → {route.arrStationName} 노선의 시간대별 운행 현황입니다.</p>
+          <h2 className="text-xl font-bold mb-4 text-gray-900">{depName} → {arrName} ITX 시간대별 운행</h2>
+          <p className="text-sm text-gray-600 mb-4">{depName} → {arrName} 노선의 시간대별 운행 현황입니다.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-orange-50 rounded-lg p-4 border border-orange-100">
               <h3 className="font-bold text-orange-800 mb-1">오전 (05:00~10:00)</h3>
@@ -370,17 +375,17 @@ export default async function ITXRoutePage({ params }: Props) {
       )}
 
       {/* 출발역 꿀팁 */}
-      <StationTipsSection stationName={route.depStationName} label="출발" />
+      <StationTipsSection stationName={route.depStationName} label="출발" displayName={depName} />
 
       {/* ITX vs KTX 비교 */}
       <TransportCompareSection depName={route.depStationName} arrName={route.arrStationName} minCharge={minCharge} duration={estimatedDuration} />
 
       {/* 명절·성수기 안내 */}
-      <SeasonalNotice depName={route.depStationName} arrName={route.arrStationName} />
+      <SeasonalNotice depName={depName} arrName={arrName} />
 
       {/* FAQ 섹션 */}
       <section className="mt-8">
-        <h2 className="text-xl font-bold mb-4">{route.depStationName} → {route.arrStationName} ITX 자주 묻는 질문</h2>
+        <h2 className="text-xl font-bold mb-4">{depName} → {arrName} ITX 자주 묻는 질문</h2>
         <div className="space-y-4">
           {faqItems.map((item, idx) => (
             <details key={idx} className="bg-white border border-gray-200 rounded-lg group">
@@ -400,7 +405,7 @@ export default async function ITXRoutePage({ params }: Props) {
       <section className="mt-8 p-4 bg-gray-50 rounded-lg">
         <h2 className="font-bold mb-2">돌아오는 노선</h2>
         <Link href={`/ITX/schedule/route/${reverseRouteSlug}`} className="text-sky-600 hover:underline">
-          {route.arrStationName} → {route.depStationName} 시간표 보기
+          {arrName} → {depName} 시간표 보기
         </Link>
       </section>
 
@@ -411,7 +416,7 @@ export default async function ITXRoutePage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {sameDepRoutes.length > 0 && (
               <div>
-                <h3 className="font-medium text-gray-700 mb-3">{route.depStationName.replace('역', '')}에서 출발하는 다른 노선</h3>
+                <h3 className="font-medium text-gray-700 mb-3">{depName}에서 출발하는 다른 노선</h3>
                 <div className="space-y-2">
                   {sameDepRoutes.map((r, idx) => (
                     <Link
@@ -419,7 +424,7 @@ export default async function ITXRoutePage({ params }: Props) {
                       href={`/ITX/schedule/route/${createRouteSlug(r.depStationName, r.arrStationName)}`}
                       className="block bg-white border border-gray-200 rounded-lg p-3 hover:border-sky-300 hover:shadow-sm transition"
                     >
-                      <span className="font-medium text-gray-900">→ {r.arrStationName.replace('역', '')}</span>
+                      <span className="font-medium text-gray-900">→ {withYeok(r.arrStationName)}</span>
                       <span className="text-sm text-gray-500 ml-2">{r.schedules.length}회/일</span>
                     </Link>
                   ))}
@@ -428,7 +433,7 @@ export default async function ITXRoutePage({ params }: Props) {
             )}
             {sameArrRoutes.length > 0 && (
               <div>
-                <h3 className="font-medium text-gray-700 mb-3">{route.arrStationName.replace('역', '')}으로 가는 다른 노선</h3>
+                <h3 className="font-medium text-gray-700 mb-3">{arrName}으로 가는 다른 노선</h3>
                 <div className="space-y-2">
                   {sameArrRoutes.map((r, idx) => (
                     <Link
@@ -436,7 +441,7 @@ export default async function ITXRoutePage({ params }: Props) {
                       href={`/ITX/schedule/route/${createRouteSlug(r.depStationName, r.arrStationName)}`}
                       className="block bg-white border border-gray-200 rounded-lg p-3 hover:border-sky-300 hover:shadow-sm transition"
                     >
-                      <span className="font-medium text-gray-900">{r.depStationName.replace('역', '')} →</span>
+                      <span className="font-medium text-gray-900">{withYeok(r.depStationName)} →</span>
                       <span className="text-sm text-gray-500 ml-2">{r.schedules.length}회/일</span>
                     </Link>
                   ))}
@@ -449,10 +454,10 @@ export default async function ITXRoutePage({ params }: Props) {
 
       {/* SEO 텍스트 */}
       <section className="mt-12 bg-gray-100 rounded-lg p-6 text-sm text-gray-700 leading-relaxed">
-        <h2 className="font-bold text-gray-900 mb-3">{route.depStationName} → {route.arrStationName} ITX 안내</h2>
+        <h2 className="font-bold text-gray-900 mb-3">{depName} → {arrName} ITX 안내</h2>
         <div className="space-y-2">
           <p>
-            {route.depStationName}에서 {route.arrStationName}까지 ITX는 하루 총 <strong>{schedules.length}회</strong> 운행됩니다.
+            {depName}에서 {arrName}까지 ITX는 하루 총 <strong>{schedules.length}회</strong> 운행됩니다.
             첫차는 <strong>{schedules[0]?.depTime}</strong>에 출발하고, 막차는 <strong>{schedules[schedules.length - 1]?.depTime}</strong>에 출발합니다.
           </p>
           <p>
@@ -470,14 +475,15 @@ export default async function ITXRoutePage({ params }: Props) {
 }
 
 // 출발역 꿀팁 컴포넌트
-function StationTipsSection({ stationName, label }: { stationName: string; label: string }) {
+function StationTipsSection({ stationName, label, displayName }: { stationName: string; label: string; displayName?: string }) {
   const guide = getStationGuide(stationName);
   if (!guide) return null;
+  const name = displayName || stationName;
 
   return (
     <section className="mt-8 bg-white border border-gray-200 rounded-xl p-6">
       <h2 className="text-xl font-bold mb-4 text-gray-900">
-        <span className="mr-2" aria-hidden="true">&#x1F4CD;</span> {stationName} {label} 꿀팁
+        <span className="mr-2" aria-hidden="true">&#x1F4CD;</span> {name} {label} 꿀팁
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* 대중교통 연결 */}

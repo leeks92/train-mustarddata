@@ -13,6 +13,7 @@ import {
   createRouteSlug,
   getAllStationSlugs,
 } from '@/lib/slugs';
+import { withYeok } from '@/lib/slug-utils';
 
 const BASE_URL = 'https://train.mustarddata.com';
 
@@ -37,35 +38,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: '역을 찾을 수 없습니다' };
   }
 
+  const name = withYeok(station.stationName);
   const itxRoutes = getItxRoutes();
   const stationItxRoutes = itxRoutes.filter(r => r.depStationId === stationId);
   const stationInfo = getStationInfo(station.stationName);
-  const stationInfoText = stationInfo ? ` ${station.stationName} 주소, 전화번호, 편의시설 정보 제공.` : '';
+  const stationInfoText = stationInfo ? ` ${name} 주소, 전화번호, 편의시설 정보 제공.` : '';
 
   return {
-    title: `${station.stationName} ITX 시간표 운행노선 요금 역 정보`,
-    description: `${station.stationName}에서 출발하는 ITX-새마을·ITX-청춘 시간표. ${stationItxRoutes.length}개 운행노선, 요금 정보.${stationInfoText}`,
+    title: `${name} ITX 시간표 운행노선 요금 역 정보`,
+    description: `${name}에서 출발하는 ITX-새마을·ITX-청춘 시간표. ${stationItxRoutes.length}개 운행노선, 요금 정보.${stationInfoText}`,
     keywords: [
-      `${station.stationName} ITX`,
-      `${station.stationName} ITX-새마을`,
-      `${station.stationName} ITX-청춘`,
-      `${station.stationName} ITX 시간표`,
-      `${station.stationName} 운행노선`,
+      `${name} ITX`,
+      `${name} ITX-새마을`,
+      `${name} ITX-청춘`,
+      `${name} ITX 시간표`,
+      `${name} 운행노선`,
       'ITX 예매',
     ],
     alternates: {
       canonical: `${BASE_URL}/ITX/schedule/${decodedSlug}`,
     },
     openGraph: {
-      title: `${station.stationName} ITX 시간표 - 운행노선, 요금, 역 정보`,
-      description: `${station.stationName}에서 출발하는 ITX-새마을·ITX-청춘 시간표. ${stationItxRoutes.length}개 운행노선, 요금 정보.${stationInfoText}`,
+      title: `${name} ITX 시간표 - 운행노선, 요금, 역 정보`,
+      description: `${name}에서 출발하는 ITX-새마을·ITX-청춘 시간표. ${stationItxRoutes.length}개 운행노선, 요금 정보.${stationInfoText}`,
       url: `${BASE_URL}/ITX/schedule/${decodedSlug}`,
       type: 'website',
     },
     twitter: {
       card: 'summary',
-      title: `${station.stationName} ITX 시간표 - 운행노선, 요금`,
-      description: `${station.stationName}에서 출발하는 ITX 시간표. ${stationItxRoutes.length}개 운행노선, 요금 정보.`,
+      title: `${name} ITX 시간표 - 운행노선, 요금`,
+      description: `${name}에서 출발하는 ITX 시간표. ${stationItxRoutes.length}개 운행노선, 요금 정보.`,
     },
   };
 }
@@ -77,6 +79,8 @@ export default async function ITXStationPage({ params }: Props) {
   const station = stationId ? getStation(stationId) : null;
   const itxAllRoutes = getItxRoutes();
   const stationInfo = station ? getStationInfo(station.stationName) : null;
+
+  const name = station ? withYeok(station.stationName) : '';
 
   if (!station || !stationId) {
     return (
@@ -99,13 +103,13 @@ export default async function ITXStationPage({ params }: Props) {
   const breadcrumbItems = [
     { name: '홈', url: BASE_URL },
     { name: 'ITX 시간표', url: `${BASE_URL}/ITX/schedule` },
-    { name: station.stationName, url: `${BASE_URL}/ITX/schedule/${decodedSlug}` },
+    { name: name, url: `${BASE_URL}/ITX/schedule/${decodedSlug}` },
   ];
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <TrainStationJsonLd
-        name={station.stationName}
+        name={name}
         address={stationInfo?.address}
         telephone={stationInfo?.phone}
         url={`${BASE_URL}/ITX/schedule/${decodedSlug}`}
@@ -117,7 +121,7 @@ export default async function ITXStationPage({ params }: Props) {
         <span className="mx-2">›</span>
         <Link href="/ITX/schedule" className="hover:text-sky-600">ITX 시간표</Link>
         <span className="mx-2">›</span>
-        <span className="text-gray-800">{station.stationName}</span>
+        <span className="text-gray-800">{name}</span>
       </nav>
 
       <header className="bg-gradient-to-r from-sky-600 to-sky-700 text-white rounded-xl p-6 mb-8">
@@ -125,7 +129,7 @@ export default async function ITXStationPage({ params }: Props) {
           <span className="bg-white/20 px-2 py-1 rounded text-sm">ITX</span>
         </div>
         <h1 className="text-2xl md:text-3xl font-bold mb-2">
-          {station.stationName} ITX 시간표 운행노선 역 정보
+          {name} ITX 시간표 운행노선 역 정보
         </h1>
         <p className="opacity-90">{station.cityName || '기차역'}</p>
         <div className="mt-4 flex flex-wrap gap-2">
@@ -137,7 +141,7 @@ export default async function ITXStationPage({ params }: Props) {
 
       {stationInfo && (
         <section className="bg-white border border-gray-200 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold mb-4 text-gray-900">{station.stationName} 역 정보 주소 전화번호</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-900">{name} 역 정보 주소 전화번호</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               {stationInfo.address && (
@@ -182,7 +186,7 @@ export default async function ITXStationPage({ params }: Props) {
       )}
 
       <section>
-        <h2 className="text-xl font-bold mb-4">{station.stationName} 출발 ITX 운행노선</h2>
+        <h2 className="text-xl font-bold mb-4">{name} 출발 ITX 운행노선</h2>
         {sortedRoutes.length === 0 ? (
           <p className="text-gray-500">운행 노선 정보가 없습니다.</p>
         ) : (
@@ -240,7 +244,7 @@ export default async function ITXStationPage({ params }: Props) {
 
       <section className="mt-8 text-sm text-gray-600">
         <p>
-          {station.stationName}에서 출발하는 ITX 시간표입니다.
+          {name}에서 출발하는 ITX 시간표입니다.
           총 {sortedRoutes.length}개 노선이 운행되며, ITX-새마을·ITX-청춘 열차가 전국 주요 도시로 연결됩니다.
           정확한 시간과 요금은 코레일 예매 사이트에서 확인하세요.
         </p>

@@ -8,6 +8,7 @@ import {
   createRouteSlug,
   parseRouteSlug,
 } from '@/lib/slugs';
+import { withYeok } from '@/lib/slug-utils';
 import { getStationGuide } from '@/lib/station-guide';
 import ScheduleTable from '@/components/ScheduleTable';
 
@@ -59,6 +60,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const depName = route.depStationName.replace('역', '');
   const arrName = route.arrStationName.replace('역', '');
+  const depDisplay = withYeok(route.depStationName);
+  const arrDisplay = withYeok(route.arrStationName);
   const metaMinCharge = getValidMinCharge(route.schedules);
   const routeSlug = createRouteSlug(route.depStationName, route.arrStationName);
   const chargeText = metaMinCharge > 0 ? `, 요금 ${formatCharge(metaMinCharge)}부터` : '';
@@ -67,27 +70,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const timeText = firstTime && lastTime ? `(첫차 ${firstTime}, 막차 ${lastTime})` : '';
 
   return {
-    title: `${route.depStationName}에서 ${route.arrStationName} 가는 무궁화호 시간표 - 요금, 소요시간`,
-    description: `${route.depStationName}에서 ${route.arrStationName} 가는 무궁화호 시간표. ${route.schedules.length}회 운행${timeText}${chargeText}.`,
+    title: `${depDisplay}에서 ${arrDisplay} 가는 무궁화호 시간표 - 요금, 소요시간`,
+    description: `${depDisplay}에서 ${arrDisplay} 가는 무궁화호 시간표. ${route.schedules.length}회 운행${timeText}${chargeText}.`,
     keywords: [
       `${depName} ${arrName} 무궁화호`,
       `${depName} ${arrName} 누리로`,
       `${depName} ${arrName} 기차`,
-      `${route.depStationName} 시간표`,
-      `${route.arrStationName} 시간표`,
+      `${depDisplay} 시간표`,
+      `${arrDisplay} 시간표`,
     ],
     alternates: {
       canonical: `${BASE_URL}/mugunghwa/schedule/route/${routeSlug}`,
     },
     openGraph: {
-      title: `${route.depStationName}에서 ${route.arrStationName} 가는 무궁화호 시간표`,
-      description: `${route.depStationName}에서 ${route.arrStationName} 가는 무궁화호. ${route.schedules.length}회/일 운행${timeText}${chargeText}.`,
+      title: `${depDisplay}에서 ${arrDisplay} 가는 무궁화호 시간표`,
+      description: `${depDisplay}에서 ${arrDisplay} 가는 무궁화호. ${route.schedules.length}회/일 운행${timeText}${chargeText}.`,
       url: `${BASE_URL}/mugunghwa/schedule/route/${routeSlug}`,
       type: 'website',
     },
     twitter: {
       card: 'summary',
-      title: `${route.depStationName}에서 ${route.arrStationName} 가는 무궁화호 시간표`,
+      title: `${depDisplay}에서 ${arrDisplay} 가는 무궁화호 시간표`,
       description: `${route.schedules.length}회/일 운행${timeText}${chargeText}`,
     },
   };
@@ -145,6 +148,8 @@ export default async function MugunghwaRoutePage({ params }: Props) {
   const reverseRouteSlug = createRouteSlug(route.arrStationName, route.depStationName);
   const depStationSlug = createStationSlug(route.depStationName);
   const siteMetadata = getMetadata();
+  const depName = withYeok(route.depStationName);
+  const arrName = withYeok(route.arrStationName);
 
   // 열차유형별 그룹화
   const typeGroups = schedules.reduce(
@@ -160,8 +165,8 @@ export default async function MugunghwaRoutePage({ params }: Props) {
   const breadcrumbItems = [
     { name: '홈', url: BASE_URL },
     { name: '무궁화호 시간표', url: `${BASE_URL}/mugunghwa/schedule` },
-    { name: route.depStationName, url: `${BASE_URL}/mugunghwa/schedule/${depStationSlug}` },
-    { name: `${route.depStationName} → ${route.arrStationName}`, url: `${BASE_URL}/mugunghwa/schedule/route/${routeSlug}` },
+    { name: depName, url: `${BASE_URL}/mugunghwa/schedule/${depStationSlug}` },
+    { name: `${depName} → ${arrName}`, url: `${BASE_URL}/mugunghwa/schedule/route/${routeSlug}` },
   ];
 
   // 소요시간 계산
@@ -187,16 +192,16 @@ export default async function MugunghwaRoutePage({ params }: Props) {
   // FAQ 데이터
   const faqItems = [
     {
-      question: `${route.depStationName}에서 ${route.arrStationName}까지 무궁화호 요금은 얼마인가요?`,
-      answer: `${route.depStationName}에서 ${route.arrStationName}까지 무궁화호 요금은 ${formatCharge(minCharge)}${minCharge !== maxCharge ? `부터 ${formatCharge(maxCharge)}` : ''}입니다. 열차 유형(${trainTypeList})에 따라 요금이 다릅니다.`,
+      question: `${depName}에서 ${arrName}까지 무궁화호 요금은 얼마인가요?`,
+      answer: `${depName}에서 ${arrName}까지 무궁화호 요금은 ${formatCharge(minCharge)}${minCharge !== maxCharge ? `부터 ${formatCharge(maxCharge)}` : ''}입니다. 열차 유형(${trainTypeList})에 따라 요금이 다릅니다.`,
     },
     {
-      question: `${route.depStationName}에서 ${route.arrStationName}까지 첫차와 막차 시간은?`,
+      question: `${depName}에서 ${arrName}까지 첫차와 막차 시간은?`,
       answer: `첫차는 ${schedules[0]?.depTime || '-'}에 출발하고, 막차는 ${schedules[schedules.length - 1]?.depTime || '-'}에 출발합니다. 하루 총 ${schedules.length}회 운행됩니다.`,
     },
     {
-      question: `${route.depStationName}에서 ${route.arrStationName}까지 소요시간은 얼마나 걸리나요?`,
-      answer: `${route.depStationName}에서 ${route.arrStationName}까지 무궁화호 소요시간은 ${estimatedDuration || '노선에 따라 상이합니다'}입니다. 중간역 정차 수에 따라 달라질 수 있습니다.`,
+      question: `${depName}에서 ${arrName}까지 소요시간은 얼마나 걸리나요?`,
+      answer: `${depName}에서 ${arrName}까지 무궁화호 소요시간은 ${estimatedDuration || '노선에 따라 상이합니다'}입니다. 중간역 정차 수에 따라 달라질 수 있습니다.`,
     },
     {
       question: `무궁화호 자유석(입석)은 무엇인가요?`,
@@ -207,11 +212,11 @@ export default async function MugunghwaRoutePage({ params }: Props) {
       answer: `누리로는 주로 수도권~충청권 단거리 구간에서 운행되는 열차로, 무궁화호와 동일한 요금 체계를 사용합니다. 차량이 더 새롭고 좌석이 넓은 편이며, 운행 구간이 무궁화호보다 짧은 것이 특징입니다.`,
     },
     {
-      question: `${route.depStationName} ${route.arrStationName} 무궁화호 예매는 어디서 하나요?`,
+      question: `${depName} ${arrName} 무궁화호 예매는 어디서 하나요?`,
       answer: `코레일(www.letskorail.com) 또는 코레일톡 앱에서 온라인 예매가 가능합니다. 무궁화호는 당일 역 창구에서도 구매 가능하지만, 명절이나 성수기에는 사전 예매가 필요합니다.`,
     },
     {
-      question: `${route.depStationName} ${route.arrStationName} 무궁화호 어린이·청소년 할인이 되나요?`,
+      question: `${depName} ${arrName} 무궁화호 어린이·청소년 할인이 되나요?`,
       answer: `만 6세~12세 어린이는 약 50% 할인, 만 13세~18세 청소년은 약 30% 할인이 적용됩니다. 예매 시 생년월일 입력이 필요합니다.`,
     },
   ];

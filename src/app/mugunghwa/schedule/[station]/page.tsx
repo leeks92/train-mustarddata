@@ -13,6 +13,7 @@ import {
   createRouteSlug,
   getAllStationSlugs,
 } from '@/lib/slugs';
+import { withYeok } from '@/lib/slug-utils';
 
 const BASE_URL = 'https://train.mustarddata.com';
 
@@ -37,34 +38,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: '역을 찾을 수 없습니다' };
   }
 
+  const name = withYeok(station.stationName);
   const mugunghwaRoutes = getMugunghwaRoutes();
   const stationMugunghwaRoutes = mugunghwaRoutes.filter(r => r.depStationId === stationId);
   const stationInfo = getStationInfo(station.stationName);
-  const stationInfoText = stationInfo ? ` ${station.stationName} 주소, 전화번호, 편의시설 정보 제공.` : '';
+  const stationInfoText = stationInfo ? ` ${name} 주소, 전화번호, 편의시설 정보 제공.` : '';
 
   return {
-    title: `${station.stationName} 무궁화호 시간표 운행노선 요금 역 정보`,
-    description: `${station.stationName}에서 출발하는 무궁화호·누리로 시간표. ${stationMugunghwaRoutes.length}개 운행노선, 요금 정보.${stationInfoText}`,
+    title: `${name} 무궁화호 시간표 운행노선 요금 역 정보`,
+    description: `${name}에서 출발하는 무궁화호·누리로 시간표. ${stationMugunghwaRoutes.length}개 운행노선, 요금 정보.${stationInfoText}`,
     keywords: [
-      `${station.stationName} 무궁화호`,
-      `${station.stationName} 누리로`,
-      `${station.stationName} 무궁화호 시간표`,
-      `${station.stationName} 운행노선`,
-      `${station.stationName} 기차 요금`,
+      `${name} 무궁화호`,
+      `${name} 누리로`,
+      `${name} 무궁화호 시간표`,
+      `${name} 운행노선`,
+      `${name} 기차 요금`,
     ],
     alternates: {
       canonical: `${BASE_URL}/mugunghwa/schedule/${decodedSlug}`,
     },
     openGraph: {
-      title: `${station.stationName} 무궁화호 시간표 - 운행노선, 요금, 역 정보`,
-      description: `${station.stationName}에서 출발하는 무궁화호·누리로 시간표. ${stationMugunghwaRoutes.length}개 운행노선, 요금 정보.${stationInfoText}`,
+      title: `${name} 무궁화호 시간표 - 운행노선, 요금, 역 정보`,
+      description: `${name}에서 출발하는 무궁화호·누리로 시간표. ${stationMugunghwaRoutes.length}개 운행노선, 요금 정보.${stationInfoText}`,
       url: `${BASE_URL}/mugunghwa/schedule/${decodedSlug}`,
       type: 'website',
     },
     twitter: {
       card: 'summary',
-      title: `${station.stationName} 무궁화호 시간표 - 운행노선, 요금`,
-      description: `${station.stationName}에서 출발하는 무궁화호·누리로 시간표. ${stationMugunghwaRoutes.length}개 운행노선, 요금 정보.`,
+      title: `${name} 무궁화호 시간표 - 운행노선, 요금`,
+      description: `${name}에서 출발하는 무궁화호·누리로 시간표. ${stationMugunghwaRoutes.length}개 운행노선, 요금 정보.`,
     },
   };
 }
@@ -76,6 +78,8 @@ export default async function MugunghwaStationPage({ params }: Props) {
   const station = stationId ? getStation(stationId) : null;
   const mugunghwaAllRoutes = getMugunghwaRoutes();
   const stationInfo = station ? getStationInfo(station.stationName) : null;
+
+  const name = station ? withYeok(station.stationName) : '';
 
   if (!station || !stationId) {
     return (
@@ -98,13 +102,13 @@ export default async function MugunghwaStationPage({ params }: Props) {
   const breadcrumbItems = [
     { name: '홈', url: BASE_URL },
     { name: '무궁화호 시간표', url: `${BASE_URL}/mugunghwa/schedule` },
-    { name: station.stationName, url: `${BASE_URL}/mugunghwa/schedule/${decodedSlug}` },
+    { name: name, url: `${BASE_URL}/mugunghwa/schedule/${decodedSlug}` },
   ];
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <TrainStationJsonLd
-        name={station.stationName}
+        name={name}
         address={stationInfo?.address}
         telephone={stationInfo?.phone}
         url={`${BASE_URL}/mugunghwa/schedule/${decodedSlug}`}
@@ -116,7 +120,7 @@ export default async function MugunghwaStationPage({ params }: Props) {
         <span className="mx-2">›</span>
         <Link href="/mugunghwa/schedule" className="hover:text-orange-600">무궁화호 시간표</Link>
         <span className="mx-2">›</span>
-        <span className="text-gray-800">{station.stationName}</span>
+        <span className="text-gray-800">{name}</span>
       </nav>
 
       <header className="bg-gradient-to-r from-orange-600 to-orange-700 text-white rounded-xl p-6 mb-8">
@@ -124,7 +128,7 @@ export default async function MugunghwaStationPage({ params }: Props) {
           <span className="bg-white/20 px-2 py-1 rounded text-sm">무궁화호</span>
         </div>
         <h1 className="text-2xl md:text-3xl font-bold mb-2">
-          {station.stationName} 무궁화호 시간표 운행노선 역 정보
+          {name} 무궁화호 시간표 운행노선 역 정보
         </h1>
         <p className="opacity-90">{station.cityName || '기차역'}</p>
         <div className="mt-4 flex flex-wrap gap-2">
@@ -139,7 +143,7 @@ export default async function MugunghwaStationPage({ params }: Props) {
 
       {stationInfo && (
         <section className="bg-white border border-gray-200 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold mb-4 text-gray-900">{station.stationName} 역 정보 주소 전화번호</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-900">{name} 역 정보 주소 전화번호</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               {stationInfo.address && (
@@ -184,7 +188,7 @@ export default async function MugunghwaStationPage({ params }: Props) {
       )}
 
       <section>
-        <h2 className="text-xl font-bold mb-4">{station.stationName} 출발 무궁화호 운행노선</h2>
+        <h2 className="text-xl font-bold mb-4">{name} 출발 무궁화호 운행노선</h2>
         {sortedRoutes.length === 0 ? (
           <p className="text-gray-500">운행 노선 정보가 없습니다.</p>
         ) : (
@@ -243,7 +247,7 @@ export default async function MugunghwaStationPage({ params }: Props) {
 
       <section className="mt-8 text-sm text-gray-600">
         <p>
-          {station.stationName}에서 출발하는 무궁화호 시간표입니다.
+          {name}에서 출발하는 무궁화호 시간표입니다.
           총 {sortedRoutes.length}개 노선이 운행되며, 전국 주요 도시로 연결됩니다.
           무궁화호는 자유석(입석) 이용이 가능하며, 정확한 시간과 요금은 코레일 예매 사이트에서 확인하세요.
         </p>

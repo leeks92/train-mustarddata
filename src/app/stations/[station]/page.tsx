@@ -18,6 +18,7 @@ import {
   createRouteSlug,
   getAllStationSlugs,
 } from '@/lib/slugs';
+import { withYeok } from '@/lib/slug-utils';
 
 const BASE_URL = 'https://train.mustarddata.com';
 
@@ -42,6 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: '역을 찾을 수 없습니다' };
   }
 
+  const name = withYeok(station.stationName);
   const routes = stationId ? getRoutesFromStation(stationId) : [];
   const stationInfo = getStationInfo(station.stationName);
   const stationGuide = getStationGuide(station.stationName);
@@ -49,24 +51,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (stationInfo?.phone) infoTexts.push('전화번호');
   if (stationGuide?.parking) infoTexts.push('주차요금');
   if (stationInfo?.facilities?.length) infoTexts.push('편의시설');
-  const infoSuffix = infoTexts.length > 0 ? ` ${station.stationName} ${infoTexts.join(', ')} 정보 제공.` : '';
+  const infoSuffix = infoTexts.length > 0 ? ` ${name} ${infoTexts.join(', ')} 정보 제공.` : '';
 
   return {
-    title: `${station.stationName} 기차 시간표 전화번호 주차요금 운행노선`,
-    description: `${station.stationName}에서 출발하는 기차 시간표. ${routes.length}개 운행노선, 요금 정보.${infoSuffix} KTX·SRT·ITX·무궁화호 전체 노선 안내.`,
+    title: `${name} 기차 시간표 전화번호 주차요금 운행노선`,
+    description: `${name}에서 출발하는 기차 시간표. ${routes.length}개 운행노선, 요금 정보.${infoSuffix} KTX·SRT·ITX·무궁화호 전체 노선 안내.`,
     alternates: {
       canonical: `${BASE_URL}/stations/${decodedSlug}`,
     },
     openGraph: {
-      title: `${station.stationName} 기차 시간표 전화번호 주차요금`,
-      description: `${station.stationName}에서 출발하는 기차 시간표. ${routes.length}개 운행노선, 요금 정보.${infoSuffix}`,
+      title: `${name} 기차 시간표 전화번호 주차요금`,
+      description: `${name}에서 출발하는 기차 시간표. ${routes.length}개 운행노선, 요금 정보.${infoSuffix}`,
       url: `${BASE_URL}/stations/${decodedSlug}`,
       type: 'website',
     },
     twitter: {
       card: 'summary',
-      title: `${station.stationName} 기차 시간표 전화번호 주차요금`,
-      description: `${station.stationName}에서 출발하는 기차 시간표. ${routes.length}개 운행노선, 요금 정보.`,
+      title: `${name} 기차 시간표 전화번호 주차요금`,
+      description: `${name}에서 출발하는 기차 시간표. ${routes.length}개 운행노선, 요금 정보.`,
     },
   };
 }
@@ -84,6 +86,8 @@ export default async function StationDetailPage({ params }: Props) {
   const srtAllRoutes = getSrtRoutes();
   const itxAllRoutes = getItxRoutes();
   const mugunghwaAllRoutes = getMugunghwaRoutes();
+
+  const name = station ? withYeok(station.stationName) : '';
 
   if (!station || !stationId) {
     return (
@@ -112,30 +116,30 @@ export default async function StationDetailPage({ params }: Props) {
   const breadcrumbItems = [
     { name: '홈', url: BASE_URL },
     { name: '기차역', url: `${BASE_URL}/stations` },
-    { name: station.stationName, url: `${BASE_URL}/stations/${decodedSlug}` },
+    { name: name, url: `${BASE_URL}/stations/${decodedSlug}` },
   ];
 
   const faqItems = [
     {
-      question: `${station.stationName}에서 출발하는 열차 노선은 몇 개인가요?`,
-      answer: `${station.stationName}에서는 ${[ktxRoutes.length > 0 ? `KTX ${ktxRoutes.length}개 노선` : '', srtRoutes.length > 0 ? `SRT ${srtRoutes.length}개 노선` : '', itxRoutes.length > 0 ? `ITX ${itxRoutes.length}개 노선` : '', mugunghwaRoutes.length > 0 ? `무궁화호 ${mugunghwaRoutes.length}개 노선` : ''].filter(Boolean).join(', ')}이 운행됩니다.`,
+      question: `${name}에서 출발하는 열차 노선은 몇 개인가요?`,
+      answer: `${name}에서는 ${[ktxRoutes.length > 0 ? `KTX ${ktxRoutes.length}개 노선` : '', srtRoutes.length > 0 ? `SRT ${srtRoutes.length}개 노선` : '', itxRoutes.length > 0 ? `ITX ${itxRoutes.length}개 노선` : '', mugunghwaRoutes.length > 0 ? `무궁화호 ${mugunghwaRoutes.length}개 노선` : ''].filter(Boolean).join(', ')}이 운행됩니다.`,
     },
     {
-      question: `${station.stationName} 주소와 연락처는?`,
+      question: `${name} 주소와 연락처는?`,
       answer: `${stationInfo?.address ? `주소: ${stationInfo.address}` : '주소 정보는 현장에서 확인 가능합니다.'}${stationInfo?.phone ? `, 전화번호: ${stationInfo.phone}` : ''}`,
     },
     {
-      question: `${station.stationName} 편의시설은 어떤 것이 있나요?`,
+      question: `${name} 편의시설은 어떤 것이 있나요?`,
       answer: stationInfo?.facilities && stationInfo.facilities.length > 0
-        ? `${station.stationName}에는 ${stationInfo.facilities.join(', ')} 등의 편의시설이 있습니다.`
-        : `${station.stationName}에는 매표소, 대합실 등 기본 편의시설이 갖추어져 있습니다.`,
+        ? `${name}에는 ${stationInfo.facilities.join(', ')} 등의 편의시설이 있습니다.`
+        : `${name}에는 매표소, 대합실 등 기본 편의시설이 갖추어져 있습니다.`,
     },
   ];
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       <TrainStationJsonLd
-        name={station.stationName}
+        name={name}
         address={stationInfo?.address}
         telephone={stationInfo?.phone}
         url={`${BASE_URL}/stations/${decodedSlug}`}
@@ -144,7 +148,7 @@ export default async function StationDetailPage({ params }: Props) {
       <FAQJsonLd items={faqItems} />
       {stationInfo?.address && (
         <LocalBusinessJsonLd
-          name={station.stationName}
+          name={name}
           address={stationInfo.address}
           telephone={stationInfo.phone}
           url={`${BASE_URL}/stations/${decodedSlug}`}
@@ -156,11 +160,11 @@ export default async function StationDetailPage({ params }: Props) {
         <span className="mx-2">›</span>
         <Link href="/stations" className="hover:text-emerald-600">기차역</Link>
         <span className="mx-2">›</span>
-        <span className="text-gray-800">{station.stationName}</span>
+        <span className="text-gray-800">{name}</span>
       </nav>
 
       <header className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl p-6 mb-8">
-        <h1 className="text-2xl md:text-3xl font-bold mb-2">{station.stationName} 시간표 전화번호 주차요금</h1>
+        <h1 className="text-2xl md:text-3xl font-bold mb-2">{name} 시간표 전화번호 주차요금</h1>
         <p className="opacity-90">{station.cityName || '기차역'}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {ktxRoutes.length > 0 && (
@@ -180,7 +184,7 @@ export default async function StationDetailPage({ params }: Props) {
 
       {stationInfo && (
         <section className="bg-white border border-gray-200 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-bold mb-4 text-gray-900">{station.stationName} 역 정보 주소 전화번호</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-900">{name} 역 정보 주소 전화번호</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               {stationInfo.address && (
@@ -225,7 +229,7 @@ export default async function StationDetailPage({ params }: Props) {
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
             <span className="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-sm font-bold">K</span>
-            {station.stationName} KTX 운행노선
+            {name} KTX 운행노선
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {ktxRoutes.sort((a, b) => a.arrStationName.localeCompare(b.arrStationName)).map(route => {
@@ -260,7 +264,7 @@ export default async function StationDetailPage({ params }: Props) {
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
             <span className="w-8 h-8 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center text-sm font-bold">S</span>
-            {station.stationName} SRT 운행노선
+            {name} SRT 운행노선
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {srtRoutes.sort((a, b) => a.arrStationName.localeCompare(b.arrStationName)).map(route => {
@@ -295,7 +299,7 @@ export default async function StationDetailPage({ params }: Props) {
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
             <span className="w-8 h-8 bg-sky-100 text-sky-600 rounded-lg flex items-center justify-center text-sm font-bold">I</span>
-            {station.stationName} ITX 운행노선
+            {name} ITX 운행노선
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {itxRoutes.sort((a, b) => a.arrStationName.localeCompare(b.arrStationName)).map(route => {
@@ -330,7 +334,7 @@ export default async function StationDetailPage({ params }: Props) {
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
             <span className="w-8 h-8 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center text-sm font-bold">M</span>
-            {station.stationName} 무궁화호 운행노선
+            {name} 무궁화호 운행노선
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {mugunghwaRoutes.sort((a, b) => a.arrStationName.localeCompare(b.arrStationName)).map(route => {
@@ -369,7 +373,7 @@ export default async function StationDetailPage({ params }: Props) {
 
       {stationGuide && (
         <section className="mt-8 bg-white border border-gray-200 rounded-xl p-6">
-          <h2 className="text-xl font-bold mb-4 text-gray-900">{station.stationName} 이용 가이드 교통 주차요금</h2>
+          <h2 className="text-xl font-bold mb-4 text-gray-900">{name} 이용 가이드 교통 주차요금</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* 교통 연결 */}
             <div>
