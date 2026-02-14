@@ -14,7 +14,6 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: 'Googlebot',
         allow: '/',
-        crawlDelay: 1,
       },
       {
         userAgent: 'Yeti', // 네이버 검색 봇

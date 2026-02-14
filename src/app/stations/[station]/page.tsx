@@ -138,22 +138,21 @@ export default async function StationDetailPage({ params }: Props) {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      <TrainStationJsonLd
-        name={name}
-        address={stationInfo?.address}
-        telephone={stationInfo?.phone}
-        url={`${BASE_URL}/stations/${decodedSlug}/`}
-      />
-      <BreadcrumbJsonLd items={breadcrumbItems} />
-      <FAQJsonLd items={faqItems} />
-      {stationInfo?.address && (
+      {stationInfo?.address ? (
         <LocalBusinessJsonLd
           name={name}
           address={stationInfo.address}
           telephone={stationInfo.phone}
           url={`${BASE_URL}/stations/${decodedSlug}/`}
         />
+      ) : (
+        <TrainStationJsonLd
+          name={name}
+          url={`${BASE_URL}/stations/${decodedSlug}/`}
+        />
       )}
+      <BreadcrumbJsonLd items={breadcrumbItems} />
+      <FAQJsonLd items={faqItems} />
 
       <nav className="text-sm text-gray-500 mb-6">
         <Link href="/" className="hover:text-emerald-600">홈</Link>

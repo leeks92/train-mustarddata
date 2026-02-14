@@ -29,10 +29,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const mugunghwaRoutes = getMugunghwaRoutes();
   const metadata = getMetadata();
 
-  // 데이터 마지막 업데이트 날짜
+  // 데이터 마지막 업데이트 날짜 (데이터 기반 페이지용)
   const dataLastModified = metadata?.lastUpdated
     ? new Date(metadata.lastUpdated)
     : new Date();
+
+  // 빌드 날짜 (정적 페이지용 — 구조 변경 시에만 갱신)
+  const buildDate = new Date();
 
   // 정적 페이지
   const staticPages: MetadataRoute.Sitemap = [
@@ -43,32 +46,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${BASE_URL}/KTX/schedule`,
-      lastModified: dataLastModified,
+      url: `${BASE_URL}/KTX/schedule/`,
+      lastModified: buildDate,
       changeFrequency: 'weekly',
       priority: 0.95,
     },
     {
-      url: `${BASE_URL}/SRT/schedule`,
-      lastModified: dataLastModified,
+      url: `${BASE_URL}/SRT/schedule/`,
+      lastModified: buildDate,
       changeFrequency: 'weekly',
       priority: 0.95,
     },
     {
-      url: `${BASE_URL}/ITX/schedule`,
-      lastModified: dataLastModified,
+      url: `${BASE_URL}/ITX/schedule/`,
+      lastModified: buildDate,
       changeFrequency: 'weekly',
       priority: 0.95,
     },
     {
-      url: `${BASE_URL}/mugunghwa/schedule`,
-      lastModified: dataLastModified,
+      url: `${BASE_URL}/mugunghwa/schedule/`,
+      lastModified: buildDate,
       changeFrequency: 'weekly',
       priority: 0.95,
     },
     {
-      url: `${BASE_URL}/stations`,
-      lastModified: dataLastModified,
+      url: `${BASE_URL}/stations/`,
+      lastModified: buildDate,
       changeFrequency: 'weekly',
       priority: 0.95,
     },
@@ -87,7 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       const slug = createStationSlug(s.stationName);
       const isMajor = majorStationNames.some(name => s.stationName.includes(name));
       return {
-        url: `${BASE_URL}/stations/${slug}`,
+        url: `${BASE_URL}/stations/${slug}/`,
         lastModified: dataLastModified,
         changeFrequency: 'weekly' as const,
         priority: isMajor ? 0.85 : 0.7,
@@ -115,7 +118,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         const slug = createStationSlug(s.stationName);
         const isMajor = majorStationNames.some(name => s.stationName.includes(name));
         return {
-          url: `${BASE_URL}/${trainTypePath}/schedule/${slug}`,
+          url: `${BASE_URL}/${trainTypePath}/schedule/${slug}/`,
           lastModified: dataLastModified,
           changeFrequency: 'weekly' as const,
           priority: isMajor ? majorPriority : normalPriority,
@@ -147,7 +150,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         const slug = createRouteSlug(route.depStationName, route.arrStationName);
         const isPopular = popularRouteSlugs.includes(slug);
         return {
-          url: `${BASE_URL}/${trainTypePath}/schedule/route/${slug}`,
+          url: `${BASE_URL}/${trainTypePath}/schedule/route/${slug}/`,
           lastModified: dataLastModified,
           changeFrequency: 'weekly' as const,
           priority: isPopular ? popularPriority : normalPriority,
