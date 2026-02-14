@@ -80,12 +80,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       `${arrDisplay} 시간표`,
     ],
     alternates: {
-      canonical: `${BASE_URL}/mugunghwa/schedule/route/${routeSlug}`,
+      canonical: `${BASE_URL}/mugunghwa/schedule/route/${routeSlug}/`,
     },
     openGraph: {
       title: `${depDisplay}에서 ${arrDisplay} 가는 무궁화호 시간표`,
       description: `${depDisplay}에서 ${arrDisplay} 가는 무궁화호. ${route.schedules.length}회/일 운행${timeText}${chargeText}.`,
-      url: `${BASE_URL}/mugunghwa/schedule/route/${routeSlug}`,
+      url: `${BASE_URL}/mugunghwa/schedule/route/${routeSlug}/`,
       type: 'website',
     },
     twitter: {
@@ -164,9 +164,9 @@ export default async function MugunghwaRoutePage({ params }: Props) {
 
   const breadcrumbItems = [
     { name: '홈', url: BASE_URL },
-    { name: '무궁화호 시간표', url: `${BASE_URL}/mugunghwa/schedule` },
-    { name: depName, url: `${BASE_URL}/mugunghwa/schedule/${depStationSlug}` },
-    { name: `${depName} → ${arrName}`, url: `${BASE_URL}/mugunghwa/schedule/route/${routeSlug}` },
+    { name: '무궁화호 시간표', url: `${BASE_URL}/mugunghwa/schedule/` },
+    { name: depName, url: `${BASE_URL}/mugunghwa/schedule/${depStationSlug}/` },
+    { name: `${depName} → ${arrName}`, url: `${BASE_URL}/mugunghwa/schedule/route/${routeSlug}/` },
   ];
 
   // 소요시간 계산
@@ -238,7 +238,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
         departureTime={schedules[0]?.depTime}
         price={minCharge}
         trainType="무궁화호"
-        url={`${BASE_URL}/mugunghwa/schedule/route/${routeSlug}`}
+        url={`${BASE_URL}/mugunghwa/schedule/route/${routeSlug}/`}
         dateModified={siteMetadata?.lastUpdated}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />

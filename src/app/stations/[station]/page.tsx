@@ -57,12 +57,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${name} 기차 시간표 전화번호 주차요금 운행노선`,
     description: `${name}에서 출발하는 기차 시간표. ${routes.length}개 운행노선, 요금 정보.${infoSuffix} KTX·SRT·ITX·무궁화호 전체 노선 안내.`,
     alternates: {
-      canonical: `${BASE_URL}/stations/${decodedSlug}`,
+      canonical: `${BASE_URL}/stations/${decodedSlug}/`,
     },
     openGraph: {
       title: `${name} 기차 시간표 전화번호 주차요금`,
       description: `${name}에서 출발하는 기차 시간표. ${routes.length}개 운행노선, 요금 정보.${infoSuffix}`,
-      url: `${BASE_URL}/stations/${decodedSlug}`,
+      url: `${BASE_URL}/stations/${decodedSlug}/`,
       type: 'website',
     },
     twitter: {
@@ -115,8 +115,8 @@ export default async function StationDetailPage({ params }: Props) {
 
   const breadcrumbItems = [
     { name: '홈', url: BASE_URL },
-    { name: '기차역', url: `${BASE_URL}/stations` },
-    { name: name, url: `${BASE_URL}/stations/${decodedSlug}` },
+    { name: '기차역', url: `${BASE_URL}/stations/` },
+    { name: name, url: `${BASE_URL}/stations/${decodedSlug}/` },
   ];
 
   const faqItems = [
@@ -142,7 +142,7 @@ export default async function StationDetailPage({ params }: Props) {
         name={name}
         address={stationInfo?.address}
         telephone={stationInfo?.phone}
-        url={`${BASE_URL}/stations/${decodedSlug}`}
+        url={`${BASE_URL}/stations/${decodedSlug}/`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQJsonLd items={faqItems} />
@@ -151,7 +151,7 @@ export default async function StationDetailPage({ params }: Props) {
           name={name}
           address={stationInfo.address}
           telephone={stationInfo.phone}
-          url={`${BASE_URL}/stations/${decodedSlug}`}
+          url={`${BASE_URL}/stations/${decodedSlug}/`}
         />
       )}
 

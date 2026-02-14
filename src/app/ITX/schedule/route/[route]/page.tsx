@@ -80,12 +80,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       `${arrDisplay} 시간표`,
     ],
     alternates: {
-      canonical: `${BASE_URL}/ITX/schedule/route/${routeSlug}`,
+      canonical: `${BASE_URL}/ITX/schedule/route/${routeSlug}/`,
     },
     openGraph: {
       title: `${depDisplay}에서 ${arrDisplay} 가는 ITX 시간표`,
       description: `${depDisplay}에서 ${arrDisplay} 가는 ITX. ${route.schedules.length}회/일 운행${timeText}${chargeText}.`,
-      url: `${BASE_URL}/ITX/schedule/route/${routeSlug}`,
+      url: `${BASE_URL}/ITX/schedule/route/${routeSlug}/`,
       type: 'website',
     },
     twitter: {
@@ -164,9 +164,9 @@ export default async function ITXRoutePage({ params }: Props) {
 
   const breadcrumbItems = [
     { name: '홈', url: BASE_URL },
-    { name: 'ITX 시간표', url: `${BASE_URL}/ITX/schedule` },
-    { name: depName, url: `${BASE_URL}/ITX/schedule/${depStationSlug}` },
-    { name: `${depName} → ${arrName}`, url: `${BASE_URL}/ITX/schedule/route/${routeSlug}` },
+    { name: 'ITX 시간표', url: `${BASE_URL}/ITX/schedule/` },
+    { name: depName, url: `${BASE_URL}/ITX/schedule/${depStationSlug}/` },
+    { name: `${depName} → ${arrName}`, url: `${BASE_URL}/ITX/schedule/route/${routeSlug}/` },
   ];
 
   // 소요시간 계산
@@ -238,7 +238,7 @@ export default async function ITXRoutePage({ params }: Props) {
         departureTime={schedules[0]?.depTime}
         price={minCharge}
         trainType="ITX"
-        url={`${BASE_URL}/ITX/schedule/route/${routeSlug}`}
+        url={`${BASE_URL}/ITX/schedule/route/${routeSlug}/`}
         dateModified={siteMetadata?.lastUpdated}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />

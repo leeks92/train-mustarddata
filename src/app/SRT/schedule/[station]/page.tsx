@@ -55,12 +55,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'SRT 예매',
     ],
     alternates: {
-      canonical: `${BASE_URL}/SRT/schedule/${decodedSlug}`,
+      canonical: `${BASE_URL}/SRT/schedule/${decodedSlug}/`,
     },
     openGraph: {
       title: `${name} SRT 시간표 - 운행노선, 요금, 역 정보`,
       description: `${name}에서 출발하는 SRT 시간표. ${stationSrtRoutes.length}개 운행노선, 요금 정보.${stationInfoText}`,
-      url: `${BASE_URL}/SRT/schedule/${decodedSlug}`,
+      url: `${BASE_URL}/SRT/schedule/${decodedSlug}/`,
       type: 'website',
     },
     twitter: {
@@ -101,8 +101,8 @@ export default async function SRTStationPage({ params }: Props) {
 
   const breadcrumbItems = [
     { name: '홈', url: BASE_URL },
-    { name: 'SRT 시간표', url: `${BASE_URL}/SRT/schedule` },
-    { name: name, url: `${BASE_URL}/SRT/schedule/${decodedSlug}` },
+    { name: 'SRT 시간표', url: `${BASE_URL}/SRT/schedule/` },
+    { name: name, url: `${BASE_URL}/SRT/schedule/${decodedSlug}/` },
   ];
 
   return (
@@ -111,7 +111,7 @@ export default async function SRTStationPage({ params }: Props) {
         name={name}
         address={stationInfo?.address}
         telephone={stationInfo?.phone}
-        url={`${BASE_URL}/SRT/schedule/${decodedSlug}`}
+        url={`${BASE_URL}/SRT/schedule/${decodedSlug}/`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
 

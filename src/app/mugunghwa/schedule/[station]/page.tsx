@@ -55,12 +55,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       `${name} 기차 요금`,
     ],
     alternates: {
-      canonical: `${BASE_URL}/mugunghwa/schedule/${decodedSlug}`,
+      canonical: `${BASE_URL}/mugunghwa/schedule/${decodedSlug}/`,
     },
     openGraph: {
       title: `${name} 무궁화호 시간표 - 운행노선, 요금, 역 정보`,
       description: `${name}에서 출발하는 무궁화호·누리로 시간표. ${stationMugunghwaRoutes.length}개 운행노선, 요금 정보.${stationInfoText}`,
-      url: `${BASE_URL}/mugunghwa/schedule/${decodedSlug}`,
+      url: `${BASE_URL}/mugunghwa/schedule/${decodedSlug}/`,
       type: 'website',
     },
     twitter: {
@@ -101,8 +101,8 @@ export default async function MugunghwaStationPage({ params }: Props) {
 
   const breadcrumbItems = [
     { name: '홈', url: BASE_URL },
-    { name: '무궁화호 시간표', url: `${BASE_URL}/mugunghwa/schedule` },
-    { name: name, url: `${BASE_URL}/mugunghwa/schedule/${decodedSlug}` },
+    { name: '무궁화호 시간표', url: `${BASE_URL}/mugunghwa/schedule/` },
+    { name: name, url: `${BASE_URL}/mugunghwa/schedule/${decodedSlug}/` },
   ];
 
   return (
@@ -111,7 +111,7 @@ export default async function MugunghwaStationPage({ params }: Props) {
         name={name}
         address={stationInfo?.address}
         telephone={stationInfo?.phone}
-        url={`${BASE_URL}/mugunghwa/schedule/${decodedSlug}`}
+        url={`${BASE_URL}/mugunghwa/schedule/${decodedSlug}/`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
 

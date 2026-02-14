@@ -56,12 +56,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'ITX 예매',
     ],
     alternates: {
-      canonical: `${BASE_URL}/ITX/schedule/${decodedSlug}`,
+      canonical: `${BASE_URL}/ITX/schedule/${decodedSlug}/`,
     },
     openGraph: {
       title: `${name} ITX 시간표 - 운행노선, 요금, 역 정보`,
       description: `${name}에서 출발하는 ITX-새마을·ITX-청춘 시간표. ${stationItxRoutes.length}개 운행노선, 요금 정보.${stationInfoText}`,
-      url: `${BASE_URL}/ITX/schedule/${decodedSlug}`,
+      url: `${BASE_URL}/ITX/schedule/${decodedSlug}/`,
       type: 'website',
     },
     twitter: {
@@ -102,8 +102,8 @@ export default async function ITXStationPage({ params }: Props) {
 
   const breadcrumbItems = [
     { name: '홈', url: BASE_URL },
-    { name: 'ITX 시간표', url: `${BASE_URL}/ITX/schedule` },
-    { name: name, url: `${BASE_URL}/ITX/schedule/${decodedSlug}` },
+    { name: 'ITX 시간표', url: `${BASE_URL}/ITX/schedule/` },
+    { name: name, url: `${BASE_URL}/ITX/schedule/${decodedSlug}/` },
   ];
 
   return (
@@ -112,7 +112,7 @@ export default async function ITXStationPage({ params }: Props) {
         name={name}
         address={stationInfo?.address}
         telephone={stationInfo?.phone}
-        url={`${BASE_URL}/ITX/schedule/${decodedSlug}`}
+        url={`${BASE_URL}/ITX/schedule/${decodedSlug}/`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
 

@@ -5,7 +5,18 @@ import TrainListClient from '@/components/TrainListClient';
 export const metadata: Metadata = {
   title: '무궁화호·누리로 시간표 - 전국 운행정보',
   description: '전국 무궁화호, 누리로 열차 시간표와 요금 정보. 저렴한 요금으로 전국 주요 도시를 연결하는 무궁화호 운행 시간표.',
-  alternates: { canonical: 'https://train.mustarddata.com/mugunghwa/schedule' },
+  alternates: { canonical: 'https://train.mustarddata.com/mugunghwa/schedule/' },
+  openGraph: {
+    title: '무궁화호·누리로 시간표 - 전국 운행정보',
+    description: '전국 무궁화호, 누리로 열차 시간표와 요금 정보. 저렴한 요금으로 전국 주요 도시를 연결하는 무궁화호 운행 시간표.',
+    url: 'https://train.mustarddata.com/mugunghwa/schedule/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: '무궁화호·누리로 시간표 - 전국 운행정보',
+    description: '전국 무궁화호, 누리로 열차 시간표와 요금 정보.',
+  },
 };
 
 export default function MugunghwaListPage() {

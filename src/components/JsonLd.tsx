@@ -125,7 +125,7 @@ export function WebSiteJsonLd({ name, url, description }: { name: string; url: s
     description,
     potentialAction: {
       '@type': 'SearchAction',
-      target: { '@type': 'EntryPoint', urlTemplate: `${url}/stations?search={search_term_string}` },
+      target: { '@type': 'EntryPoint', urlTemplate: `${url}/stations/?search={search_term_string}` },
       'query-input': 'required name=search_term_string',
     },
   };

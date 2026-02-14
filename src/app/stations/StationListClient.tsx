@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { createStationSlug } from '@/lib/slug-utils';
 import { BreadcrumbJsonLd } from '@/components/JsonLd';
@@ -63,6 +63,12 @@ const regionOrder = [
 export default function StationListClient({ stations, ktxRoutes, generalRoutes }: Props) {
   const [searchTerm, setSearchTerm] = useState('');
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const search = params.get('search');
+    if (search) setSearchTerm(search);
+  }, []);
+
   const allRouteDepIds = new Set([
     ...ktxRoutes.map(r => r.depStationId),
     ...generalRoutes.map(r => r.depStationId),
@@ -89,8 +95,8 @@ export default function StationListClient({ stations, ktxRoutes, generalRoutes }
   return (
     <div className="min-h-screen bg-gray-50 pb-16">
       <BreadcrumbJsonLd items={[
-        { name: '홈', url: 'https://train.mustarddata.com' },
-        { name: '전국 기차역', url: 'https://train.mustarddata.com/stations' },
+        { name: '홈', url: 'https://train.mustarddata.com/' },
+        { name: '전국 기차역', url: 'https://train.mustarddata.com/stations/' },
       ]} />
       <div className="bg-emerald-600 text-white py-12 px-4 shadow-md">
         <div className="max-w-6xl mx-auto text-center">
