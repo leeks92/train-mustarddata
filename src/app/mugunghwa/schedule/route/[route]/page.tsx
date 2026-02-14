@@ -37,7 +37,7 @@ export async function generateStaticParams() {
       const slug = createRouteSlug(route.depStationName, route.arrStationName);
       if (slugSet.has(slug)) return null;
       slugSet.add(slug);
-      return { route: encodeURIComponent(slug) };
+      return { route: slug };
     })
     .filter((p): p is { route: string } => p !== null);
 }

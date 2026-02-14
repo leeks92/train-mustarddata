@@ -29,7 +29,7 @@ interface Props {
 
 export async function generateStaticParams() {
   const slugs = getAllStationSlugs();
-  return slugs.map(slug => ({ station: encodeURIComponent(slug) }));
+  return slugs.map(slug => ({ station: slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
