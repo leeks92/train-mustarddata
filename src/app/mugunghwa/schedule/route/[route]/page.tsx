@@ -244,8 +244,8 @@ export default async function MugunghwaRoutePage({ params }: Props) {
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQJsonLd items={faqItems} />
       <TableJsonLd
-        name={`${route.depStationName} → ${route.arrStationName} 무궁화호 시간표`}
-        description={`${route.depStationName}에서 ${route.arrStationName}까지 무궁화호 시간표. ${schedules.length}회 운행, ${formatCharge(minCharge)}부터.`}
+        name={`${depName} → ${arrName} 무궁화호 시간표`}
+        description={`${depName}에서 ${arrName}까지 무궁화호 시간표. ${schedules.length}회 운행, ${formatCharge(minCharge)}부터.`}
         columns={['출발', '도착', '열차유형', '열차번호', '요금']}
         rows={schedules.slice(0, 10).map(s => [s.depTime, s.arrTime, s.trainType, s.trainNo, formatCharge(s.charge)])}
       />
@@ -256,9 +256,9 @@ export default async function MugunghwaRoutePage({ params }: Props) {
         <span className="mx-2">›</span>
         <Link href="/mugunghwa/schedule" className="hover:text-orange-600">무궁화호 시간표</Link>
         <span className="mx-2">›</span>
-        <Link href={`/mugunghwa/schedule/${depStationSlug}`} className="hover:text-orange-600">{route.depStationName}</Link>
+        <Link href={`/mugunghwa/schedule/${depStationSlug}`} className="hover:text-orange-600">{depName}</Link>
         <span className="mx-2">›</span>
-        <span className="text-gray-800">{route.arrStationName}</span>
+        <span className="text-gray-800">{arrName}</span>
       </nav>
 
       {/* 노선 정보 헤더 */}
@@ -267,7 +267,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
           <span className="bg-white/20 px-2 py-1 rounded text-sm">무궁화호</span>
         </div>
         <h1 className="text-2xl md:text-3xl font-bold mb-4">
-          {route.depStationName}에서 {route.arrStationName} 가는 무궁화호 시간표
+          {depName}에서 {arrName} 가는 무궁화호 시간표
         </h1>
         <div className="flex flex-wrap gap-6 text-sm">
           <div>
@@ -317,7 +317,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
 
       {/* 열차유형별 요약 */}
       <section className="mt-8">
-        <h2 className="text-xl font-bold mb-4">{route.depStationName} → {route.arrStationName} 무궁화호 요금 안내</h2>
+        <h2 className="text-xl font-bold mb-4">{depName} → {arrName} 무궁화호 요금 안내</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {Object.entries(typeGroups).map(([type, items]) => (
             <div key={type} className="bg-white border rounded-lg p-4">
@@ -336,8 +336,8 @@ export default async function MugunghwaRoutePage({ params }: Props) {
       {/* 시간대별 운행 가이드 */}
       {schedules.length >= 3 && (
         <section className="mt-8 bg-white border border-gray-200 rounded-xl p-6">
-          <h2 className="text-xl font-bold mb-4 text-gray-900">{route.depStationName} → {route.arrStationName} 무궁화호 시간대별 운행</h2>
-          <p className="text-sm text-gray-600 mb-4">{route.depStationName} → {route.arrStationName} 노선의 시간대별 운행 현황입니다.</p>
+          <h2 className="text-xl font-bold mb-4 text-gray-900">{depName} → {arrName} 무궁화호 시간대별 운행</h2>
+          <p className="text-sm text-gray-600 mb-4">{depName} → {arrName} 노선의 시간대별 운행 현황입니다.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-orange-50 rounded-lg p-4 border border-orange-100">
               <h3 className="font-bold text-orange-800 mb-1">오전 (05:00~10:00)</h3>
@@ -375,17 +375,17 @@ export default async function MugunghwaRoutePage({ params }: Props) {
       )}
 
       {/* 출발역 꿀팁 */}
-      <StationTipsSection stationName={route.depStationName} label="출발" />
+      <StationTipsSection stationName={route.depStationName} label="출발" displayName={depName} />
 
       {/* 무궁화호 vs KTX 비교 */}
-      <TransportCompareSection depName={route.depStationName} arrName={route.arrStationName} minCharge={minCharge} duration={estimatedDuration} />
+      <TransportCompareSection depName={depName} arrName={arrName} minCharge={minCharge} duration={estimatedDuration} />
 
       {/* 명절·성수기 안내 */}
-      <SeasonalNotice depName={route.depStationName} arrName={route.arrStationName} />
+      <SeasonalNotice depName={depName} arrName={arrName} />
 
       {/* FAQ 섹션 */}
       <section className="mt-8">
-        <h2 className="text-xl font-bold mb-4">{route.depStationName} → {route.arrStationName} 무궁화호 자주 묻는 질문</h2>
+        <h2 className="text-xl font-bold mb-4">{depName} → {arrName} 무궁화호 자주 묻는 질문</h2>
         <div className="space-y-4">
           {faqItems.map((item, idx) => (
             <details key={idx} className="bg-white border border-gray-200 rounded-lg group">
@@ -405,7 +405,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
       <section className="mt-8 p-4 bg-gray-50 rounded-lg">
         <h2 className="font-bold mb-2">돌아오는 노선</h2>
         <Link href={`/mugunghwa/schedule/route/${reverseRouteSlug}`} className="text-orange-600 hover:underline">
-          {route.arrStationName} → {route.depStationName} 시간표 보기
+          {arrName} → {depName} 시간표 보기
         </Link>
       </section>
 
@@ -416,7 +416,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {sameDepRoutes.length > 0 && (
               <div>
-                <h3 className="font-medium text-gray-700 mb-3">{route.depStationName.replace('역', '')}에서 출발하는 다른 노선</h3>
+                <h3 className="font-medium text-gray-700 mb-3">{depName}에서 출발하는 다른 노선</h3>
                 <div className="space-y-2">
                   {sameDepRoutes.map((r, idx) => (
                     <Link
@@ -424,7 +424,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
                       href={`/mugunghwa/schedule/route/${createRouteSlug(r.depStationName, r.arrStationName)}`}
                       className="block bg-white border border-gray-200 rounded-lg p-3 hover:border-orange-300 hover:shadow-sm transition"
                     >
-                      <span className="font-medium text-gray-900">→ {r.arrStationName.replace('역', '')}</span>
+                      <span className="font-medium text-gray-900">→ {withYeok(r.arrStationName)}</span>
                       <span className="text-sm text-gray-500 ml-2">{r.schedules.length}회/일</span>
                     </Link>
                   ))}
@@ -433,7 +433,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
             )}
             {sameArrRoutes.length > 0 && (
               <div>
-                <h3 className="font-medium text-gray-700 mb-3">{route.arrStationName.replace('역', '')}으로 가는 다른 노선</h3>
+                <h3 className="font-medium text-gray-700 mb-3">{arrName}으로 가는 다른 노선</h3>
                 <div className="space-y-2">
                   {sameArrRoutes.map((r, idx) => (
                     <Link
@@ -441,7 +441,7 @@ export default async function MugunghwaRoutePage({ params }: Props) {
                       href={`/mugunghwa/schedule/route/${createRouteSlug(r.depStationName, r.arrStationName)}`}
                       className="block bg-white border border-gray-200 rounded-lg p-3 hover:border-orange-300 hover:shadow-sm transition"
                     >
-                      <span className="font-medium text-gray-900">{r.depStationName.replace('역', '')} →</span>
+                      <span className="font-medium text-gray-900">{withYeok(r.depStationName)} →</span>
                       <span className="text-sm text-gray-500 ml-2">{r.schedules.length}회/일</span>
                     </Link>
                   ))}
@@ -454,10 +454,10 @@ export default async function MugunghwaRoutePage({ params }: Props) {
 
       {/* SEO 텍스트 */}
       <section className="mt-12 bg-gray-100 rounded-lg p-6 text-sm text-gray-700 leading-relaxed">
-        <h2 className="font-bold text-gray-900 mb-3">{route.depStationName} → {route.arrStationName} 무궁화호 안내</h2>
+        <h2 className="font-bold text-gray-900 mb-3">{depName} → {arrName} 무궁화호 안내</h2>
         <div className="space-y-2">
           <p>
-            {route.depStationName}에서 {route.arrStationName}까지 무궁화호는 하루 총 <strong>{schedules.length}회</strong> 운행됩니다.
+            {depName}에서 {arrName}까지 무궁화호는 하루 총 <strong>{schedules.length}회</strong> 운행됩니다.
             첫차는 <strong>{schedules[0]?.depTime}</strong>에 출발하고, 막차는 <strong>{schedules[schedules.length - 1]?.depTime}</strong>에 출발합니다.
           </p>
           <p>
@@ -476,14 +476,15 @@ export default async function MugunghwaRoutePage({ params }: Props) {
 }
 
 // 출발역 꿀팁 컴포넌트
-function StationTipsSection({ stationName, label }: { stationName: string; label: string }) {
+function StationTipsSection({ stationName, label, displayName }: { stationName: string; label: string; displayName?: string }) {
   const guide = getStationGuide(stationName);
   if (!guide) return null;
+  const name = displayName || stationName;
 
   return (
     <section className="mt-8 bg-white border border-gray-200 rounded-xl p-6">
       <h2 className="text-xl font-bold mb-4 text-gray-900">
-        <span className="mr-2" aria-hidden="true">&#x1F4CD;</span> {stationName} {label} 꿀팁
+        <span className="mr-2" aria-hidden="true">&#x1F4CD;</span> {name} {label} 꿀팁
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* 대중교통 연결 */}
